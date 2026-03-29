@@ -23,5 +23,9 @@ Como já supracitado a proposta é ser uma plataforma de catalogação, citaremo
 - GG App: Funciona como uma rede social de jogos, o front-end é mais amigável, parecido com o letterbox;
 - My Game: Front-end nada amigável.
 
-
+##Integrantes do grupo
+- Pietra Mota
+- Sarah Meireles
+- Gustavo de Pinho
+- Maria Helena 
 
