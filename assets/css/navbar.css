@@ -34,9 +34,8 @@ body {
   flex-shrink: 0;
 }
 
-.sidebar .logo {
-  color: var(--orange);
-  font-size: 1.6rem;
+.sidebar .logo-design-ifsc {
+  width: 60px;
 }
 
 .sidebar .nav-item {
