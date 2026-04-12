@@ -1,0 +1,44 @@
+/* side bar*/
+.sidebar {
+  width: 72px;
+  background: var(--cream);
+  border-right: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.sidebar .logo {
+  color: var(--orange);
+  font-size: 1.6rem;
+}
+
+.sidebar .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.6rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar .nav-item i {
+  font-size: 1.2rem;
+}
+
+.sidebar .nav-item:hover {
+  color: var(--dark_blue);
+}
+
+.sidebar .bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
