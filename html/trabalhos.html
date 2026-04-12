@@ -34,64 +34,195 @@
     <a href="/html/trabalhos.html" class="nav-item"><i class="bi bi-clipboard2"></i><span>Trabalhos</span></a>
 
     <div class="bottom">
-      <a href="#" class="nav-item"><i class="bi bi-box-arrow-left"></i><span>Logout</span></a>
+      <a href="/html/login.html" class="nav-item"><i class="bi bi-box-arrow-left"></i><span>Logout</span></a>
     </div>
   </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="page-wrapper">
+ 
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div>
+        <h1 class="page-title">Trabalhos</h1>
+        <p class="page-sub">Projetos enviados por alunos como referência</p>
+      </div>
+      <button class="btn btn-upload" data-bs-toggle="modal" data-bs-target="#uploadModal">
+        <i class="bi bi-plus-lg"></i> Enviar projeto
+      </button>
+    </header>
+ 
+    <!-- filtranod -->
+    <div class="filters-bar">
+      <!-- busca -->
+      <div class="search-wrap">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" class="search-input" placeholder="Pesquise aqui..." id="searchInput"/>
+      </div>
+ 
+      <!-- semestre -->
+      <select class="filter-select" id="filterSemestre">
+        <option value="">Semestre</option>
+        <option>1º Semestre</option>
+        <option>2º Semestre</option>
+        <option>3º Semestre</option>
+        <option>4º Semestre</option>
+        <option>5º Semestre</option>
+        <option>6º Semestre</option>
+      </select>
+ 
+      <!-- categoria -->
+      <select class="filter-select">
+        <option value="">Categoria</option>
+        <option>Identidade Visual</option>
+        <option>UX/UI</option>
+        <option>Tipografia</option>
+        <option>Ilustração</option>
+        <option>Motion</option>
+        <option>Fotografia</option>
+      </select>
+    </div>
+ 
+    <!-- grid -->
+    <div class="projects-grid" id="projectsGrid">
+ 
+      <!-- card 1 -->
+      <div class="proj-card" data-semestre="3º Semestre" data-cat="Identidade Visual">
+        <div class="proj-thumb">
+          <div class="thumb-placeholder">
+            <img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" srcset="">
+          </div>
+          <div class="proj-overlay">
+            <button class="btn-view"><i class="bi bi-eye"></i> Ver</button>
+          </div>
+        </div>
+        <div class="proj-info">
+          <span class="proj-tag">Identidade Visual</span>
+          <h3 class="proj-name">Marca — Café Origem</h3>
+          <p class="proj-meta">
+            <span class="proj-author"><i class="bi bi-person-circle"></i> Aluno</span>
+            <span class="proj-sem">semestre</span>
+          </p>
+        </div>
+      </div>
+ 
+      <!-- card 2 -->
+      <div class="proj-card" data-semestre="4º Semestre" data-cat="UX/UI">
+        <div class="proj-thumb">
+          <div class="thumb-placeholder">
+            <img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" srcset="">
+          </div>
+          <div class="proj-overlay">
+            <button class="btn-view"><i class="bi bi-eye"></i> Ver</button>
+          </div>
+        </div>
+        <div class="proj-info">
+          <span class="proj-tag">UX/UI</span>
+          <h3 class="proj-name">App — Guia de Trilhas</h3>
+          <p class="proj-meta">
+            <span class="proj-author"><i class="bi bi-person-circle"></i> Aluno</span>
+            <span class="proj-sem">semestre</span>
+          </p>
+        </div>
+      </div>
+ 
+      <!-- card 3 -->
+      <div class="proj-card" data-semestre="2º Semestre" data-cat="Tipografia">
+        <div class="proj-thumb">
+          <div class="thumb-placeholder">
+            <img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" srcset="">
+          </div>
+          <div class="proj-overlay">
+            <button class="btn-view"><i class="bi bi-eye"></i> Ver</button>
+          </div>
+        </div>
+        <div class="proj-info">
+          <span class="proj-tag">Tipografia</span>
+          <h3 class="proj-name">Família Tipográfica Cerne</h3>
+          <p class="proj-meta">
+            <span class="proj-author"><i class="bi bi-person-circle"></i> Aluno</span>
+            <span class="proj-sem">semestre</span>
+          </p>
+        </div>
+      </div>
+ 
+      <!-- card 4 -->
+      <div class="proj-card" data-semestre="5º Semestre" data-cat="Motion">
+        <div class="proj-thumb">
+          <div class="thumb-placeholder">
+            <img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" srcset="">
+          </div>
+          <div class="proj-overlay">
+            <button class="btn-view"><i class="bi bi-eye"></i> Ver</button>
+          </div>
+        </div>
+        <div class="proj-info">
+          <span class="proj-tag">Motion</span>
+          <h3 class="proj-name">Animação — Identidade IFSC</h3>
+          <p class="proj-meta">
+            <span class="proj-author"><i class="bi bi-person-circle"></i> Aluno</span>
+            <span class="proj-sem">semestre</span>
+          </p>
+        </div>
+      </div>
+ 
+      <!-- card 5 -->
+      <div class="proj-card" data-semestre="1º Semestre" data-cat="Ilustração">
+        <div class="proj-thumb">
+          <div class="thumb-placeholder">
+            <img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" srcset="">
+          </div>
+          <div class="proj-overlay">
+            <button class="btn-view"><i class="bi bi-eye"></i> Ver</button>
+          </div>
+        </div>
+        <div class="proj-info">
+          <span class="proj-tag">Ilustração</span>
+          <h3 class="proj-name">Série — Fauna Catarinense</h3>
+          <p class="proj-meta">
+            <span class="proj-author"><i class="bi bi-person-circle"></i> Aluno</span>
+            <span class="proj-sem">semestre</span>
+          </p>
+        </div>
+      </div>
+ 
+    </div>
+    <!-- mensagem vazia -->
+    <div class="empty-msg d-none" id="emptyMsg">
+      <i class="bi bi-search" style="font-size:2rem;"></i>
+      <p>Nenhum projeto encontrado.</p>
+    </div>
+ 
+  </div>
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function togglePwd() {
-      const input = document.getElementById('pwdInput');
-      const icon  = document.getElementById('eyeIcon');
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.className = 'bi bi-eye';
-      } else {
-        input.type = 'password';
-        icon.className = 'bi bi-eye-slash';
-      }
-    }
-  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

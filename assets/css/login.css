@@ -70,22 +70,6 @@ img {
   margin: 0;
 }
 
-.dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--border);
-}
-
-.dot.active {
-  background: var(--dark);
-}
-
 /* painel direito */
 .right-panel {
   flex: 1;
@@ -144,7 +128,7 @@ img {
 
 /* botão de continue */
 .btn-main {
-  background: var(--dark_blue);
+  background: var(--dark);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -156,7 +140,8 @@ img {
 
 .btn-main:hover {
   opacity: 0.88;
-  color: #fff;
+  color: var(--cream);
+  background-color: var(--muted);
 }
 
 /* barreira */
