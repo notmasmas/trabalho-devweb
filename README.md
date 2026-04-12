@@ -23,6 +23,14 @@ Como já supracitado a proposta é ser uma plataforma de catalogação, citaremo
 - GG App: Funciona como uma rede social de jogos, o front-end é mais amigável, parecido com o letterbox;
 - My Game: Front-end nada amigável.
 
+## Cores utilizadas
+
+--cream:  #f2ede4;
+--dark:   #1c1c1c;
+--dark_blue: #171253;
+--border: #c8bfb0;
+--muted:  #7a7060;
+
 ##Integrantes do grupo
 - Pietra Mota
 - Sarah Meireles
