@@ -20,13 +20,70 @@
   <nav class="sidebar d-none d-md-flex">
     <div class="logo"><img src="/assets/img/logo_design_ifsc-removebg-preview.png" alt="" class="logo-design-ifsc"></div>
 
-    <a href="#" class="nav-item"><i class="bi bi-house"></i><span>Home</span></a>
+    <a href="/html/home.html" class="nav-item"><i class="bi bi-house"></i><span>Home</span></a>
     <a href="#" class="nav-item"><i class="bi bi-chat-left-dots"></i><span>Fórum</span></a>
-    <a href="#" class="nav-item"><i class="bi bi-book"></i><span>Biblioteca</span></a>
-    <a href="#" class="nav-item"><i class="bi bi-bezier2"></i><span>Semestres</span></a>
+    <a href="/html/biblioteca.html" class="nav-item"><i class="bi bi-book"></i><span>Biblioteca</span></a>
+    <a href="/html/semestres.html" class="nav-item"><i class="bi bi-bezier2"></i><span>Semestres</span></a>
     <a href="/html/trabalhos.html" class="nav-item"><i class="bi bi-clipboard2"></i><span>Trabalhos</span></a>
 
     <div class="bottom">
       <a href="#" class="nav-item"><i class="bi bi-box-arrow-left"></i><span>Logout</span></a>
     </div>
   </nav>
+
+  <!-- main -->
+
+  <main>
+    <h1>Biblioteca</h1>
+    <p>Aqui você encontra materiais auxiliares para a suas aulas compartilhados por professores e outros alunos!</p>
+
+    <div class="add-content-wrapper">
+        <button class="btn btn-primary add-content">
+            <i class="bi bi-file-earmark-plus"></i>
+            Adicionar conteúdo
+        </button>
+    </div>
+
+    <!-- cards -->
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 pdf-wrapper">
+    <div class="col">
+        <div class="card h-100">
+        <img src="/assets/img/logo_design_ifsc-removebg-preview.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+        <img src="/assets/img/logo_design_ifsc-removebg-preview.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+        <img src="/assets/img/logo_design_ifsc-removebg-preview.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+        <img src="/assets/img/logo_design_ifsc-removebg-preview.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <button type="button" class="btn btn-primary load-more">Carregar mais</button>
+  </main>
