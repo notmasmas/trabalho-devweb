@@ -12,7 +12,6 @@ Nos foi apresentado esse problema de descentralização de informações pelo pr
 
 - Fórum da comunidade para tirar dúvidas ou conhecer outros alunos
 - Biblioteca de PDFs, com a possibilidade de pesquisa, download e upload de arquivos. Professores podem fazer o upload de PDFs na plataforma e marcá-los como disponíveis apenas para outros professores ou alunos de determinado semestre
-- Gameficação como incentivo do uso da plataforma, o user ganha icons e mais possibilidades de estilização do perfil por ofensiva de dias ou jogos finalizados;
 - Fluxograma das matérias do curso, apontando seus requerimentos e que matéria é recomendada ser feita em determinada fase do curso
 - Seção de divulgação de trabalhos dos próprios alunos para inspiração e portfólio
 
