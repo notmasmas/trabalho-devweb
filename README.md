@@ -17,12 +17,12 @@ Nos foi apresentado esse problema de descentralização de informações pelo pr
 
 ## Cores utilizadas
 
---cream:  #f2ede4;
---dark:   #1c1c1c;
---dark_blue: #171253;
---border: #c8bfb0;
---muted:  #7a7060;
---green-ifsc: #84CB87;
+--cream:  #f2ede4;\
+--dark:   #1c1c1c;\
+--dark_blue: #171253;\
+--border: #c8bfb0;\
+--muted:  #7a7060;\
+--green-ifsc: #84CB87;\
 --red-ifsc: #F55A0A;
 
 ## Instalação dos módulos
@@ -33,9 +33,9 @@ Se a IDE utilizada possuir terminal integrado, com o projeto aberto:
 
 `$ npm install`
 
-Senão, em um terminal:
-``$ cd diretorio_em_que_o_projeto_esta/trabalho-devweb
-$ npm install``
+Senão, em um terminal:\
+`$ cd diretorio_em_que_o_projeto_esta/trabalho-devweb`\
+`$ npm install`
 
 ## Integrantes do grupo
 - Pietra Mota
