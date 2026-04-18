@@ -1,27 +1,20 @@
-# Aplicativo de avaliação de jogos
+# Hub de Conhecimento para o Centro Acadêmico de Design IFSC
 
-A proposta da plataforma é ser de catalogação de jogos, onde o user coloca o jogo que jogou, review e coloca também o "registro de gameplay", onde ele registra o tempo que jogou no dia.
+A Proposta da plataforma é centralizar conhecimentos úteis para alunos de graduação do curso de Design do IFSC
 
-> A proposta é implementar uma gameficação que utiliza desse "registro de gameplay", onde temos ofensivas de dias jogados e inspirado na plataforma de jogos Steam, dar icons e estilizações a cada jogo finalizado.
+> Contando com fórum, biblioteca de PDFs, área de compartilhamento de trabalhos de design realizados por outros alunos e fluxograma de matérias do curso incluindo seus requerimentos prévios
 
 ## Inspirações
 
-Foi utilizado como inspirações os aplicativos de catalogações já existentes como o Skoob, que é utilizado para livros e o letterbox que é utilizado para filmes e series.
-> Existem sim, aplicativos que catalogam os jogos, mas foi identificado um gap quanto a experiência do user.
+Nos foi apresentado esse problema de descentralização de informações pelo próprio centro acadêmico em questão. O pedido deles foi nosso auxílio para criar uma plataforma em que seja possível encontrar todas as informações úteis para os alunos em um só lugar.
 
 ## Funcionalidades
 
-Como já supracitado a proposta é ser uma plataforma de catalogação, citaremos aqui algumas das funcionalidades já mapeadas.
-- Registro de jogos já jogados, jogos que o user está jogando e os que o user quer jogar;
-- Possibilidade de fazer o "registro das gameplays" toda vez que joga e assim permitindo bem a gameficação da plataforma;
+- Fórum da comunidade para tirar dúvidas ou conhecer outros alunos
+- Biblioteca de PDFs, com a possibilidade de pesquisa, download e upload de arquivos. Professores podem fazer o upload de PDFs na plataforma e marcá-los como disponíveis apenas para outros professores ou alunos de determinado semestre
 - Gameficação como incentivo do uso da plataforma, o user ganha icons e mais possibilidades de estilização do perfil por ofensiva de dias ou jogos finalizados;
-- Resenha dos jogos e a possibilidade de contato com outros users.
-
-## Plataformas do mercado
-
-- Stash: Aplicativo móvel intuitivo com categorias, tags personalizadas e recursos sociais para compartilhar recomendações;
-- GG App: Funciona como uma rede social de jogos, o front-end é mais amigável, parecido com o letterbox;
-- My Game: Front-end nada amigável.
+- Fluxograma das matérias do curso, apontando seus requerimentos e que matéria é recomendada ser feita em determinada fase do curso
+- Seção de divulgação de trabalhos dos próprios alunos para inspiração e portfólio
 
 ## Cores utilizadas
 
@@ -30,8 +23,22 @@ Como já supracitado a proposta é ser uma plataforma de catalogação, citaremo
 --dark_blue: #171253;
 --border: #c8bfb0;
 --muted:  #7a7060;
+--green-ifsc: #84CB87;
+--red-ifsc: #F55A0A;
 
-##Integrantes do grupo
+## Instalação dos módulos
+
+- É necessário ter o Node.js/NPM instalado
+  
+Se a IDE utilizada possuir terminal integrado, com o projeto aberto:
+
+`$ npm install`
+
+Senão, em um terminal:
+``$ cd diretorio_em_que_o_projeto_esta/trabalho-devweb
+$ npm install``
+
+## Integrantes do grupo
 - Pietra Mota
 - Sarah Meireles
 - Gustavo de Pinho
