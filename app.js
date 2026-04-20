@@ -1,7 +1,20 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./db/connect');
+const files = require('./routes/files');
 require('dotenv').config();
+
+// middleware
+app.use(express.static('./static'));
+app.use(express.json());
+
+// routes
+app.use('/api/v1/files', files);
+
+//testing routes
+app.get('/biblioteca', (req, res) => {
+    res.sendFile(__dirname + '/static/html/biblioteca.html');
+})
 
 const port = 3000;
 
