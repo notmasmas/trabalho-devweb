@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAllFiles, createFile, deleteFile} = require('../controllers/file');
+const {getAllFiles, createFile, deleteFile, editFile} = require('../controllers/file');
 const router = express.Router();
 
 router.route('/')
@@ -7,6 +7,7 @@ router.route('/')
     .post(createFile);
 
 router.route('/:id')
-    .delete(deleteFile);
+    .delete(deleteFile)
+    .patch(editFile);
 
 module.exports = router;

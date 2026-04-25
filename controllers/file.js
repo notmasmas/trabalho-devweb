@@ -53,8 +53,33 @@ const deleteFile = async (req, res) => {
     }
 }
 
+const editFile = async (req, res) => {
+
+    try {
+        const{id:fileID} = req.params;
+        const file = await File.findByIdAndUpdate({_id: fileID}, req.body, {new: true});
+
+        if (!file) {
+            return res
+                .status(404)
+                .json({'msg': 'File not found'});
+        }
+
+        res
+            .status(200)
+            .json(file);
+    }
+    catch (error) {
+
+        res
+            .status(500)
+            .json({'msg': error});
+    }
+}
+
 module.exports = {
     getAllFiles,
     createFile,
-    deleteFile
+    deleteFile,
+    editFile
 };
