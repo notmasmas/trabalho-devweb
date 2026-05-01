@@ -10,7 +10,8 @@ const fileSchema = new mongoose.Schema({
     "author": {
         type: String,
         trim: true,
-        maxlength: [40, 'author name cannot be more than 40 characters']
+        maxlength: [40, 'author name cannot be more than 40 characters'],
+        default: "Nome não providenciado"
     },
     "uploader": {
         type: String,
@@ -20,14 +21,16 @@ const fileSchema = new mongoose.Schema({
     },
     "description": {
         type: String,
-        trim: true
+        trim: true,
+        default: '...'
     },
     "protected": {
         type: Boolean,
         default: false
     },
     "fileSize": {
-        type: Number
+        type: Number,
+        default: 0
     },
     "fileURI": {
         type: String,
