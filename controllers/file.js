@@ -18,10 +18,29 @@ const getAllFiles = async (req, res) => {
 const createFile = async (req, res) => {
     
     try {
-        const file = await File.create(req.body);
+
+        if (!req.file) {
+            return res.status(400).json({'msg': 'File must be provided'});
+        }
+
+        const {size, path} = req.file;
+        const {name, author, uploader, description, protected} = req.body;
+
+        const fileData = {
+            name: name,
+            author: author,
+            uploader: uploader,
+            description: description,
+            protected: protected,
+            fileSize: size,
+            fileURI: path
+        }
+
+        const file = await File.create(fileData);
+
         res
             .status(201)
-            .json({file});
+            .json(file);
     }
     catch (error) {
         res
