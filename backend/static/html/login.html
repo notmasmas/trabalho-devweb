@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acervo Design</title>
+  <link rel="icon" type="image" href="/static/assets/img/logo.png">
+
+</head>
+<body>
+  
+  <!-- Main -->
+  <div class="main-wrapper">
+    <div class="card-shell">
+
+      <!-- Left Panel -->
+      <div class="left-panel">
+        <div class="illustration-box">
+          <img src="/static/assets/img/logo.png" alt="" srcset="">
+        </div>
+
+        <h3 class="panel-title">Acervo Design</h3>
+        <p class="panel-desc">
+          plataforma digital exclusiva para alunos do curso de Design, com o objetivo de centralizar materiais acadêmicos, facilitar o acesso ao conhecimento e melhorar a troca de informações entre estudantes de diferentes semestres.
+        </p>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="right-panel">
+        <h2>Faca seu login</h2>
+        <p class="subtitle">Faça aqui a o login para acessar o Acervo Design, e facilite a sua vida academica.</p>
+
+        <div>
+          <input type="email" class="form-control" placeholder="Email address"/>
+        </div>
+
+        <div>
+          <div class="input-group">
+            <input type="password" id="pwdInput" class="form-control" placeholder="Password"/>
+            <button class="btn-eye" type="button" onclick="togglePwd()">
+              <i class="bi bi-eye-slash" id="eyeIcon"></i>
+            </button>
+          </div>
+          <a class="recovery-link mt-1">Esqueceu a senha?</a>
+        </div>
+
+        <button class="btn btn-main w-100">Continue</button>
+
+        <div class="divider">ou crie aqui a sua conta</div>
+
+        <p class="sign-in-text">
+          Crie sua conta aqui: <a href="#">Create account</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function togglePwd() {
+      const input = document.getElementById('pwdInput');
+      const icon  = document.getElementById('eyeIcon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bi bi-eye';
+      } else {
+        input.type = 'password';
+        icon.className = 'bi bi-eye-slash';
+      }
+    }
+  </script>
+</body>
+</html>

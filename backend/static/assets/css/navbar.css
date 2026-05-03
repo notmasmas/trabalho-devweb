@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ── variaveis ── */
+:root {
+  --cream:  #f2ede4;
+  --dark:   #1c1c1c;
+  --dark_blue: #171253;
+  --border: #c8bfb0;
+  --muted:  #7a7060;
+}
+
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* side bar*/
+.sidebar {
+  width: 72px;
+  background: var(--cream);
+  border-right: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.sidebar .logo-design-ifsc {
+  width: 60px;
+}
+
+.sidebar .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.6rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar .nav-item i {
+  font-size: 1.2rem;
+}
+
+.sidebar .nav-item:hover {
+  color: var(--dark_blue);
+}
+
+.sidebar .bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
