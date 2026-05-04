@@ -18,10 +18,29 @@ const getAllFiles = async (req, res) => {
 const createFile = async (req, res) => {
     
     try {
-        const file = await File.create(req.body);
+
+        if (!req.file) {
+            return res.status(400).json({'msg': 'File must be provided'});
+        }
+
+        const {size, path} = req.file;
+        const {name, author, uploader, description, protected} = req.body;
+
+        const fileData = {
+            name: name,
+            author: author,
+            uploader: uploader,
+            description: description,
+            protected: protected,
+            fileSize: size,
+            fileURI: path
+        }
+
+        const file = await File.create(fileData);
+
         res
             .status(201)
-            .json({file});
+            .json(file);
     }
     catch (error) {
         res
@@ -77,9 +96,40 @@ const editFile = async (req, res) => {
     }
 }
 
+const downloadFile = async (req, res) => {
+
+    try {
+        const {id:fileID} = req.params;
+        const {fileURI} = await File.findOne({_id: fileID}, {fileURI: 1});
+
+        if (!fileURI) {
+            return res
+                .status(404)
+                .json({'msg': 'File not found'});
+        }
+
+        res
+            .status(200)
+            .download(fileURI, 'file.pdf', (error) => {
+
+                if (error) {
+                   return res
+                        .status(500)
+                        .json({'msg': error.msg});
+                }
+            })
+    }
+    catch (error) {
+        res
+            .status(500)
+            .json({'msg': error})
+    }
+}
+
 module.exports = {
     getAllFiles,
     createFile,
     deleteFile,
-    editFile
+    editFile,
+    downloadFile
 };
