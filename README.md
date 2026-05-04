@@ -41,5 +41,6 @@ Senão, em um terminal:\
 - Pietra Mota
 - Sarah Meireles
 - Gustavo de Pinho
-- Maria Helena 
+- Maria Helena Melo
+- Filipe Pereira da Silva
 
