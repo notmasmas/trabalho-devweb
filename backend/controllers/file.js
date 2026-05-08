@@ -3,14 +3,36 @@ const File = require('../models/file.js');
 const getAllFiles = async (req, res) => {
     
     try {
-        const files = await File.find({});
+        const {name, author, uploader} = req.query;
+        const queryObject = {}
+
+        if (name) {
+            queryObject.name = {$regex: name, $options: 'i'};
+        }
+        if (author) {
+            queryObject.author = {$regex: author, $options: 'i'};
+        }
+        if (uploader) {
+            queryObject.uploader = {$regex: uploader, $options: 'i'};
+        }
+
+        let result = File.find(queryObject);
+
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
+        result = result.skip(skip).limit(limit);
+
+        const files = await result;
+        
         res
             .status(200)
-            .json({files});
+            .json({files})
     }
     catch (error) {
         res
-            .status(500)
+            .status(201)
             .json({'msg': error});
     }
 }
@@ -27,11 +49,11 @@ const createFile = async (req, res) => {
         const {name, author, uploader, description, protected} = req.body;
 
         const fileData = {
-            name: name,
-            author: author,
-            uploader: uploader,
-            description: description,
-            protected: protected,
+            name,
+            author,
+            uploader,
+            description,
+            protected,
             fileSize: size,
             fileURI: path
         }
