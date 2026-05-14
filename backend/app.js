@@ -13,6 +13,9 @@ app.use(express.static('./static'));
 app.use(express.json());
 app.use('/api/v1', require('./routes'))
 
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+
 const port = process.env.PORT || 3000;
 
 // conecta ao banco ANTES de subir o servidor
