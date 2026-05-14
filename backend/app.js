@@ -4,19 +4,20 @@ const connectDB = require('./config/db/connect')
 
 const app = express()
 
+// error handler
+const errorHandlerMiddleware = require('./middleware/error-handler');
+const notFound = require('./middleware/not-found');
+
 // middleware
 app.use(express.static('./static'));
 app.use(express.json());
 app.use('/api/v1', require('./routes'))
 
+const port = process.env.PORT || 3000;
+
 // conecta ao banco ANTES de subir o servidor
 connectDB().then(() => {
-  app.listen(process.env.PORT, () => {
-    console.log(`Servidor rodando na porta ${process.env.PORT}`)
+  app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`)
   })
-})
-
-//testing routes (remove)
-app.get('/biblioteca', (req, res) => {
-    res.sendFile(__dirname + '/static/html/biblioteca.html');
 })
