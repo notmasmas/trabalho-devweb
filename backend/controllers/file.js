@@ -34,7 +34,7 @@ const getAllFiles = async (req, res) => {
 
 const createFile = async (req, res) => {
     if (!req.file) {
-        throw BadRequestError('File must be provided');
+        throw new BadRequestError('File must be provided');
     }
 
     const {size, path} = req.file;
@@ -63,7 +63,7 @@ const deleteFile = async (req, res) => {
     const file = await File.deleteOne({_id: fileID});
 
     if (!file) {
-        throw NotFoundError('File not found')
+        throw new NotFoundError('File not found')
     }
 
     res
@@ -77,7 +77,7 @@ const editFile = async (req, res) => {
     const file = await File.findByIdAndUpdate({_id: fileID}, req.body, {returnDocument: 'after'});
 
     if (!file) {
-        throw NotFoundError('File not found');
+        throw new NotFoundError('File not found');
         console.log('Got here');
     }
 
@@ -92,14 +92,14 @@ const downloadFile = async (req, res) => {
     const {fileURI} = await File.findOne({_id: fileID}, {fileURI: 1});
 
     if (!fileURI) {
-        throw NotFoundError('File not found');
+        throw new NotFoundError('File not found');
     }
 
     res
         .status(StatusCodes.OK)
         .download(fileURI, 'file.pdf', (error) => {
             if (error) {
-                throw CustomAPIError('Something went wrong. Try again later!')
+                throw new CustomAPIError('Something went wrong. Try again later!')
             }
         })
 }
