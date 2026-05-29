@@ -19,7 +19,7 @@ const login = async (req, res) => {
         throw new BadRequestError('Please provide e-mail and password');
     }
 
-    const user = User.findOne({email});
+    const user = await User.findOne({email});
     
     if (!user) {
         throw new NotFoundError(`No account found with e-mail ${email}`);

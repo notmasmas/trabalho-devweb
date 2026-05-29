@@ -24,7 +24,8 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: 'student'
+        default: 'student',
+        enum: ['student', 'professor', 'admin']
     }
 })
 
@@ -35,7 +36,7 @@ UserSchema.pre('save', async function () {
 
 UserSchema.methods.createJWT = function () {
     const payload = {
-        userId: this._id, 
+        userID: this._id, 
         name: this.name, 
         role: this.role};
 
