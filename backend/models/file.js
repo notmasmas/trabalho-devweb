@@ -37,7 +37,7 @@ const fileSchema = new mongoose.Schema({
     "previewImageURI": {
         type: String,
         trim: true,
-        default: __dirname + `/uploads/images/default.jpg`,
+        default: `uploads/images/default.jpg`,
     },
     "uploadDate": {
         type: Date,

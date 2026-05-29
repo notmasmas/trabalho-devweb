@@ -1,5 +1,6 @@
-const File = require('../models/file.js');
 const {StatusCodes} = require('http-status-codes');
+const fs = require('fs');
+const File = require('../models/file.js');
 const {BadRequestError, NotFoundError, CustomAPIError} = require('../errors');
 
 const getAllFiles = async (req, res) => {
@@ -38,7 +39,13 @@ const createFile = async (req, res) => {
     }
 
     const {size, path} = req.file;
-    const {name, author, uploader, description, protected} = req.body;
+    const {
+        name, 
+        author, 
+        uploader, 
+        description, 
+        protected
+    } = req.body;
 
     const fileData = {
         name,
@@ -54,21 +61,41 @@ const createFile = async (req, res) => {
 
     res
         .status(StatusCodes.CREATED)
+        .send();
+}
+
+const getFile = async (req, res) => {
+    const {id:fileID} = req.params;
+    
+    const file = await File.findOne({_id: fileID});
+
+    if (!file) {
+        throw new NotFoundError('File not found');
+    }
+
+    res
+        .status(StatusCodes.OK)
         .json(file);
 }
 
 const deleteFile = async (req, res) => {
 
     const {id:fileID} = req.params;
-    const file = await File.deleteOne({_id: fileID});
+    const file = await File.findOneAndDelete({_id: fileID});
 
     if (!file) {
         throw new NotFoundError('File not found')
     }
 
+    await fs.unlink(file.fileURI, (error) => {
+        if (error) {
+            throw new CustomAPIError('Something went wrong. Try again later');
+        }
+    });
+
     res
-        .status(200)
-        .json(file);
+        .status(StatusCodes.OK)
+        .send();
 }
 
 const editFile = async (req, res) => {
@@ -78,12 +105,11 @@ const editFile = async (req, res) => {
 
     if (!file) {
         throw new NotFoundError('File not found');
-        console.log('Got here');
     }
 
     res
         .status(StatusCodes.OK)
-        .json(file);
+        .send();
 }
 
 const downloadFile = async (req, res) => {
@@ -107,6 +133,7 @@ const downloadFile = async (req, res) => {
 module.exports = {
     getAllFiles,
     createFile,
+    getFile,
     deleteFile,
     editFile,
     downloadFile
