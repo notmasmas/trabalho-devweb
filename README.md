@@ -92,6 +92,35 @@ Faz upload de um arquivo e cria ele no banco de dados.
 |`description` | `Essa história aqui [...]` | Não (default = '')| 
 |`protected` | `true` | Não (default = true)|
 
+#### Get all items
+
+Pega apenas um arquivo.
+
+
+```http
+  GET /api/v1/files/{id}
+```
+
+<details>
+<summary>Saída</summary>
+
+```http
+{
+  "_id": "6a19d65629856ed2a2e5c9cc",
+  "name": "Test File",
+  "author": "Jack Doe",
+  "uploader": "Lara Smith",
+  "description": "This is a test file for the API request",
+  "protected": false,
+  "fileSize": 68096,
+  "fileURI": "uploads/files/1780078166431-Curriculo_Maria_Helena_Melo.pdf",
+  "previewImageURI": "uploads/images/default.jpg",
+  "uploadDate": "2026-05-29T18:09:26.438Z",
+  "__v": 0
+}
+```
+</details>
+
 ### Delete File
 
 Deleta um arquivo do banco de dados e da pasta de uploads.
