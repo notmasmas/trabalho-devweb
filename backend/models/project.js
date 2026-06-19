@@ -1,17 +1,11 @@
 const mongoose = require('mongoose');
 
-const fileSchema = new mongoose.Schema({
-    "title": {
+const projectSchema = new mongoose.Schema({
+    "name": {
         type: String,
-        required: [true, 'must provide title'],
+        required: [true, 'must provide name'],
         trim: true,
-        maxlength: [40, 'file title cannot be more than 40 characters']
-    },
-    "author": {
-        type: String,
-        trim: true,
-        maxlength: [40, 'author name cannot be more than 40 characters'],
-        default: "Nome não providenciado"
+        maxlength: [40, 'file name cannot be more than 40 characters']
     },
     "uploader": {
         type: String,
@@ -24,9 +18,10 @@ const fileSchema = new mongoose.Schema({
         trim: true,
         default: '...'
     },
-    "protected": {
-        type: Boolean,
-        default: false
+    "semester": {
+        type: String,
+        trim: true,
+        default: ''
     },
     "fileSize": {
         type: Number,
@@ -48,4 +43,4 @@ const fileSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('File', fileSchema);
+module.exports = mongoose.model('Project', projectSchema);

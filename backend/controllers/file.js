@@ -5,11 +5,11 @@ const {BadRequestError, NotFoundError, CustomAPIError} = require('../errors');
 
 const getAllFiles = async (req, res) => {
 
-    const {name, author, uploader} = req.query;
+    const {title, author, uploader} = req.query;
     const queryObject = {}
 
-    if (name) {
-        queryObject.name = {$regex: name, $options: 'i'};
+    if (title) {
+        queryObject.title = {$regex: title, $options: 'i'};
     }
     if (author) {
         queryObject.author = {$regex: author, $options: 'i'};
@@ -40,7 +40,7 @@ const createFile = async (req, res) => {
 
     const {size, path} = req.file;
     const {
-        name, 
+        title, 
         author, 
         uploader, 
         description, 
@@ -48,7 +48,7 @@ const createFile = async (req, res) => {
     } = req.body;
 
     const fileData = {
-        name,
+        title,
         author,
         uploader,
         description,
