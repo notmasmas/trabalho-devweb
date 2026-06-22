@@ -1,0 +1,402 @@
+[
+  {
+    "codigo": "DSN020601",
+    "nome": "DESENHO",
+    "semestre": 1,
+    "cargaHoraria": 80,
+    "professores": ["Roberto Angelo Pistorello"],
+    "ementa": "Objetivos: - Possibilitar o desenvolvimento do raciocínio e visão espacial; - Desenvolver a habilidade de formulação de esboços durante a geração de ideias; - Promover a experimentação de materiais de desenho; - Aplicar diferentes técnicas e materiais para a representação de produtos. Conteúdos: - Aspectos históricos e conceituais da representação gráfica manual; - Desenho de esboços; - Desenvolvimento dos aspectos gerais do desenho; - Desenho de observação de produtos e sua representação de materiais e texturas; - Aspectos técnicos do traço; - Noções básicas das perspectivas cônicas (ponto de fuga); - Desenho a partir de formas geométricas elementares; - Técnicas básicas de desenho de esboço (sketching) (arredondamento de arestas, União/interseção entre formas geométricas); - Sombra projetada; - Composição e criação de backgrounds; - Aplicação de técnicas para agregação de cores utilizando meios diversos.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Quarta",  "inicio": "08:00", "fim": "10:00" }
+    ]
+  },
+  {
+    "codigo": "HAD020601",
+    "nome": "HISTÓRIA DA ARTE E DO DESIGN",
+    "semestre": 1,
+    "cargaHoraria": 80,
+    "professores": ["Priscila Moura Ortiga"],
+    "ementa": "Objetivos: - Conhecer escolas, estilos e movimentos da Arte e do Design; - Perceber e inter-relacionar a evolução da Arte e do Design ao longo da história da humanidade; - Perceber as influências tecnológicas e sociais em cada escola, estilo ou movimento da arte e do design Conteúdos: - Estilos artísticos - da Idade Antiga, Moderna e Contemporânea. Manifestações artístico-culturais nas sociedades: africanas, americanas, europeias, asiáticas e Oceania; - História do Desenho Industrial a partir da Revolução Industrial; - Arte, cultura e design; - Estética de produtos industriais sob o aspecto artístico-cultural, formal e tecnológico; - Escolas, estilos e movimentos de obras de arte e objetos de design; - Estilos e tendências em objetos contemporâneos",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Terça", "inicio": "10:00", "fim": "12:00" },
+      { "dia": "Quinta","inicio": "10:00", "fim": "11:00" }
+    ]
+  },
+  {
+    "codigo": "IND020601",
+    "nome": "INTRODUÇÃO DO DESIGN",
+    "semestre": 1,
+    "cargaHoraria": 80,
+    "professores": ["Sérgio Prado Scolar"],
+    "ementa": "Objetivos: - Compreender sobre a origem e o desenvolvimento da atuação profissional do designer; - Entender o papel do Design na cadeia produtiva e na sociedade. Conteúdos: - Concepção do Design ao longo do tempo e História do Design; - Atuação profissional do designer. Ética, legislação ligada à atuação do designer e Lei de Propriedade Intelectual; - Implicações do Design na esfera social, econômica e cultural no contexto atual; - Design Vernacular: cultura material em diferentes sociedades; - Noções de Design Social, Design Universal e Design para a Sustentabilidade.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "MDL020601",
+    "nome": "MODELAGEM I",
+    "semestre": 1,
+    "cargaHoraria": 80,
+    "professores": ["Profa. Beatriz Melo"],
+    "ementa": "Objetivos: - Utilizar diferentes técnicas e materiais para a construção de modelos para representação de produtos; - Experimentar os materiais e técnicas de modelagem criativamente; - Desenvolver raciocínio espacial; - Organizar o espaço bi e tridimensional; - Compreender a importância dos modelos físicos tridimensionais na metodologia projetual. Conteúdos: - Experimentação da forma, materiais e técnicas de representação tridimensional; - Elementos visuais aplicados à tridimensionalidade; - O modelo físico no projeto de produto. Tipos de modelos físicos - nomenclatura; - Introdução às técnicas com papel, argila e gesso para a construção de modelos físicos tridimensionais; - Modelamento à mão livre e instrumentos guia; - Moldes e fôrmas; - Técnicas de acabamento de superfícies utilizando tintas, papéis e outros materiais.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "14:00", "fim": "16:00" },
+      { "dia": "Sexta",   "inicio": "08:00", "fim": "10:00" }
+    ]
+  },
+  {
+    "codigo": "PIN020601",
+    "nome": "PROJETO INTEGRADOR I",
+    "semestre": 1,
+    "cargaHoraria": 40,
+    "professores": ["Priscila Moura Ortiga"],
+    "ementa": "Objetivo: - Apresentar releitura formal conceitual de um produto de baixa complexidade com base em movimento artístico/cultural/social. Conteúdos: - Releitura de objeto; - Compreensão de produtos a partir do movimento artístico ou de design do qual resultam; - Etapas de elaboração e apresentação de projeto de produto; - Pesquisa bibliográfica e iconográfica; - Pré-projeto de desenvolvimento de produto; - Painéis síntese e painéis de estilo; - Geração de desenhos de alternativas de produto; - Elaboração de modelos físicos",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta", "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "PVE020601",
+    "nome": "PRODUÇÃO VERBAL",
+    "semestre": 1,
+    "cargaHoraria": 40,
+    "professores": ["Carlos Eduardo de Oliveira Lara"],
+    "ementa": "Objetivos: - Conhecer os princípios de estruturação de trabalhos técnico-científicos; - Aplicar técnicas de redação para comunicação de ideias e para apresentação audiovisual; - Escrever textos variados do universo acadêmico. Conteúdos: - Pesquisa acadêmica: métodos e técnicas; - Pesquisa em base de dados; - Apresentação e estrutura do texto científico: projetos, relatórios e artigos; - Dissertações expositivas e argumentativas e técnicas de redação; - Gêneros textuais; - Variação linguística e norma padrão; - Tópicos linguísticos variados; - Noções de língua portuguesa. - Técnicas de apresentação audiovisual.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta", "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+
+
+
+  {
+    "codigo": "DSO020602",
+    "nome": "DESIGN E SOCIEDADE",
+    "semestre": 2,
+    "cargaHoraria": 80,
+    "professores": ["Carla Arcoverde de Aguiar Neves"],
+    "ementa": "Objetivos: - Apresentar o Design como processo de articulação histórica e sociocultural da sociedade moderna, desde o mercantilismo até a industrialização e a formação da cultura de mercado e consumo; - Compreender o Design como construção sociocultural; - Analisar a lógica dos objetos e suas interações culturais; - Compreender as variadas relações do Design com a sociedade sob a ótica da sociologia, antropologia e economia. Conteúdos: - Contexto histórico e intelectual que tornaram possível o surgimento da Sociologia e do Design; - Categorias centrais de entendimento de uma sociedade: estruturas sociais; instituições sociais, papéis sociais, interação social; - Direitos humanos e relações étnico-raciais; - Cultura: conceito e objeto; - Relações do Design com a sociologia e antropologia; - Relações de troca entre os meios de produção e os diversos segmentos sociais.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Quarta",  "inicio": "10:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DTC020602",
+    "nome": "DESENHO TÉCNICO",
+    "semestre": 2,
+    "cargaHoraria": 80,
+    "professores": ["Carlos Eduardo Senna"],
+    "ementa": "Objetivos: - Compreender o Desenho Técnico como forma de linguagem normatizada; - Aprender a utilizar os instrumentos e materiais de desenho; - Conhecer as normas do desenho técnico relacionadas à representação de produtos; - Ler e interpretar desenhos técnicos de produtos; - Elaborar desenhos técnicos de componentes de produtos e conjuntos, utilizando normas técnicas. Conteúdos: - Introdução ao desenho técnico; - Normas técnicas associadas ao desenho técnico de produtos; - Desenho com instrumentos; - Desenho geométrico: construções geométricas simples e planificação; - Folha de desenho: tipos de linhas, formato de folha, legenda, lista de materiais, tábuas de revisão; - Cotagem: definições, sistemas de cotagem e sinais convencionais; - Escala; - Sistemas de projeção cilíndrica ortogonal (representações no 1° e 3° diedros); - Desenho em perspectiva técnica: Isométrica e Cavaleira; - Cortes e seções; - Desenho de detalhes, vistas omitidas, vistas auxiliares, vistas interrompidas; - Desenho de conjuntos.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Terça", "inicio": "08:00", "fim": "11:00" }
+    ]
+  },
+  {
+    "codigo": "EST020602",
+    "nome": "ESTÉTICA",
+    "semestre": 2,
+    "cargaHoraria": 80,
+    "professores": ["Isabela Mendes Sielski"],
+    "ementa": "Objetivos: - Perceber a dimensão estética da Arte e do Design ao longo dos tempos; - Desenvolver capacidade de ler obras de arte e objetos de design nas culturas clássica, moderna e contemporânea; - Aplicar conceitos de Estética em projetos de Design; - Desenvolver pensamento crítico no âmbito da cultura contemporânea. Conteúdos: - Introdução à Estética: a extensão do termo; - A necessidade da estética. Aisthesis e a percepção pelos sentidos; - Estética clássica; - Breve sinopse histórica da estética; - As categorias estéticas; - Estética e Arte; - Estética e Design; - A estética no projeto de produto: aspectos estético-formais; - Reflexões contemporâneas para uma experiência estética.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Sexta",  "inicio": "08:00", "fim": "11:00" }
+    ]
+  },
+  {
+    "codigo": "MDL020602",
+    "nome": "MODELAGEM II",
+    "semestre": 2,
+    "cargaHoraria": 80,
+    "professores": ["Jucelia Salete Giacomini da Silva"],
+    "ementa": "Objetivos: - Desenvolver visão espacial e experimentar materiais e técnicas de modelagem criativamente para construir modelos tridimensionais; - Conhecer e qualificar para uso adequado as diferentes técnicas e materiais para a construção de modelos para a representação de produtos; - Operar máquinas, equipamentos e selecionar materiais e ferramentas para a construção de mock-ups e modelos de representação tridimensional física. Conteúdos: - Fundamentos e técnicas para representação tridimensional da forma utilizando como materiais: poliuretano, resina, metais e madeira; - Fundamentos para a representação 3D: formatos representacionais 3D em projeto; espaços negativos e positivos; formato e forma; - Técnicas, processos e equipamentos para elaboração de mockups e construção de modelos tridimensionais; - Elaboração de mock-ups e modelos de aparência relacionados a áreas temáticas definidas.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta", "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "MTV020602",
+    "nome": "METODOLOGIA VISUAL",
+    "semestre": 2,
+    "cargaHoraria": 80,
+    "professores": ["Carla Arcoverde de Aguiar Neves"],
+    "ementa": "Objetivos: - Analisar, interpretar e sintetizar a organização visual da forma para compreender objetos; - Conhecer a teoria das cores; - Introduzir os conhecimentos de formas e estruturas bidimensionais, envolvidas na representação gráfica; - Desenvolver visão espacial para planejamento e organização do espaço; - Permitir a análise e crítica para a solução de problemas da forma; - Potencializar a capacidade de sintetização da forma e da cor e seus fenômenos perceptivos. Conteúdos: - Elementos da linguagem visual; - Estrutura da forma; - Unidades de forma; - Repetição; - Design de superfície; - Leis da Gestalt; - Composição e organização da forma; - Percepção visual/espacial; - Teoria da cor.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "14:00", "fim": "16:00" },
+      { "dia": "Sexta",   "inicio": "14:00", "fim": "16:00" }
+    ]
+  },
+
+  
+
+
+  {
+    "codigo": "CGR020603",
+    "nome": "COMPUTAÇÃO GRÁFICA",
+    "semestre": 3,
+    "cargaHoraria": 80,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Compreender os fundamentos de softwares para a representação gráfica; - Criar e editar imagens vetoriais; - Tratar e editar imagens em bitmap; - Realizar projetos de editoração eletrônica. Conteúdos: - Softwares utilizados em representação gráfica; - Conceitos fundamentais e o trabalho com softwares gráficos; - Distinção entre os formatos de imagens digitais; - Ferramentas e técnicas para a criação de imagens vetoriais; - Ferramentas e técnicas para o tratamento e edição de imagens em bitmap; - Ferramentas e técnicas para a editoração eletrônica de documentos; - Fechamento de arquivos para impressão.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "MTP020603",
+    "nome": "METODOLOGIA DE PROJETO",
+    "semestre": 3,
+    "cargaHoraria": 80,
+    "professores": ["Carla Arcoverde de Aguiar Neves"],
+    "ementa": "Objetivos: - Compreender o processo e as ferramentas utilizadas no desenvolvimento de produtos; - Desenvolver projetos de produto, focado na função estética, aplicando as ferramentas adequadas; - Conhecer e aplicar princípios metodológicos, técnicas e ferramentas no desenvolvimento de projetos de Design. Conteúdos: - Métodos projetuais; - Técnicas e ferramentas projetuais; - Técnicas para exploração de necessidade, do processo criativo, para seleção de alternativas e comunicação de projeto. - Planejamento e acompanhamento no processo de desenvolvimento de produtos.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Terça", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "PQU020603",
+    "nome": "PESQUISA COM O USUÁRIO",
+    "semestre": 3,
+    "cargaHoraria": 80,
+    "professores": ["PRaquel de Oliveira Bugliani"],
+    "ementa": "Objetivos: - Aplicar técnicas para coleta de dados com usuários; - Analisar dados coletados em pesquisas com usuários; - Propor o uso de ferramentas de pesquisa de mercado e comportamentais, mapeando tendências e elaborando cenários para o desenvolvimento de produtos e serviços; - Indicar requisitos para o desenvolvimento de produtos; - Apresentar abordagens centradas no usuário, aplicando para tanto, técnicas de registro de dados para definir o perfil do usuário; - Definir níveis de experiência do usuário por meio de pesquisa qualitativa avaliando suas percepções, comportamentos, atitudes e motivações em relação ao projeto. Conteúdos: - Métodos e técnicas de coleta e análise de dados com usuários, direcionado ao desenvolvimento de projetos em Design; - Conceitos éticos na pesquisa com o usuário; - Comportamento do usuário/consumidor e experiência do usuário (UX).",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "REN020603",
+    "nome": "RENDERING",
+    "semestre": 3,
+    "cargaHoraria": 80,
+    "professores": ["Prof. Rafael Andrade"],
+    "ementa": "Objetivos: - Conhecer as técnicas e materiais utilizados para a representação de superfícies; - Compreender os efeitos de transparência, brilho e textura dos materiais, para reprodução dos atributos do produto; - Aplicar as técnicas de representação gráfica manual e digital. Conteúdos: - Dados históricos e progressivos do desenho de apresentação; - Utilização de sketches e de renderings no desenvolvimento de produtos; - Técnicas avançadas de desenho de esboço; - Estudo da forma, da luz e da sombra aplicados ao rendering; - Representação das características dos materiais em desenho de produto; - Introdução de ilustração/rendering digital; - Composição e apresentação dos desenhos, com uso de backgrounds.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "SEM020603",
+    "nome": "SEMIÓTICA",
+    "semestre": 3,
+    "cargaHoraria": 8,
+    "professores": ["Profa. Mariana Costa"],
+    "ementa": "Objetivos: - Conhecer os diversos conceitos semióticos para entender e analisar produtos; - Produzir discursos conhecendo os valores semióticos de elementos plásticos bidimensionais e tridimensionais; - Identificar em um enunciado as marcas da enunciação, percebendo a tessitura paradigmática e sintagmática dos produtos do discurso do Design. - Aplicar a semiótica na transmissão de conceitos, informações e valores por meio de objetos de Design; - Relacionar os fundamentos semióticos com as práticas comunicacionais na metodologia do projeto de Design. Conteúdos: - Introdução à Semiótica; - Principais vertentes semióticas e seus autores; - Principais conceitos em semiótica; - Teoria geral dos signos; - Semiótica e Design.",
+    "preRequisitos": [""],
+    "horarios": [
+      { "dia": "Sexta", "inicio": "08:00", "fim": "11:00" }
+    ]
+  },
+
+  
+
+
+  
+  {
+    "codigo": "ERG020604",
+    "nome": "ERGONOMIA",
+    "semestre": 4,
+    "cargaHoraria": 80,
+    "professores": ["Carla Arcoverde de Aguiar Neves", "Raquel de Oliveira Bugliani"],
+    "ementa": "Objetivos: - Conhecer e aplicar os princípios da Ergonomia ao desenvolvimento de produto; - Compreender e correlacionar aspectos da comunicação humana e da cognição humana, consonantes ao uso de interfaces de produtos; - Compreender o conceito de antropometria e a sua importância para o Design de Produtos, aplicando os procedimentos de medição antropométrica para projetos. Apresentar noções básicas de biomecânica, reconhecendo para tanto as capacidades e limitações físicas do corpo humano em projeto; - Evidenciar as características comportamentais humanas relacionadas ao trabalho. Conteúdos: - Conceitos ergonômicos aplicados ao Design de Produto e fundamentos de Ergonomia; - Métodos e Técnicas em Ergonomia; - Bases biomecânicas, fisiológicas e antropométricas; - Estereótipos populares; - Pegas, manejos e controles; - Medidas do corpo como parâmetros para projeto; - Fatores humanos que interferem no desempenho do trabalho, organização do trabalho e avaliação e projeto de postos de trabalho.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Terça", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "FTG020604",
+    "nome": "FOTOGRAFIA",
+    "semestre": 4,
+    "cargaHoraria": 80,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Compreender os elementos da fotografia e os significados destes na imagem; - Manusear câmeras fotográficas; - Aplicar técnicas de iluminação; - Aplicar técnicas de composição fotográfica; - Fotografar em estúdio fotográfico; - Fotografar produtos. Conteúdos: - A criação de significados através da fotografia; - Linguagem fotográfica; - Câmeras fotográficas: obturador, diafragma, ISO, balanço de branco, foco, tipos de lente, filtros; - Iluminação em estúdio e externa: conceitos, equipamentos e prática; - Técnicas fotográficas: composição de imagens fotográficas; - Fotografia em estúdio: princípios e prática; - Fotografia de produtos: materiais variados e ambientação em cenários. Metodologia de Abordagem: Aulas teóricas em sala de aula, atividades práticas em estúdio fotográfico e saídas fotográficas externas, atividades de extensão utilizando a fotografia como forma de contribuir com a sociedade. Extensão**: A unidade curricular pretende oferecer ao estudante a possibilidade de participar ativamente de atividades de extensão na região, exigindo que este utilize a gama de conhecimentos adquiridos na unidade curricular.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "MPF020604",
+    "nome": "MATERIAIS E PROCESSOS DE FABRICAÇÃO I",
+    "semestre": 4,
+    "cargaHoraria": 80,
+    "professores": ["Aldrwin Farias Hamad", "Pâmela Teixeira Fernandes"],
+    "ementa": "Objetivos: - Conhecer materiais e processos empregados na fabricação de mobiliário; - Selecionar materiais e processos para a fabricação de móveis; - Conhecer os mecanismos e sistemas construtivos de móveis; - Conhecer materiais e processos empregados na fabricação de componentes mecânicos; - Selecionar materiais e processos para fabricação de peças mecânicas. Conteúdos: - Introdução aos materiais; - Processamento de materiais de origem natural (couros, tecidos e fibras); - Materiais e processos utilizados na fabricação de mobiliário; - Madeira maciça: propriedades, aplicações e processos de fabricação; - Madeira processada: propriedades, aplicações e processos de fabricação; - Revestimentos: tipos, propriedades, aplicações e processos de fabricação; - Sistemas construtivos e mecanismos utilizados na construção do mobiliário; - Metais: introdução; - Ligas metálicas: tipos, propriedades, aplicações; - Processos de fabricação aplicados aos metais e suas ligas; - Revestimentos e tratamentos aplicados aos metais e suas ligas; - Seleção de materiais; - Materiais inovadores. Metodologia de Abordagem: Pretende-se trabalhar o conteúdo a partir de uma problematização, ou seja, por meio de questões que possam ser resolvidas no âmbito da prática projetual. Neste sentido, a unidade curricular irá dar subsídio ao Projeto Integrador do semestre (assim como projetos isolados) e, assim, será necessário o domínio de diferentes conteúdos, os quais os alunos deverão se apropriar. A incorporação destes conteúdos tem o papel de transformação cujo o resultado será aplicado em projetos práticos",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta",  "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Sexta",   "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "PIN020604",
+    "nome": "PROJETO INTEGRADOR II",
+    "semestre": 4,
+    "cargaHoraria": 80,
+    "professores": ["Sérgio Henrique Prado Scolari", "Pâmela Teixeira Fernandes"],
+    "ementa": "Objetivos: - Compreender os conceitos para o Design de Mobiliário e Interiores; - Utilizar métodos e técnicas no desenvolvimento de produtos; - Organizar, conduzir e representar e registrar o processo de Design. Conteúdos: - Metodologia de Projetos em Design; - Design de Mobiliário e Interiores: fatores humanos, mercadológicos e tecnológicos aplicados ao processo de desenvolvimento de projetos. Aspectos históricos, estético-formais e simbólicos. Metodologia de Abordagem: Na disciplina são trabalhados projetos a partir de temáticas propostas. As atividades são exercidas por grupos de trabalho. Os professores responsáveis atuam como coordenadores e/ou supervisores, professores das disciplinas com co-requisito colaboram com suas especialidades e técnicos de laboratório asseguram suporte tecnológico. Extensão**: A unidade curricular pretende oferecer ao estudante a possibilidade de participar ativamente de atividades de extensão na região, exigindo que este utilize a gama de conhecimentos adquiridos na unidade curricular.",
+    "preRequisitos": ["PIN020601","DTC020602","MDL020602","MTP020603"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "RDI020604",
+    "nome": "REPRESENTAÇÃO DIGITAL 3D I",
+    "semestre": 4,
+    "cargaHoraria": 80,
+    "professores": ["Carlos Eduardo Senna"],
+    "ementa": "Objetivos: - Utilizar recursos computacionais para representação tridimensional de produtos; - Estudar funções específicas para modelamento sólido, para representação tridimensional; - Aprimorar representação técnica de peças e conjuntos; - Utilizar recursos computacionais para renderização. Conteúdos: - Introdução a programas CAD (Computer-aided Design); - Interface e características do programa CAD; - Desenho de esboços; - Modelamento sólido de peças; - Montagem de peças no ambiente virtual; - Desenho técnico e detalhamento no ambiente virtual; - Recursos básicos de renderização; - Alterações no projeto virtual; - Uso de elementos de união no ambiente virtual; - Fechamento de arquivo. Metodologia de Abordagem: Pretende-se trabalhar o conteúdo a partir de uma problematização, ou seja, por meio de questões que possam ser resolvidas no âmbito da prática projetual. Neste sentido, a unidade curricular irá dar subsídio ao Projeto Integrador do semestre (assim como projetos isolados) e, assim, será necessário o domínio de diferentes conteúdos, os quais os alunos deverão se apropriar. A incorporação destes conteúdos tem o papel de transformação cujo o resultado será aplicado em projetos práticos.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+
+
+
+    {
+    "codigo": "DEM020605",
+    "nome": "DESIGN DE EMBALAGEM",
+    "semestre": 5,
+    "cargaHoraria": 80,
+    "professores": ["Priscila Moura Ortiga"],
+    "ementa": "Objetivos: - Conhecer os conceitos para o Design de Embalagem; - Correlacionar o Design de Embalagem com o conceito de ciclo de vida do produto e perceber as - potencialidades de inovação; - Conhecer a legislação e a normalização pertinentes ao projeto de embalagens. Conteúdos: - Design de embalagens: aspectos históricos, estético-formais e metodológicos; - Conceitos do Design de Embalagem; - Gestão do ciclo de vida das embalagens; - Programação visual de embalagens; - Legislação e normalização pertinentes ao projeto de embalagens. Metodologia de Abordagem: - Aulas expositivas e dialogadas utilizando recursos audiovisuais; - Atividades / exercícios sob orientação do professor; - Trabalhos individuais e dinâmicas em grupo. Extensão**: A unidade curricular pretende oferecer ao estudante a possibilidade de participar ativamente de atividades de extensão na região, exigindo que este utilize a gama de conhecimentos adquiridos na unidade curricular",
+    "preRequisitos": ["CGR020603"],
+    "horarios": [
+      { "dia": "Terça", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "MKE020605",
+    "nome": "MARKETING E EMPREENDEDORISMO",
+    "semestre": 5,
+    "cargaHoraria": 80,
+    "professores": ["Jucelia Salete Giacomini da Silva"],
+    "ementa": "Objetivos: - Conhecer os princípios do marketing e as etapas de elaboração de um projeto empresarial. Conteúdo: - Conceitos e evolução do Marketing e suas implicações no Design; - Influências do Marketing no comportamento de compra; - Segmentação de mercado; - Sistemas de Marketing; - Estratégias de Marketing para produtos e serviços; - Princípios básicos do empreendedorismo no Design e plano de negócios; - Características do empreendedor. Bases legais para implantação de uma empresa. Inovação e riscos empresariais; - Plano de Marketing, estratégias para o produto e projeto empresarial. Metodologia de Abordagem: - Aulas expositivas e dialogadas utilizando recursos audiovisuais; - Atividades / exercícios sob orientação do professor; - Trabalhos individuais e dinâmicas em grupo. Extensão**: A unidade curricular pretende oferecer ao estudante a possibilidade de participar ativamente de atividades de extensão na região, exigindo que este utilize a gama de conhecimentos adquiridos na unidade curricular.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "MPF020605",
+    "nome": "MATERIAIS E PROCESSOS DE FABRICAÇÃO II",
+    "semestre": 5,
+    "cargaHoraria": 80,
+    "professores": ["Carlos Eduardo Senna"],
+    "ementa": "Objetivos: - Conhecer materiais e processos empregados na fabricação de bens de consumo, moda e embalagens; - Selecionar materiais e processos para a fabricação de bens de consumo, moda e embalagens. Conteúdos: - Polímeros: tipos, propriedades, aplicações e processos de fabricação; - Termoplásticos, termofixos e elastômeros; - Noções básicas de moldes de processamento de polímero: tipos e características; - Acabamentos para materiais poliméricos; - Noções básicas de projeto de componentes poliméricos; - Reciclagem e alternativas sustentáveis; - Cerâmica: tipos, propriedades, aplicações e processos de fabricação; - Vidro: tipos, propriedades, aplicações e processos de fabricação; - Materiais e processos produtivos utilizados em embalagens: propriedades e desempenhos, práticas de mercado e tendências; - Processamento de material têxtil (para Indústria da Moda); - Processos de produção gráfica em diferentes suportes visando aplicação em embalagem",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta",  "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Sexta",   "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "PIN020605",
+    "nome": "PROJETO INTEGRADOR III",
+    "semestre": 5,
+    "cargaHoraria": 80,
+    "professores": ["Sérgio Henrique Prado Scolari", "Pâmela Teixeira Fernandes"],
+    "ementa": "Objetivos: - Compreender os conceitos para o Design de bens de consumo; - Compreender os conceitos para o Design de acessórios de moda; - Utilizar métodos e técnicas no desenvolvimento de produtos; - Organizar, conduzir e representar e registrar o processo de Design. Conteúdos: - Fatores humanos, mercadológicos e tecnológicos aplicados ao processo de desenvolvimento de bens de consumo e moda. - Aspectos estético-formais e simbólicos; - Metodologia de projetos em Design. - Inovação e estado da técnica; - Microtendências, tendências e macrotendências. Metodologia de Abordagem: Na disciplina são trabalhados projetos a partir de temáticas propostas. As atividades são exercidas por grupos de trabalho. Os professores responsáveis atuam como coordenadores e/ou supervisores, professores das disciplinas com co-requisito colaboram com suas especialidades e técnicos de laboratório asseguram suporte tecnológico.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "RDI020605",
+    "nome": "REPRESENTAÇÃO DIGITAL 3D I",
+    "semestre": 5,
+    "cargaHoraria": 80,
+    "professores": ["Carlos Eduardo Senna"],
+    "ementa": "Objetivos: - Utilizar recursos computacionais para representação tridimensional de produtos com geometrias complexas; - Estudar funções específicas para modelamento de superfícies e modelagem híbrida para representação tridimensional; - Utilizar recursos computacionais básicos de renderização e animação. Conteúdos: - Modelamento de superfícies; - Modelamento híbrido (sólido e superfície); - Criação de curvas e utilização de esboços 3D; - Recursos avançados de renderização e montagem; - Importação e exportação arquivos de outras plataformas CAD; - Renderização; - Noções de animações e vídeos; - Noções básicas de projetos de moldes e peças plásticas; - Gestão de projeto: organização de arquivos, montagens e submontagens; - Montagem: posicionamentos avançados.",
+    "preRequisitos": ["RDI020604"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+
+
+
+
+  {
+    "codigo": "DSI020606",
+    "nome": "DESIGN DE INTERFACE",
+    "semestre": 6,
+    "cargaHoraria": 80,
+    "professores": ["Pâmela Teixeira Fernandes"],
+    "ementa": "Objetivos: - Conhecer e interpretar as recomendações e as normatizações que se aplicam ao projeto de interfaces de produtos; - Compreender e correlacionar aspectos da comunicação humana e da cognição humana, consonantes ao uso de interfaces, como percepção, memória e raciocínio, suas potencialidades e limitações; - Projetar interfaces para produtos. Conteúdos: - Aspectos cognitivos do projeto de interfaces: psicologia da percepção, cognição, mapas e modelos mentais; - Aspectos físicos do projeto de interface: arranjos e dimensões dos elementos de interfaces, realimentação, canais visual e auditivo; - Design da informação: visibilidade, legibilidade, leiturabilidade; - Usabilidade: conceitos e avaliação; - Conceitos básicos de UX/UI (User Experience/User Interface)",
+    "preRequisitos": ["CGR020603"],
+    "horarios": [
+      { "dia": "Terça", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "DSP020606 ",
+    "nome": "DESIGN DE SISTEMAS PRODUTO/SERVIÇO",
+    "semestre": 6,
+    "cargaHoraria": 80,
+    "professores": ["Carla Arcoverde de Aguiar Neves", "Jucelia Salete Giacomini da Silva"],
+    "ementa": "Objetivos: - Apresentar novas abordagens projetuais, por meio de ferramentas de Design de Sistema Produto-Serviço, dando ênfase à inovação, às mudanças de comportamento de usuários e de seus padrões de consumo; - Compreender os sistemas de produção e utilização com base no Sistema Produto-Serviço, permitindo assim, o desenvolvimento de projetos sustentáveis; - Refletir sobre o conceito de Sistema Produto-Serviço como um sistema ativo que promove a satisfação das demandas dos consumidores minimizando os riscos e impactos à sociedade e ao meio ambiente. Conteúdos: - Design para a sustentabilidade; - Abordagem do sistema de satisfação de demandas e abordagem da configuração dos integrantes do sistema; - SPS - Sistemas Produto-Serviço: conceitos, métodos e ferramentas; - SPS e inovação; - SPS como abordagem voltada para a Sustentabilidade.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Segunda", "inicio": "14:00", "fim": "18:00" }
+    ]
+  },
+  {
+    "codigo": "GDE020606",
+    "nome": "GESTÃO DO DESIGN",
+    "semestre": 6,
+    "cargaHoraria": 80,
+    "professores": ["Jucelia Salete Giacomini da Silva"],
+    "ementa": "Objetivos: - Compreender os conceitos e processos de Gestão do Design na administração de projetos e nas relações humanas como meio de transformação e aperfeiçoamento de realidades empresariais, organizacionais e sociais; - Conhecer as ferramentas de gerenciamento de projeto; - Compreender o design como estratégia empresarial. Conteúdo: - Gestão do Design na estrutura organizacional: conceitos e definições; - Princípios e técnicas de gestão de projetos e liderança de equipes na estrutura organizacional com foco no Design; - Gestão de projeto nos níveis estratégico, tático e operacional; - Ferramentas de gerenciamento de projeto; - Gestão de custos de projeto e orçamentos",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quarta",  "inicio": "08:00", "fim": "10:00" },
+      { "dia": "Sexta",   "inicio": "14:00", "fim": "17:00" }
+    ]
+  },
+  {
+    "codigo": "MTC020606",
+    "nome": "METODOLOGIA CIENTÍFICA",
+    "semestre": 6,
+    "cargaHoraria": 80,
+    "professores": ["Sérgio Henrique Prado Scolari"],
+    "ementa": "Objetivos: - Conhecer os fundamentos sobre a produção do conhecimento científico, enfatizando a importância do uso de métodos e técnicas de pesquisa; - Conhecer os tipos de pesquisa e as normas para elaboração de trabalhos acadêmicos; - Subsidiar a fundamentação teórica e metodológica do Trabalho de Conclusão de Curso (TCC). Conteúdos: - Ciência e conhecimento; - O método científico; - Tipos de pesquisa científica e suas aplicações; - Documentação científica; - Normalização de trabalhos científicos; - Elaboração de artigos; - Projeto de pesquisa.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "PIN020606",
+    "nome": "PROJETO INTEGRADOR IV",
+    "semestre": 6,
+    "cargaHoraria": 80,
+    "professores": ["Aldrwin Farias Hamad", "Roberto Angelo Pistorello"],
+    "ementa": "Objetivos: - Compreender os conceitos para o Design de Produtos de alta complexidade; - Compreender os conceitos para o Design de Produtos do setor eletroeletrônico e metalmecânico; - Utilizar métodos e técnicas no desenvolvimento de produtos com muitos subsistemas; - Organizar, conduzir, representar e registrar o processo de Design. Conteúdos: - Métodos, ferramentas e técnicas aplicadas ao desenvolvimento de produtos complexos; - Metodologia de projetos em Design de produtos de alta complexidade; - Fatores humanos, mercadológicos e tecnológicos aplicados ao processo de desenvolvimento de produtos de alta complexidade; - Design para montagem e desmontagem; - Design para manufatura; - Elaboração e detalhamento técnico de produtos de alta complexidade contendo sistemas, subsistemas e componentes; - Planejamento de processos de fabricação.",
+    "preRequisitos": ["PIN020605"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  }
+]
