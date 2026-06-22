@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAllProjects, createProject, getProject, deleteProject, editProject};
+const {getAllProjects, createProject, getProject, deleteProject, editProject} = require('../controllers/project');
 const router = express.Router();
 const upload = require('../middleware/upload');
 
