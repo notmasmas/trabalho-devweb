@@ -12,17 +12,40 @@ const getAllPosts = async (req, res) => {
 
     result = posts.skip(skip).limit(limit);
 
-    const posts = await result;
+    const finalPosts = await result;
     
     res
         .status(StatusCodes.OK)
-        .json(posts)
+        .json(finalPosts)
 }
 
 const createPost = async (req, res) => {
-    const post = await Post.create(req.body);
 
-    req
+    console.log(req.file);
+
+    const {
+        title,
+        body,
+        author,
+        tags
+    } = req.body;
+
+    let postData = {
+        title,
+        body,
+        author,
+        tags
+    }
+
+    if (req.file) {
+        const {size, path} = req.file;
+        postData.imageSize = size;
+        postData.imageURI = path;
+    }
+
+    const post = await Post.create(postData);
+
+    res
         .status(StatusCodes.CREATED)
         .send();
 }

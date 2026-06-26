@@ -22,6 +22,14 @@ const postSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    "imageSize": {
+        type: Number,
+        default: 0
+    },
+    "imageURI": {
+        type: String,
+        default: ''
+    },
     "uploadDate": {
         type: Date,
         default: Date.now

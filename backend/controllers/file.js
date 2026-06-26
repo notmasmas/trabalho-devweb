@@ -1,15 +1,16 @@
 const {StatusCodes} = require('http-status-codes');
 const fs = require('fs');
+const path = require('path');
 const File = require('../models/file.js');
 const {BadRequestError, NotFoundError, CustomAPIError} = require('../errors');
 
 const getAllFiles = async (req, res) => {
 
-    const {title, author, uploader} = req.query;
+    const {name, author, uploader} = req.query;
     const queryObject = {}
 
-    if (title) {
-        queryObject.title = {$regex: title, $options: 'i'};
+    if (name) {
+        queryObject.name = {$regex: name, $options: 'i'};
     }
     if (author) {
         queryObject.author = {$regex: author, $options: 'i'};
@@ -39,8 +40,9 @@ const createFile = async (req, res) => {
     }
 
     const {size, path} = req.file;
+    
     const {
-        title, 
+        name, 
         author, 
         uploader, 
         description, 
@@ -48,7 +50,7 @@ const createFile = async (req, res) => {
     } = req.body;
 
     const fileData = {
-        title,
+        name,
         author,
         uploader,
         description,
@@ -87,11 +89,9 @@ const deleteFile = async (req, res) => {
         throw new NotFoundError('File not found')
     }
 
-    await fs.unlink(file.fileURI, (error) => {
-        if (error) {
-            throw new CustomAPIError('Something went wrong. Try again later');
-        }
-    });
+    const filePath = path.join(__dirname, '..', file.fileURI);
+
+    await fs.promises.unlink(filePath);
 
     res
         .status(StatusCodes.OK)
@@ -113,22 +113,29 @@ const editFile = async (req, res) => {
 }
 
 const downloadFile = async (req, res) => {
+    const { id: fileID } = req.params;
 
-    const {id:fileID} = req.params;
-    const {fileURI} = await File.findOne({_id: fileID}, {fileURI: 1});
+    const file = await File.findById(fileID).select('fileURI');
 
-    if (!fileURI) {
+    if (!file) {
         throw new NotFoundError('File not found');
     }
 
-    res
-        .status(StatusCodes.OK)
-        .download(fileURI, 'file.pdf', (error) => {
-            if (error) {
-                throw new CustomAPIError('Something went wrong. Try again later!')
+    const filePath = path.join(__dirname, '..', file.fileURI);
+    console.log(filePath);
+
+    return res.download(filePath, 'file.pdf', (err) => {
+        if (err) {
+            console.error(err);
+
+            if (!res.headersSent) {
+                return res.status(500).json({
+                    message: 'Something went wrong.'
+                });
             }
-        })
-}
+        }
+    });
+};
 
 module.exports = {
     getAllFiles,
