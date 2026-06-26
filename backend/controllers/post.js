@@ -93,10 +93,25 @@ const editPost = async (req, res) => {
         .send();
 }
 
+const createComment = async (req, res) => {
+
+    const {id:postID} = req.params;
+
+    await Post.findByIdAndUpdate(postID, {
+        $push: {
+            comments: {
+                user: req.user.id,
+                text: req.body.text
+            }
+        }
+    })
+}
+
 module.exports = {
     getAllPosts,
     createPost,
     getPost,
     deletePost,
-    editPost
+    editPost,
+    createComment
 };

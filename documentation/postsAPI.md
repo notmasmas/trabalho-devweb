@@ -1,6 +1,6 @@
-# api/v1/files
+# api/v1/posts
 
-Essa branch é dedicada ao desenvolvimento das rotas de API relacionadas à sessão de biblioteca de PDFs do site, onde o usuário poderá fazer upload, editar e baixar PDFs
+Essa documentação mostra o funcionamento das rotas de posts no fórum
 
 ## Modelo de dado
 

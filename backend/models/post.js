@@ -14,6 +14,16 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: [true, "Post must have author"],
     },
+    "comments": [
+        {
+            "user": String,
+            "text": String,
+            "createdAt": {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
     "tags": {
         type: [String],
         default: []
