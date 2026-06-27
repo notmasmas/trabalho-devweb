@@ -4,157 +4,149 @@ Essa documentação mostra o funcionamento das rotas de posts no fórum
 
 ## Modelo de dado
 
-Um arquivo PDF contém os seguintes atributos no banco de dados:
+Um post de forum possui os seguintes atributos no banco de dados:
 
 | Nome | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `id` | `string` | id automaticamente gerado pelo MongoDB |
-| `name`| `string`|nome do arquivo|
-|`author`|`string`|autor do arquivo|
-|`uploader`|`ObjectID`|quem fez upload do arquivo|
-|`description`|`string`|descrição do arquivo|
-|`proctected`|`bool`|se o arquivo está disponível somente para professores
-|`fileSize`|`number`|tamanho do arquivo |
-|`fileURI`|`string`|URI de onde está armazenado o arquivo PDF em si|
-|`previewImageURI`|`string`|URI de onde está armazenada a imagem de preview do arquivo|
+| `id` | `ObjectId` | id automaticamente gerado pelo MongoDB |
+| `title`| `string`|título do post|
+|`body`|`string`|corpo do post (texto)|
+|`author`|`string`|quem fez upload do arquivo (id dele no banco)|
+|`comments`|`[{user, text, createdAt}]`|conjunto de comentários|
+|`tags`|`[string]`|lista de tags do post|
+|`imageSize`|`number`|tamanho da imagem (se tiver) |
+|`imageURI`|`string`|URI de onde está armazenada a imagem em si|
 |`uploadDate`|`Date`|data de upload do arquivo|
-
 
 ## Rotas
 
-#### Get all items
+#### Get all posts
 
-Pega todos os arquivos disponívels no banco de dados.
+Pega todos os posts disponívels no banco de dados.
 
 
 ```http
-  GET /api/v1/files
+  GET /api/v1/posts
 ```
 
 | Query | Exemplo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`      | `api/v1/files?name="Word"` | Arquivos cujo nome possui essa palavra |
-|`author` | `api/v1/files?author="John"`| Arquivos cujo autor possui esse nome |
-|`uploader`| `api/v1/files?uploader="Pietra"` | Arquivos cujo dono possui esse nome |
-|`page` | `api/v1/files?page=2` | Arquivos da página solicitada dependendo do limite
-|`limite` | `api/v1/files?limit=10` | Limita a quantidade de arquivos retornados
+|`page` | `api/v1/posts?page=2` | Arquivos da página solicitada dependendo do limite
+|`limite` | `api/v1/posts?limit=10` | Limita a quantidade de posts retornados
 
 <details>
 <summary>Saída</summary>
 
 ```http
   {
-    "files": [
-        {
-            "_id": "69e57f60b0de1134a4f6741e",
-            "name": "Testing Patch lololol",
-            "author": "John Doe",
-            "uploader": "Jane Smith",
-            "description": "This is a test file for the API request.",
-            "protected": false,
-            "fileSize": 1024,
-            "fileURI": "uploads/files/test_file.pdf",
-            "previewImageURI": "/uploads/images/default.jpg",
-            "uploadDate": "2026-04-20T01:20:32.915Z",
-            "__v": 0
-        },
-        {
-            "_id": "69f501963943353a8e2c23fb",
-            "name": "Test File",
-            "author": "John Doe",
-            "uploader": "Jane Smith",
-            "description": "This is a test file for the API request",
-            "protected": false,
-            "fileSize": 1024,
-            "fileURI": "uploads/file/test_file.pdf",
-            "previewImageURI": "/uploads/images/default.jpg",
-            "uploadDate": "2026-05-01T19:40:06.194Z",
-            "__v": 0
-        }]
+    "posts": [
+    {
+        "_id": "6a3f1e38c721aaf64b86764c",
+        "title": "Test post",
+        "body": "This is a test post to test this API Route",
+        "author": "6a3ef61633777e10c3035c2b",
+        "tags": [
+            "cool,amazing"
+        ],
+        "likes": 0,
+        "imageSize": 2661806,
+        "imageURI": "uploads/1782521400424-plasma.jpg",
+        "comments": [
+            {
+                "user": "6a3ef61633777e10c3035c2b",
+                "text": "wow, what a great post!",
+                "createdAt": "2026-06-27T00:50:00.444+00:00"
+            }
+        ],
+        "uploadDate": "2026-06-27T00:50:00.444Z",
+        "__v": 0
     }
+    ]   
+  }
 ```
 </details>
 
-#### Create file
+#### Create post
 
-Faz upload de um arquivo e cria ele no banco de dados.
+Cria um post no fórum
 
 ```http
-  POST /api/v1/files
+  POST /api/v1/posts
 ```
 
 | Parâmetros | Exemplo     | Obrigatório?                       |
 | :-------- | :------- | :-------------------------------- |
-| `name`      | `Arquivo bem legal` | Sim |
-|`author` | `John`| Sim |
-|`uploader`| `Pietra` | Sim |
-|`description` | `Essa história aqui [...]` | Não (default = '')| 
-|`protected` | `true` | Não (default = true)|
+| `title`      | `Post bem legal` | Sim |
+|`body`| `Pipipipopopo` | Sim |
+|`tags` | `['cool', 'hints']` | Não (default = '[]')| 
 
-#### Get all items
+#### Get post
 
-Pega apenas um arquivo.
+Pega apenas um post.
 
 
 ```http
-  GET /api/v1/files/{id}
+  GET /api/v1/posts/{id}
 ```
+| Parâmetros | Exemplo     | Obrigatório?                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `12345` | Sim |
 
 <details>
 <summary>Saída</summary>
 
 ```http
 {
-  "_id": "6a19d65629856ed2a2e5c9cc",
-  "name": "Test File",
-  "author": "Jack Doe",
-  "uploader": "Lara Smith",
-  "description": "This is a test file for the API request",
-  "protected": false,
-  "fileSize": 68096,
-  "fileURI": "uploads/files/1780078166431-Curriculo_Maria_Helena_Melo.pdf",
-  "previewImageURI": "uploads/images/default.jpg",
-  "uploadDate": "2026-05-29T18:09:26.438Z",
-  "__v": 0
+    "_id": "6a3f1e38c721aaf64b86764c",
+    "title": "Test post",
+    "body": "This is a test post to test this API Route",
+    "author": "6a3ef61633777e10c3035c2b",
+    "tags": [
+        "cool,amazing"
+    ],
+    "likes": 0,
+    "imageSize": 2661806,
+    "imageURI": "uploads/1782521400424-plasma.jpg",
+    "comments": [],
+    "uploadDate": "2026-06-27T00:50:00.444Z",
+    "__v": 0
 }
 ```
 </details>
 
-### Delete File
+### Delete Post
 
 Deleta um arquivo do banco de dados e da pasta de uploads.
 
 ```http
-  DELETE /api/v1/files/{id}
+  DELETE /api/v1/posts/{id}
 ```
 | Parâmetros | Exemplo     | Obrigatório?                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `12345` | Sim |
 
-### Edit File
+### Edit Post
 
-Edita um arquivo que o usuário criou.
+Edita um post que o usuário criou
 
 ```http
-  PATCH /api/v1/files/{id}
+  PATCH /api/v1/posts/{id}
 ```
 
 | Parâmetros | Exemplo     | Obrigatório?                       |
 | :-------- | :------- | :-------------------------------- |
 | `id` | `123`| Sim |
-| `name`      | `Arquivo bem legal` | Não |
-|`author` | `John`| Não |
-|`uploader`| `Pietra` | Não |
-|`description` | `Essa história aqui [...]` | Não | 
-|`protected` | `true` | Não |
+| `title (body)`      | `Novo título do post` | Não |
+|`body (body)` | `Novo corpo de texto...` | Não | 
 
-### Download File
+### Create Comment
 
-Manda para o client o arquivo .pdf requisitado para download
+Cria um comentário no post
 
 ```http
-  GET /api/v1/files/download/{id}
+  POST /api/v1/posts/comments/{id}
 ```
 | Parâmetros | Exemplo     | Obrigatório?                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `12345` | Sim |
+| `id` | `123`| Sim |
+| `body (body)`      | `Comentário muito legal!` | Sim |

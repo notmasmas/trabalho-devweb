@@ -8,10 +8,10 @@ Um arquivo PDF contém os seguintes atributos no banco de dados:
 
 | Nome | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `id` | `string` | id automaticamente gerado pelo MongoDB |
+| `id` | `ObjectId` | id automaticamente gerado pelo MongoDB |
 | `name`| `string`|nome do arquivo|
 |`author`|`string`|autor do arquivo|
-|`uploader`|`ObjectID`|quem fez upload do arquivo|
+|`uploader`|`ObjectID`|quem fez upload do arquivo (id dele no banco)|
 |`description`|`string`|descrição do arquivo|
 |`proctected`|`bool`|se o arquivo está disponível somente para professores
 |`fileSize`|`number`|tamanho do arquivo |
@@ -22,7 +22,7 @@ Um arquivo PDF contém os seguintes atributos no banco de dados:
 
 ## Rotas
 
-#### Get all items
+#### Get all files
 
 Pega todos os arquivos disponívels no banco de dados.
 
@@ -87,11 +87,10 @@ Faz upload de um arquivo e cria ele no banco de dados.
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `Arquivo bem legal` | Sim |
 |`author` | `John`| Sim |
-|`uploader`| `Pietra` | Sim |
 |`description` | `Essa história aqui [...]` | Não (default = '')| 
-|`protected` | `true` | Não (default = true)|
+|`protected` | `true` | Não (default = false)|
 
-#### Get all items
+#### Get file
 
 Pega apenas um arquivo.
 
@@ -99,6 +98,10 @@ Pega apenas um arquivo.
 ```http
   GET /api/v1/files/{id}
 ```
+| Parâmetros | Exemplo     | Obrigatório?                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `12345` | Sim |
+
 
 <details>
 <summary>Saída</summary>
@@ -142,11 +145,10 @@ Edita um arquivo que o usuário criou.
 | Parâmetros | Exemplo     | Obrigatório?                       |
 | :-------- | :------- | :-------------------------------- |
 | `id` | `123`| Sim |
-| `name`      | `Arquivo bem legal` | Não |
-|`author` | `John`| Não |
-|`uploader`| `Pietra` | Não |
-|`description` | `Essa história aqui [...]` | Não | 
-|`protected` | `true` | Não |
+| `name (body)`      | `Arquivo bem legal` | Não |
+|`author (body)` | `John`| Não |
+|`description (body)` | `Essa história aqui [...]` | Não | 
+|`protected (body)` | `true` | Não |
 
 ### Download File
 
