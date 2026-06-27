@@ -2,11 +2,11 @@ const {StatusCodes} = require('http-status-codes');
 const fs = require('fs');
 const path = require('path');
 const File = require('../models/file.js');
-const {BadRequestError, NotFoundError, CustomAPIError} = require('../errors');
+const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
 
 const getAllFiles = async (req, res) => {
 
-    const {name, author, uploader} = req.query;
+    const {name, author} = req.query;
     const queryObject = {}
 
     if (name) {
@@ -15,8 +15,9 @@ const getAllFiles = async (req, res) => {
     if (author) {
         queryObject.author = {$regex: author, $options: 'i'};
     }
-    if (uploader) {
-        queryObject.uploader = {$regex: uploader, $options: 'i'};
+
+    if (req.user.role == 'student') {
+        queryObject.protected = false; // this prevents students from seeing protected files
     }
 
     let result = File.find(queryObject);
@@ -44,7 +45,6 @@ const createFile = async (req, res) => {
     const {
         name, 
         author, 
-        uploader, 
         description, 
         protected
     } = req.body;
@@ -52,7 +52,7 @@ const createFile = async (req, res) => {
     const fileData = {
         name,
         author,
-        uploader,
+        uploader: req.user.id,
         description,
         protected,
         fileSize: size,
@@ -75,6 +75,10 @@ const getFile = async (req, res) => {
         throw new NotFoundError('File not found');
     }
 
+    if (file.protected && req.user.role == 'student') {
+        throw new ForbiddenError("You don't have permission to read this file");
+    }
+
     res
         .status(StatusCodes.OK)
         .json(file);
@@ -83,15 +87,21 @@ const getFile = async (req, res) => {
 const deleteFile = async (req, res) => {
 
     const {id:fileID} = req.params;
-    const file = await File.findOneAndDelete({_id: fileID});
+    const file = await File.findOneAndDelete({_id: fileID,
+                                               uploader: req.user.id});
 
     if (!file) {
-        throw new NotFoundError('File not found')
+        throw new ForbiddenError("You don't have permission to delete this file");
     }
 
     const filePath = path.join(__dirname, '..', file.fileURI);
 
-    await fs.promises.unlink(filePath);
+    try {
+        await fs.promises.unlink(filePath);
+    }
+    catch (error) {
+        console.warn('File already deleted or missing');
+    }
 
     res
         .status(StatusCodes.OK)
@@ -101,10 +111,14 @@ const deleteFile = async (req, res) => {
 const editFile = async (req, res) => {
 
     const{id:fileID} = req.params;
-    const file = await File.findByIdAndUpdate({_id: fileID}, req.body, {returnDocument: 'after'});
+
+    const file = await File.findOneAndUpdate({_id: fileID, 
+                                                uploader: req.user.id}, // checking if user is the owner of that file
+                                                req.body, // content that is being updated
+                                                {returnDocument: 'after'});
 
     if (!file) {
-        throw new NotFoundError('File not found');
+        throw new ForbiddenError("You don't have permission to edit this file");
     }
 
     res
@@ -113,7 +127,7 @@ const editFile = async (req, res) => {
 }
 
 const downloadFile = async (req, res) => {
-    const { id: fileID } = req.params;
+    const {id:fileID} = req.params;
 
     const file = await File.findById(fileID).select('fileURI');
 
@@ -121,8 +135,11 @@ const downloadFile = async (req, res) => {
         throw new NotFoundError('File not found');
     }
 
+    if (file.protected && req.user.role == 'student') {
+        throw new ForbiddenError("You don't have permission to access this file");
+    }
+
     const filePath = path.join(__dirname, '..', file.fileURI);
-    console.log(filePath);
 
     return res.download(filePath, 'file.pdf', (err) => {
         if (err) {

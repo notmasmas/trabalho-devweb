@@ -1,16 +1,16 @@
 const StatusCodes = require('http-status-codes');
 const Post = require('../models/post');
-const {BadRequestError, NotFoundError, CustomAPIError} = require('../errors');
+const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
 
 const getAllPosts = async (req, res) => {
 
-    let posts = await Post.find({});
+    let result = Post.find();
 
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    result = posts.skip(skip).limit(limit);
+    result = result.skip(skip).limit(limit);
 
     const finalPosts = await result;
     
@@ -21,19 +21,16 @@ const getAllPosts = async (req, res) => {
 
 const createPost = async (req, res) => {
 
-    console.log(req.file);
-
     const {
         title,
         body,
-        author,
         tags
     } = req.body;
 
     let postData = {
         title,
         body,
-        author,
+        author: req.user.id,
         tags
     }
 
@@ -68,10 +65,10 @@ const getPost = async (req, res) => {
 const deletePost = async (req, res) => {
 
     const {id:postID} = req.params;
-    const post = await Post.findOneAndDelete({_id:postID});
+    const post = await Post.findOneAndDelete({_id: postID, author: req.user.id});
 
     if (!post) {
-        throw new NotFoundError('Post not found');
+        throw new ForbiddenError("You don't have permission to delete this post");
     }
 
     res
@@ -82,10 +79,10 @@ const deletePost = async (req, res) => {
 const editPost = async (req, res) => {
 
     const {id:postID} = req.params;
-    const post = await Post.findOneAndUpdate({_id: postID}, req.body, {returnDocument: 'after'});
+    const post = await Post.findOneAndUpdate({_id: postID, author: req.user.id}, req.body, {returnDocument: 'after'});
 
     if (!post) {
-        return new NotFoundError('Post not found');
+        throw new ForbiddenError("You don't have permission to edit this post");
     }
 
     res

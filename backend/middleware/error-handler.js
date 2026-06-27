@@ -9,7 +9,7 @@ const errorHandlerMiddleware = (error, req, res, next) => {
     }
     return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({error});
+            .json({msg: error.message});
 }
 
 module.exports = errorHandlerMiddleware;

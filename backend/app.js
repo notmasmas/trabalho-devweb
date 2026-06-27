@@ -1,19 +1,20 @@
-require('dotenv').config()
-const express = require('express')
-const connectDB = require('./config/db/connect')
+require('dotenv').config();
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const connectDB = require('./config/db/connect');
 
-const app = express()
+const app = express();
 
 // error handler
-const errorHandlerMiddleware = require('./middleware/error-handler');
 const notFound = require('./middleware/not-found');
 
 // middleware
+app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 app.use('/api/v1', require('./routes'))
 app.use(notFound);
-app.use(errorHandlerMiddleware);
+app.use(require('./middleware/error-handler'));
 
 const port = process.env.PORT || 3000;
 
