@@ -115,6 +115,10 @@ const createComment = async (req, res) => {
             }
         }
     })
+
+    res
+        .status(StatusCodes.OK)
+        .send();
 }
 
 module.exports = {
