@@ -1,32 +1,9 @@
 import React, { useState } from "react"
-import logo from '../assets/img/logo.svg';
+import logo from '../assets/img/logo.svg'
+import { Button, InputSenha, Input, Card } from '../components'
 
 function handleSubmit() {
     //implementar validação com api (backend)
-}
-
-function PasswordInput({ value, onChange, placeholder = "Senha" }) {
-  const [showPassword, setShowPassword] = useState(false);
-
-  return (
-      <div style={{ display: "flex", alignItems: "center" }} className="input-group">
-        <input
-          type={showPassword ? "text" : "password"} //se showPassword for True mostra a senha escrita 
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className="form-control"
-        />
-        <button
-          type="button"
-          className="btn-eye"
-          onClick={() => setShowPassword((prev) => !prev)} //inverte o valor do booleano
-          aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
-        >
-          <i className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"} />
-        </button>
-      </div>
-    );
 }
 
 function LeftPanel() {
@@ -48,7 +25,6 @@ function LeftPanel() {
 
 function RightPanel() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   return (
     <div className="right-panel">
@@ -58,25 +34,10 @@ function RightPanel() {
         acadêmica!
       </p>
       
-      <div>
-        <input
-          type="email"
-          className="form-control"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+      <Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <InputSenha />
 
-      <div>
-        <PasswordInput
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <a className="recovery-link mt-1"> Esqueci a minha senha </a>
-      </div>
-
-      <button className="btn btn-main w-100" onClick={handleSubmit}> Entrar </button>
+      <Button onClick={handleSubmit}> Entrar </Button>
 
       <div className="divider">  
         <p className="sign-in-text">
@@ -90,10 +51,10 @@ function RightPanel() {
 export default function Login({ onLogin }) {
   return (
     <div className="main-wrapper">
-      <div className="card-shell">
+      <Card>
       <LeftPanel />
       <RightPanel onLogin={onLogin}/>
-      </div>
+      </Card>
     </div>
   );
 }

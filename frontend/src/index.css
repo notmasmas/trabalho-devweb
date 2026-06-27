@@ -132,9 +132,9 @@ body {
 }
 
 .panel-desc {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  text-align: justify;
+  text-align: center;
   line-height: 1.6;
   margin: 0;
 }
@@ -142,16 +142,16 @@ body {
 /* painel direito */
 .right-panel {
   flex: 1;
-  padding: 40px 36px;
+  padding: 0px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .right-panel h2 {
   font-size: 1.6rem;
-  margin: 0 0 4px;
+  margin: 0 0 -8px;
 }
 
 .right-panel .subtitle {
@@ -204,7 +204,7 @@ body {
 }
 
 /* botão principal */
-.btn-main {
+.btn {
   background: var(--dark);
   color: #fff;
   border: none;
@@ -216,7 +216,7 @@ body {
   transition: background-color 0.2s, opacity 0.2s;
 }
 
-.btn-main:hover {
+.btn:hover {
   opacity: 0.88;
   background-color: var(--muted);
 }
