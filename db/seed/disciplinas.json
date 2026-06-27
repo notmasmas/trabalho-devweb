@@ -398,5 +398,104 @@
     "horarios": [
       { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
     ]
-  }
+  },
+
+
+
+  {
+    "codigo": "CGA020607",
+    "nome": "COMPUTAÇÃO GRÁFICA AVANÇADA",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Desenvolver identidade visual para projetos gráficos; - Estruturar e desenvolver projetos gráficos baseados em softwares de representação gráfica. Conteúdos: - Softwares de representação gráfica; - Ferramentas avançadas de softwares de representação gráfica; - Identidade visual em projetos gráficos; - Desenvolvimento de projeto gráfico",
+    "preRequisitos": ["CGR020603"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DCE020607",
+    "nome": "DESIGN CERÂMICO",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Isabela Mendes Sielski", "Pâmela Fernandes"],
+    "ementa": "Objetivos: - Compreender o Design Cerâmico e seus conceitos básicos; - Conhecer os processos manuais e industriais da técnica cerâmica; - Conhecer as técnicas cerâmicas manuais e industriais; - Conhecer os processos de decoração e queimas cerâmicas; - Elaborar projeto de Design Cerâmico, da concepção a materialização. Conteúdos: - Introdução ao Design Cerâmico; - Cerâmica: classificação e propriedades; - Processos (manuais e industriais) e materiais aplicados à cerâmica; - Aproximações ao design cerâmico: forma, volume, proporção, conceitos, superfícies, texturas, inspiração visual; - Preparação de pastas cerâmicas; - Modelagem manual de corpos cerâmicos; - Moldes de gesso e moldagem em barbotina; - Decoração e tratamento de superfícies; - Processo de secagem e suas características; - Processos da queima cerâmica; - Avaliação dos aspectos técnicos do processo de produção.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DIN020607",
+    "nome": "DESIGN DA INFORMAÇÃO",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Raquel de Oliveira Bugliani"],
+    "ementa": "Objetivos: - Conhecer os conceitos que compõem o reconhecimento e entendimento de informações textuais e não textuais; - Identificar sequências hierárquicas da informação; - Analisar a eficácia e eficiência da comunicação empregada em produtos; - Desenvolver projetos aplicando os conceitos de design da informação. Conteúdos: - Visibilidade, legibilidade, leiturabilidade; - Hierarquia de informação; - Elementos tipográficos, cores, pictogramas; símbolos, advertências; - Projeto da informação: aplicação em produtos com comunicação analógica e/ou digital.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DPI020607",
+    "nome": "DESENVOLVIMENTO DE PRODUTOS INJETADOS",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Roberto Angelo Pistorello"],
+    "ementa": "Objetivos: - Desenvolver o projeto conceitual e detalhado de um componente plástico injetado; - Conhecer os processos de injeção visando melhoria da produtividade e qualidade; - Identificar as características e restrições do processo de injeção; - Projetar e fabricar componentes de um molde de injeção; - Programar e operar máquina injetora. Conteúdos: - Criação e avaliação de conceitos de Design; - Projeto Detalhado de componentes; - Projeto de molde; - Fabricação do molde; - Moldagem das peças; - Teste e avaliação dos resultados. Metodologia de Abordagem: - Aulas expositivas da imersão em Metodologias Ativas de Aprendizagem, a partir de uma problematização; - Desenvolvimento de projeto prático em equipes multidisciplinares (de preferência intercursos); - Aulas práticas com a operação equipamentos; - Avaliações mediante atividades teóricas e práticas; - Visitas técnicas.",
+    "preRequisitos": ["RDI020604","MPF020604"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DSB020607",
+    "nome": "DESIGN PARA A SUSTENTABILIDADE",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Carla Arcoverde de Aguiar Neves"],
+    "ementa": "Objetivos: - Conhecer os conceitos para o desenvolvimento sustentável; - Compreender a problemática ambiental nos diferentes contextos da sociedade; - Conhecer e aplicar as diferentes ferramentas de gestão ambiental e sustentabilidade nos projetos de desenvolvimento de produto; - Conhecer e aplicar os princípios do Design para Sustentabilidade e Ecodesign. Conteúdos: - Sustentabilidade: definições/conceitos da área, histórico e paradigmas; - A concepção de natureza e a evolução dos conceitos sobre a natureza, conscientização ambiental, esgotamento dos recursos naturais e poluição e globalização; - Dimensões/eixos da sustentabilidade: social, econômico e ambiental; - Ferramentas e metodologias para sustentabilidade: Sistema de Gestão Ambiental (SGA), Análise do Ciclo de Vida(ACV), Produção mais Limpa (PML) e Ecologia Industrial; - Design para o desenvolvimento sustentável - Design for Excellence (DfX) / Ecodesign.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "DSE020607",
+    "nome": "DESIGN DE SERVIÇOS",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Jucelia Salete Giacomini da Silva"],
+    "ementa": "Objetivos: - Compreender o histórico, conceitos, classificações e funções do Design de Serviços; - Compreender a atuação do designer em cenários de alta complexidade para o desenvolvimento de serviços com enfoque nos critérios da sustentabilidade ambiental, social e econômica; - Entender as necessidades e as relações entre as pessoas e as interfaces tangíveis e intangíveis dos serviços e sua aplicação na concepção, desenvolvimento e avaliação dos cenários; - Desenvolver e prototipar a experiência em Design de Serviços com foco na cultura organizacional e inovação, mudanças de comportamento de usuários e padrões de consumo. Conteúdos: - Fundamentos de uma sociedade de serviços: conceituação e classificação das atividades, características, funções, inovação tecnológica e evolução dos serviços; - A natureza do Design de Serviços: interação, intangibilidade, experiência, valor e desempenho; - Design de serviços em cenários de alta complexidade fundamentados no desenvolvimento sustentável (social, econômico e ambiental); - Entendendo as pessoas e as relações no cenário de serviços: métodos e ferramentas (Design de Experiência, Human-Centered-Design, Design Thinking e Design Colaborativo); - Desenvolvimento e prototipagem da experiência em Design de Serviços: ferramentas, processos e representação de cenários de serviços inovadores impulsionados por desafios tecnológicos, econômicos, ambientais e sociais.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "FTA020607",
+    "nome": "FOTOGRAFIA AVANÇADA",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Conhecer e experimentar estilos fotográficos; - Construir um estilo fotográfico individual; - Planejar um projeto fotográfico; - Executar um projeto autoral. Conteúdos: - Estilos fotográficos; - Fotografia autoral: definição e prática; - Criatividade e busca pelo estilo próprio; - Planejamento e gerenciamento de um projeto fotográfico.",
+    "preRequisitos": ["FTG020604"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "GAM020607",
+    "nome": "GAME DESIGN",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Conhecer e aplicar elementos e mecânicas de jogos; - Desenvolver games. Conteúdos: - Fundamentos de game design; - Gêneros de jogos; - Elementos de jogos; - Mecânicas de jogos",
+    "preRequisitos": ["MTP020603"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
 ]
