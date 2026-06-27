@@ -1,4 +1,6 @@
 const StatusCodes = require('http-status-codes');
+const fs = require('fs');
+const path = require('path');
 const Post = require('../models/post');
 const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
 
@@ -69,6 +71,17 @@ const deletePost = async (req, res) => {
 
     if (!post) {
         throw new ForbiddenError("You don't have permission to delete this post");
+    }
+
+    if (post.imageURI !== '') {
+        const imagePath = path.join(__dirname, '..', post.imageURI);
+
+        try {
+            await fs.promises.unlink(imagePath);
+        }
+        catch (error) {
+            console.warn('File already deleted or missing');
+        }
     }
 
     res
