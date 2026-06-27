@@ -37,7 +37,7 @@ const getAllFiles = async (req, res) => {
 
 const createFile = async (req, res) => {
     if (!req.file) {
-        throw new BadRequestError('File must be provided');
+        throw new BadRequestError('Arquivo deve ser providenciado');
     }
 
     const {size, path} = req.file;
@@ -72,11 +72,11 @@ const getFile = async (req, res) => {
     const file = await File.findOne({_id: fileID});
 
     if (!file) {
-        throw new NotFoundError('File not found');
+        throw new NotFoundError('Arquivo não encontrado');
     }
 
     if (file.protected && req.user.role == 'student') {
-        throw new ForbiddenError("You don't have permission to read this file");
+        throw new ForbiddenError("Você não tem permissão para acessar este arquivo");
     }
 
     res
@@ -91,7 +91,7 @@ const deleteFile = async (req, res) => {
                                                uploader: req.user.id});
 
     if (!file) {
-        throw new ForbiddenError("You don't have permission to delete this file");
+        throw new ForbiddenError("Você não tem permissão para deletar este arquivo");
     }
 
     const filePath = path.join(__dirname, '..', file.fileURI);
@@ -100,7 +100,7 @@ const deleteFile = async (req, res) => {
         await fs.promises.unlink(filePath);
     }
     catch (error) {
-        console.warn('File already deleted or missing');
+        console.warn('Arquivo já foi deletado ou não encontrado');
     }
 
     res
@@ -118,7 +118,7 @@ const editFile = async (req, res) => {
                                                 {returnDocument: 'after'});
 
     if (!file) {
-        throw new ForbiddenError("You don't have permission to edit this file");
+        throw new ForbiddenError("Você não tem permissão para editar este arquivo");
     }
 
     res
@@ -136,7 +136,7 @@ const downloadFile = async (req, res) => {
     }
 
     if (file.protected && req.user.role == 'student') {
-        throw new ForbiddenError("You don't have permission to access this file");
+        throw new ForbiddenError("Você não tem permissão para baixar este arquivo");
     }
 
     const filePath = path.join(__dirname, '..', file.fileURI);
@@ -147,7 +147,7 @@ const downloadFile = async (req, res) => {
 
             if (!res.headersSent) {
                 return res.status(500).json({
-                    message: 'Something went wrong.'
+                    message: 'Algo deu errado, tente mais tarde'
                 });
             }
         }

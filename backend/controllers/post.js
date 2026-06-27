@@ -18,7 +18,7 @@ const getAllPosts = async (req, res) => {
     
     res
         .status(StatusCodes.OK)
-        .json(finalPosts)
+        .json({posts: finalPosts})
 }
 
 const createPost = async (req, res) => {
@@ -56,7 +56,7 @@ const getPost = async (req, res) => {
     const post = await Post.find({_id: postID});
 
     if (!post) {
-        throw new NotFoundError('Post not found');
+        throw new NotFoundError('Post não foi encontrado');
     }
 
     res
@@ -70,7 +70,7 @@ const deletePost = async (req, res) => {
     const post = await Post.findOneAndDelete({_id: postID, author: req.user.id});
 
     if (!post) {
-        throw new ForbiddenError("You don't have permission to delete this post");
+        throw new ForbiddenError("Você não tem permissão para deletar este post");
     }
 
     if (post.imageURI !== '') {
@@ -80,7 +80,7 @@ const deletePost = async (req, res) => {
             await fs.promises.unlink(imagePath);
         }
         catch (error) {
-            console.warn('File already deleted or missing');
+            console.warn('Imagem já foi deletada ou não encontrada');
         }
     }
 
@@ -95,7 +95,7 @@ const editPost = async (req, res) => {
     const post = await Post.findOneAndUpdate({_id: postID, author: req.user.id}, req.body, {returnDocument: 'after'});
 
     if (!post) {
-        throw new ForbiddenError("You don't have permission to edit this post");
+        throw new ForbiddenError("Você não tem permissão para acessar este post");
     }
 
     res
@@ -110,7 +110,7 @@ const createComment = async (req, res) => {
     await Post.findByIdAndUpdate(postID, {
         $push: {
             comments: {
-                user: req.user.id,
+                user: req.user.name,
                 text: req.body.text
             }
         }
