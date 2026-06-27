@@ -16,7 +16,6 @@ Um arquivo PDF contém os seguintes atributos no banco de dados:
 |`proctected`|`bool`|se o arquivo está disponível somente para professores
 |`fileSize`|`number`|tamanho do arquivo |
 |`fileURI`|`string`|URI de onde está armazenado o arquivo PDF em si|
-|`previewImageURI`|`string`|URI de onde está armazenada a imagem de preview do arquivo|
 |`uploadDate`|`Date`|data de upload do arquivo|
 
 
@@ -54,7 +53,6 @@ Pega todos os arquivos disponívels no banco de dados.
             "protected": false,
             "fileSize": 1024,
             "fileURI": "uploads/files/test_file.pdf",
-            "previewImageURI": "/uploads/images/default.jpg",
             "uploadDate": "2026-04-20T01:20:32.915Z",
             "__v": 0
         },
@@ -67,7 +65,6 @@ Pega todos os arquivos disponívels no banco de dados.
             "protected": false,
             "fileSize": 1024,
             "fileURI": "uploads/file/test_file.pdf",
-            "previewImageURI": "/uploads/images/default.jpg",
             "uploadDate": "2026-05-01T19:40:06.194Z",
             "__v": 0
         }]
@@ -116,7 +113,6 @@ Pega apenas um arquivo.
   "protected": false,
   "fileSize": 68096,
   "fileURI": "uploads/files/1780078166431-Curriculo_Maria_Helena_Melo.pdf",
-  "previewImageURI": "uploads/images/default.jpg",
   "uploadDate": "2026-05-29T18:09:26.438Z",
   "__v": 0
 }
