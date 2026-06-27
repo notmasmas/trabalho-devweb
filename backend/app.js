@@ -1,20 +1,27 @@
-require('dotenv').config()
-const express = require('express')
-const connectDB = require('./config/db/connect')
+require('dotenv').config();
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const cors = require('cors');
+const connectDB = require('./config/db/connect');
 
-const app = express()
+const app = express();
 
-// error handler
-const errorHandlerMiddleware = require('./middleware/error-handler');
-const notFound = require('./middleware/not-found');
+const corsOptions = {
+    origin: ['http://localhost:5173'], // React/Vite
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: true
+};
+
+app.use(cors(corsOptions));
+
 
 // middleware
-app.use(express.static('./static'));
-app.use(express.json());
-app.use('/api/v1', require('./routes'))
-
-app.use(notFound);
-app.use(errorHandlerMiddleware);
+app.use(cookieParser()); // cookies
+app.use(express.json()); // aceitar body em JSON
+app.use('/uploads', express.static('uploads')); // expor a pasta uploads
+app.use('/api/v1', require('./routes')); 
+app.use(require('./middleware/not-found'));
+app.use(require('./middleware/error-handler'));
 
 const port = process.env.PORT || 3000;
 

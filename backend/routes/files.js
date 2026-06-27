@@ -12,7 +12,7 @@ router.route('/:id')
     .delete(deleteFile)
     .patch(editFile);
 
-router.route('/:id/download')
+router.route('/download/:id')
     .get(downloadFile);
 
 module.exports = router;
