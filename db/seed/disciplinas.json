@@ -498,4 +498,112 @@
       { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
     ]
   },
+  {
+    "codigo": "IDM020607",
+    "nome": "INTRODUÇÃO AO DESIGN DE MODA",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Priscila Moura Ortiga"],
+    "ementa": "Objetivos: - Pesquisar a moda em suas diversas fontes identificando, analisando e sintetizando estilos e macrotendências e decodificando para microtendências e assim, entender o Sistema da Moda e o que ele representa desde seu surgimento até os dias atuais. Conteúdos: - Nomenclatura, áreas de atuação, funcionamento dos diversos segmentos de Moda; - Surgimento da moda e sua história até os dias atuais; - Conceituar Moda e Tendência; - Compreender os fenômenos de moda a fim de perceber comportamentos; - Entender o papel da Alta-costura e do Prêt-à-porter na Moda; - Diferenciar a Moda conceitual da Moda comercial; - Pesquisar a moda de forma profissional nos variados meios (ruas, épica, cadernos de tendência, feiras, desfiles, mídias, editoriais, entre outros); - Reconhecer grupos geracionais de consumo; - Identificar e traduzir tendências em imagens, ambiências, formas e textos.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "ILD020607",
+    "nome": "ILUSTRAÇÃO DIGITAL",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Deise Albertazzi Gonçalves Tomelin"],
+    "ementa": "Objetivos: - Desenvolver storyboards; - Aplicar conceitos de iluminação à ilustração digital; - Aplicar conceitos de coloração à ilustração digital; - Realizar ilustrações. Conteúdos: - Planejamento da ilustração; - Referências gráficas; - Fundamentos de iluminação para ilustração digital; - Fundamentos de cor para ilustração digital.",
+    "preRequisitos": ["REN020603", "CGR020603"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "LIB020607",
+    "nome": "LIBRAS",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Uéslei Paterno"],
+    "ementa": "Objetivos: - Compreender os principais aspectos da Língua Brasileira de Sinais – Libras, língua oficial da comunidade surda brasileira, contribuindo para a inclusão educacional dos alunos surdos; - Utilizar a Língua Brasileira de Sinais (Libras) em contextos escolares e não escolares; - Conhecer aspectos básicos da estrutura da Língua Brasileira de Sinais; - Iniciar uma conversação por meio da Língua de Sinais com pessoas surdas; - Conhecer a história da Língua Brasileira de Sinais no Brasil. Conteúdos: - Desmistificação de ideias recebidas relativamente às Línguas de Sinais; - A Língua de Sinais.enquanto língua utilizada pela comunidade surda brasileira; - Introdução à Língua Brasileira de Sinais: usar a língua em contextos que exigem comunicação básica, como se apresentar, realizar perguntas, responder perguntas e dar informações sobre alguns aspectos pessoais (nome, endereço, telefone); - Conhecer aspectos culturais específicos da comunidade surda brasileira; - Legislação específica: a Lei nº 10.436, de 24/04/2002 e o Decreto nº 5.626, de 22/12/2005.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "MAN020607",
+    "nome": "MANUFATURA ADITIVA",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Roberto Angelo Pistorello"],
+    "ementa": "Objetivos: - Conhecer os processos de manufatura aditiva; - Entender a aplicação de processos de manufatura aditiva e fabricação digital no desenvolvimento de produtos; - Adquirir conhecimentos para operação de equipamento de manufatura aditiva. Conteúdos: - Histórico dos processos de manufatura aditiva ou impressão 3D; - Ciclo de fabricação para manufatura aditiva; - Classificação das tecnologias e características dos principais processos; - Aspectos de projeto para manufatura aditiva; - Processos de fabricação rápida de ferramentas; - Aplicações e perspectivas futuras; - Práticas em processos de manufatura aditiva. Metodologia de Abordagem: - Aulas expositivas com a realização de exercícios teóricos e práticos; - Aulas práticas com a operação equipamentos; - Desenvolvimento de projeto prático envolvendo manufatura aditiva; - Avaliações mediante atividades teóricas e práticas; - Visitas técnicas.",
+    "preRequisitos": ["RDI020604", "MPF020604"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "PRO020607",
+    "nome": "PROPRIEDADE INTELECTUAL",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Carlos Eduardo Sena", "Sérgio Henrique Prado Scolari"],
+    "ementa": "Objetivos: - Entender os diferentes aspectos e formas da Propriedade Intelectual; - Conhecer as principais regras envolvidas na proteção do Design; - Realizar processo de busca e prospecção tecnológica; - Ler e interpretar os dados disponíveis nas patentes; - Buscar reflexão sobre o papel da Propriedade Intelectual no desenvolvimento econômico. Conteúdos: - Introdução à Propriedade Intelectual (origem, conceitos e evolução); - Formas de proteção do trabalho; - Razões para patentear; - O que é (e o que não é) patenteável; - Características fundamentais das patentes (patente de invenção x modelo de utilidade); - As principais bases de dados (Por exemplo: USPTO, Google Patents, Espacenet, OEPM, JPO, WIPO, INPI); - Etapas de pesquisa (o processo de busca de anterioridade); - Conteúdo criativo em Design e Propriedade Intelectual; - Transferência de tecnologia.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "PRT020607",
+    "nome": "PROCESSOS TÊXTEIS",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Priscila Moura Ortiga"],
+    "ementa": "Objetivos: - Proporcionar ao aluno conhecimento sobre os materiais têxteis, bem como distinguir as diferentes fibras têxteis de acordo com suas origens, características e propriedades e possíveis aplicações no projeto de Design; - Classificar os tecidos quanto a seu sistema de obtenção, quanto à estrutura (formação), quanto à coloração, quanto à padronagem. Conteúdos: - Introdução à Tecnologia Têxtil: primórdios dos artigos têxteis e surgimento da Indústria Têxtil; - Artigos têxteis no dia-a-dia e o mercado têxtil; - Fibras naturais: vegetais, animais e minerais. Propriedades, origem e aplicações; - Fibras artificiais: tipos de fibras, propriedades, origem e aplicações; - Fibras sintéticas: tipos de fibras, propriedades, origem e aplicações; - Processos de fiação - Tipos e etapas de processos de fiação, titulagem – Sistemas de titulação. - Processo de Tecelagem: classificação dos tecidos quanto a seu sistema de obtenção, quanto à estrutura (formação), quanto à coloração, quanto à padronagem; - Beneficiamento: tipos de beneficiamentos para tecidos planos e malhas, tecidos tecnológicos, transformação têxtil.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "PVP020607",
+    "nome": "PLANEJAMENTO VISUAL DE PORTFÓLIO",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": ["Pâmela Teixeira Fernandes"],
+    "ementa": "Objetivos: - Compreender os princípios básicos de Design Gráfico e sua aplicação no planejamento visual de projetos gráficos; - Compreender os conceitos de diagramação para a configuração de projetos gráficos; - Desenvolver portfólio de produtos para mídias impressa e digital. Conteúdos: - Princípios básicos de design gráfico; - Planejamento visual de projetos gráficos; - Princípios de diagramação e desenvolvimento de grid; - Princípios básicos de editoração gráfica; - Formas de apresentação de portfólios em meio impresso e digital; - Seleção e apresentação de projetos.",
+    "preRequisitos": ["CGR020603"],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "ATC020607",
+    "nome": "ATIVIDADES COMPLEMENTARES",
+    "semestre": 7,
+    "cargaHoraria": 40,
+    "professores": [],
+    "ementa": "De acordo com as Diretrizes Curriculares Nacionais para cursos de Design em seu artigo 8º (Conselho Nacional de Educação, 2004), as Atividades Complementares são componentes curriculares que possibilitam o reconhecimento, por avaliação, de habilidades, conhecimentos e competências do aluno, inclusive adquiridas fora do ambiente escolar, incluindo a prática de estudos e atividades independentes, opcionais, de interdisciplinaridade, especialmente nas relações com o mundo do trabalho e com as diferentes manifestações e expressões culturais e artísticas, com as inovações tecnológicas, incluindo ações de extensão junto à comunidade. Ressalta-se que, como trata-se de um componente curricular enriquecedor e implementador do perfil do formando, estas atividades devem estar relacionadas com a área de atuação de Bacharel em Design, buscando-se a participação dos alunos em eventos do curso e do campus. As atividades podem ser executadas em qualquer um dos semestres, desde que somem durante todo o curso, uma quantidade mínima de horas prevista neste Projeto Pedagógico. As Atividades Complementares do Curso de Bacharelado em Design seguem diretrizes constantes em regulamentação específica da instituição.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  },
+  {
+    "codigo": "TCC020607",
+    "nome": "TRABALHO DE CONCLUSÃO DE CURSO",
+    "semestre": 7,
+    "cargaHoraria": 160,
+    "professores": ["Docente do curso a definir"],
+    "ementa": "Objetivos: - Utilizar uma redação formal, clara e objetiva; - Organizar de forma clara e objetiva os passos de um projeto; - Aplicar os conhecimentos adquiridos nas unidades curriculares do curso em um desenvolvimento de produto; - Comunicar-se eficientemente nas formas escrita, oral e gráfica. Conteúdos: - Desenvolvimento da metodologia do projeto proposta na unidade curricular de Metodologia Científica; - Análise de resultados fundamentada na bibliografia e desenvolvimento realizado; - Identificação das deficiências e méritos do trabalho realizado; - Conclusão do trabalho com base nos dados obtidos; - Redação de documento em forma de Monografia; - Apresentação oral e defesa do TCC.",
+    "preRequisitos": [],
+    "horarios": [
+      { "dia": "Quinta", "inicio": "08:00", "fim": "12:00" }
+    ]
+  }
 ]
