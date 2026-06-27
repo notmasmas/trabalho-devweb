@@ -36,7 +36,7 @@ const disciplinaSchema = new mongoose.Schema({
         trim: true,        // rtemove espaços em branco desnecessários no início e fim
         uppercase: true,   // Força a conversão do texto para letras maiúsculas
         // Exige de 2 a 6 letras seguiidas de 3 a 6 números (Ex: DES101, COMP3012)
-        match: [/^[A-Z]{2,6}\d{3,6}$/, 'Código inválido. Ex: DES101']
+        match: [/^[A-Z]{3}\d{6}$/, 'Código inválido. Ex: DES123456']
     },
 
     // Nome por extenso da disciplina (ex: "Programação WEB")
