@@ -48,6 +48,7 @@ function RightPanel() {
       <InputSenha value={password} onChange={(e) => setPassword(e.target.value)} />
       <a className="recovery-link mt-1"> Esqueci a minha senha </a>
 
+      {error && <span className="error">{error}</span>}
       <Button onClick={handleSubmit}> Entrar </Button>
 
       <div className="divider">  
