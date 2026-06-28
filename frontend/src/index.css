@@ -182,6 +182,7 @@ body {
 .right-panel h2 {
   font-size: 1.6rem;
   margin: 0 0 -8px;
+  font-weight: 400;
 }
 
 .right-panel .subtitle {
@@ -252,6 +253,12 @@ body {
 }
 
 /* divider */
+.divider-line {
+  border: none;
+  border-top: 1.2px solid var(--muted);
+  margin: 8px 0;
+}
+
 .divider {
   display: flex;
   align-items: center;

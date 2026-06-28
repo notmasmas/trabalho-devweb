@@ -1,8 +1,9 @@
-export default function Button({ children, onClick, variant = 'dark', className = '' }) {
+export default function Button({ children, onClick, className = '', style }) {
 
   return (
     <button
       onClick={onClick}
+      style={style}
       className="btn"
     >
       {children}

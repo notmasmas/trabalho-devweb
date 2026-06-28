@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../api/axios";
 import logo from '../assets/img/logo.svg'
 import { Button, InputSenha, Input, Card } from '../components'
+import Cadastro from './Cadastro'
 
-function LeftPanel() {
+export function LeftPanel() {
   return (
     <div className="left-panel">
       <div className="illustration-box">
@@ -54,7 +55,7 @@ function RightPanel() {
 
       <div className="divider">  
         <p className="sign-in-text">
-          Ou <a href="#"> crie sua conta </a>
+          Ou <Link to="/cadastro"> crie sua conta </Link>
         </p>
       </div>
     </div>

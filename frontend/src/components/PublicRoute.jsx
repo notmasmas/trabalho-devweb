@@ -6,15 +6,13 @@ import Loading from "./Loading.jsx";
 export default function PublicRoute({ children }) {
   const [loading, setLoading] = useState(true);
   const [isAuth, setIsAuth] = useState(false);
-    useEffect(() => {
-    const minDelay = new Promise(resolve => setTimeout(resolve, 200));
 
-    const verify = api.get("/auth/verify", { withCredentials: true })
+  useEffect(() => {
+    api.get("/auth/verify", { withCredentials: true })
       .then(() => setIsAuth(true))
-      .catch(() => setIsAuth(false));
-
-    Promise.all([verify, minDelay]).finally(() => setLoading(false));
-    }, []);
+      .catch(() => setIsAuth(false))
+      .finally(() => setLoading(false));
+  }, []);
 
     if (loading) return < Loading / >;
 
