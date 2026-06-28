@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Biblioteca from "./pages/Biblioteca/Biblioteca.jsx"
+import Forum from "./pages/Forum/Forum.jsx"
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 
@@ -33,6 +34,12 @@ export default function App() {
         <Route path="/biblioteca" element= {
           <PrivateRoute>
             <Biblioteca />
+          </PrivateRoute>
+        }/>
+
+        <Route path="/forum" element= {
+          <PrivateRoute>
+            <Forum />
           </PrivateRoute>
         }/>
 

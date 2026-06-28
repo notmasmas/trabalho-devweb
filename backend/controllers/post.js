@@ -6,11 +6,18 @@ const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require
 
 const getAllPosts = async (req, res) => {
 
-    let result = Post.find();
-
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
+
+    const title = req.query.title?.trim();
+
+    let result = Post.find();
+
+    if (title) {
+        const titleRegex = new RegExp(title, 'i');
+        result = result.find({ title: titleRegex });
+    }
 
     result = result.skip(skip).limit(limit);
 
