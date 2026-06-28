@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { getPasswordError } from "../utils/validators";
 
 //componente interno
-function PasswordInput({ value, onChange, placeholder = "Senha" }) {
+function PasswordInput({ value, onChange, placeholder = "Senha", onBlur }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -13,6 +13,7 @@ function PasswordInput({ value, onChange, placeholder = "Senha" }) {
           onChange={onChange}
           placeholder={placeholder}
           className="form-control"
+          onBlur={onBlur}
         />
         <button
           type="button"
@@ -28,13 +29,15 @@ function PasswordInput({ value, onChange, placeholder = "Senha" }) {
 
 //lift state da função, assim podemos controlar através do Login ou qualquer outra página
 export default function InputSenha({ value, onChange, validate = false}) {
-  const error = validate ? getPasswordError(value) : null; //só realiza a validação caso seja True!
+  const [touched, setTouched] = useState(false);
+  const error = validate && touched ? getPasswordError(value) : null; //só realiza a validação caso seja True!
 
   return (
     <div>
       <PasswordInput
           value={value}
           onChange={onChange}
+          onBlur={() => setTouched(true)}
       />
       {error && <span className="error">{error}</span>}
     </div>

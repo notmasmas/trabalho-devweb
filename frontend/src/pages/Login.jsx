@@ -32,7 +32,8 @@ function RightPanel() {
       await api.post("/auth/login", { email, password });
       navigate("/"); //redireciona
     } catch (err) {
-      setError("E-mail ou senha inválidos.");
+      const msg = err.response?.data?.msg;
+      setError(msg);
     }
   }
 
