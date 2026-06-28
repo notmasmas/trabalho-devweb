@@ -7,7 +7,7 @@ export default function PublicRoute({ children }) {
   const [loading, setLoading] = useState(true);
   const [isAuth, setIsAuth] = useState(false);
     useEffect(() => {
-    const minDelay = new Promise(resolve => setTimeout(resolve, 800));
+    const minDelay = new Promise(resolve => setTimeout(resolve, 200));
 
     const verify = api.get("/auth/verify", { withCredentials: true })
       .then(() => setIsAuth(true))

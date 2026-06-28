@@ -8,7 +8,7 @@ export default function PrivateRoute({ children }) {
   const [isAuth, setIsAuth] = useState(false);
 
     useEffect(() => {
-    const minDelay = new Promise(resolve => setTimeout(resolve, 800));
+    const minDelay = new Promise(resolve => setTimeout(resolve, 200));
 
     const verify = api.get("/auth/verify", { withCredentials: true })
       .then(() => setIsAuth(true))
