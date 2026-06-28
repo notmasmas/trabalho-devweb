@@ -1,5 +1,7 @@
-export default function Oi() {
+import { Sidebar } from '../components/Sidebar';
+
+export default function Home() {
     return (
-        <p>Legal, você logou!</p>
+        <Sidebar />
     )
 }
