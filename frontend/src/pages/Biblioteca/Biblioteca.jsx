@@ -1,0 +1,78 @@
+import { useEffect, useState } from 'react'
+import api from "../../api/axios";
+import { Sidebar } from '../../components/Sidebar'
+import { SearchBar } from '../../components/SearchBar';
+import { CardPDF } from './CardPDF'
+import { ModalPDF } from './ModalPDF';
+import './Biblioteca.css'
+
+export default function Biblioteca () {
+    const [files, setFiles] = useState([]);
+    const [page, setPage] = useState(1);
+    const [search, setSearch] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [refresh, setRefresh] = useState(0);
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        api.get("/auth/verify", { withCredentials: true })
+            .then((res) => setUser(res.data.user))
+            .catch(() => setUser(null));
+    }, []);
+
+    useEffect(() => {
+        api.get(`/files?limit=${page * 10}&name=${search}`, {
+            withCredentials: true
+        })
+            .then((response) => {
+                setFiles(response.data.files);
+            })
+    }, [page, search, refresh])
+
+    return (
+    <div className="app-layout">
+    <Sidebar/>
+
+    <main className="container">
+    <h1>Biblioteca</h1>
+    <p>Aqui você encontra materiais auxiliares para a suas aulas compartilhados por professores e outros alunos!</p>
+    <SearchBar search={search} setSearch={setSearch}/>
+
+    <div className="add-content-wrapper">
+        <button className="btn btn-primary add-content" onClick={() => {setIsModalOpen(true)}}>
+            <i className="bi bi-file-earmark-plus"></i>
+             Adicionar conteúdo
+        </button>
+        <button className="btn btn-primary add-content">
+            <i className="bi bi-pencil"></i>
+             Editar meus PDFs
+        </button>
+    </div>
+
+    <div className="row row-cols-1 row-cols-md-3 g-4 pdf-wrapper">
+        {
+        files.map ((file) => {
+            return (
+                <CardPDF
+                    key={file["_id"]}
+                    cardID={file["_id"]}
+                    cardTitle={file["name"]}
+                    cardDescription={file["description"]}
+                />
+            )
+        })}
+    </div>
+
+    <button type="button" className="btn btn-primary load-more" onClick={() => {setPage(page + 1)}}>Carregar mais</button>
+    <ModalPDF
+        user={user}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSuccess={() => {
+            setRefresh(refresh + 1); // recarrega lista
+        }}
+    />
+  </main>
+  </div>
+  )
+}

@@ -44,3 +44,6 @@ Senão, em um terminal:\
 - Maria Helena Melo
 - Filipe Pereira da Silva
 
+## Documentação
+Posts (Biblioteca de PDFs) [Documentação](documentation/filesAPI.md)
+
