@@ -1,4 +1,4 @@
-//import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 import logoIFSC from '../assets/img/logo.svg'
 
@@ -9,22 +9,26 @@ export function Sidebar() {
                 <img src={logoIFSC} alt="Logo do curso de Design do IFSC" className="logo-design-ifsc"/>
             </div>
 
-            <a href="/static/html/home.html" className="nav-item">
+            <NavLink to="/" className="nav-item">
                 <i className="bi bi-house" />
                 <span>Home</span>
-            </a>
-            <a href="/static/html/forum.html" className="nav-item">
+            </NavLink>
+
+            <NavLink to="/forum" className="nav-item">
                 <i className="bi bi-chat-left-dots" />
                 <span>Fórum</span>
-            </a>
-            <a href="/static/html/biblioteca.html" className="nav-item">
+            </NavLink>
+
+            <NavLink to="/biblioteca" className="nav-item">
                 <i className="bi bi-book" />
                 <span>Biblioteca</span>
-            </a>
+            </NavLink>
+
             <a href="/static/html/semestres.html" className="nav-item">
                 <i className="bi bi-bezier2" />
                 <span>Semestres</span>
             </a>
+
             <div className="bottom">
                 <a href="#" className="nav-item">
                     <i className="bi bi-box-arrow-left"></i>

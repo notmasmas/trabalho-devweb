@@ -1,16 +1,15 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
+import api from "../../api/axios";
 import { Sidebar } from '../../components/Sidebar'
 import { CardPDF } from './CardPDF'
 import './Biblioteca.css'
 
-
-export function Biblioteca () {
+export default function Biblioteca () {
     const [files, setFiles] = useState([]);
     const [page, setPage] = useState(1);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/v1/files?limit=${page * 10}`, {
+        api.get(`/files?limit=${page * 10}`, {
             withCredentials: true
         })
             .then((response) => {
