@@ -1,0 +1,186 @@
+/* ------ variáveis do projeto -------*/
+:root {
+  --cream:      #f2ede4;
+  --dark:       #1c1c1c;
+  --dark_blue:  #171253;
+  --border:     #c8bfb0;
+  --muted:      #7a7060;
+  --green-ifsc: #84CB87;
+}
+
+/* --------- layout geral -----------
+   assume que navbar.css já cuida do sidebar e define .sidebar
+   main recebe margem para não ficar debaixo da sidebar           */
+main {
+  padding: 2rem 2rem 2rem 2.5rem;
+  overflow: hidden;
+}
+
+main h1 { font-size: 1.5rem; color: var(--dark); margin-bottom: .25rem; }
+main > p { color: var(--muted); font-size: .875rem; margin-bottom: 1.5rem; }
+
+/* ----- container com scroll horizontal -------- */
+#wrapper {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+/* ------ área do fluxograma (colunas side-by-side) -----------
+   position: relative é OBRIGATÓRIO — o SVG se ancora aqui        */
+#fluxograma {
+  display: flex;
+  gap: 5rem;
+  padding: 1rem;
+  min-width: max-content;
+  position: relative;
+  align-items: flex-start;
+}
+
+/* ---------SVG de linhas (por baixo dos cards) ----------- */
+#fluxograma svg {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+#fluxograma svg path {
+  stroke: var(--border);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* -----------coluna de semestre-----------*/
+.col {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.col-titulo {
+  display: block;
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  padding-bottom: .4rem;
+  border-bottom: 2px solid var(--green-ifsc);
+  margin-bottom: .25rem;
+}
+
+/* --------card de disciplina----------
+   position: relative garante que offsetParent seja #fluxograma   */
+.card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .6rem .75rem;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.tipo-tag {
+    font-size: .6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: .1rem .4rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: .3rem;
+}
+.tipo-tag.obrigatoria { background: var(--green-ifsc); color: #fff; }
+.tipo-tag.optativa    { background: var(--cream); color: var(--muted); border: 1px solid var(--border); }
+
+/* borda tracejada para optativas */
+.card[data-tipo="optativa"] { border-style: dashed; }
+
+.card strong {
+  font-size: .8rem;
+  color: var(--dark);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.card span {
+  font-size: .7rem;
+  color: var(--muted);
+}
+
+.card:hover       { border-color: var(--dark_blue); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.card.ativo       { border-color: var(--green-ifsc); box-shadow: 0 0 0 2px var(--green-ifsc); }
+
+/* --------painel lateral de detalhe---------- */
+#detalhe {
+  position: fixed;
+  top: 0; right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  border-left: 1px solid var(--border);
+  padding: 1.25rem 1.25rem 2rem;
+  overflow-y: auto;
+  z-index: 200;
+  box-shadow: -4px 0 20px rgba(0,0,0,.07);
+  transition: transform .2s ease;
+}
+
+#detalhe.fechado { transform: translateX(100%); }
+
+#btn-fechar {
+  float: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+#detalhe h2 {
+  font-size: .95rem;
+  color: var(--dark);
+  margin: .5rem 0 1rem;
+  line-height: 1.4;
+  clear: both;
+}
+
+/* lista de definições para os campos */
+#detalhe dl { margin: 0; }
+
+#detalhe dt {
+  font-size: .65rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .75rem;
+}
+
+#detalhe dd {
+  font-size: .8rem;
+  color: var(--dark);
+  margin-left: 0;
+  line-height: 1.5;
+}
+
+#detalhe code {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .1rem .35rem;
+  font-size: .7rem;
+  font-family: monospace;
+}
+
+/* -------mensagem de erro------- */
+.erro { color: var(--muted); font-size: .875rem; padding: 1rem 0; }
