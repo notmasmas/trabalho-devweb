@@ -29,7 +29,7 @@ export default function Cadastro() {
     } catch (err) {
 			console.log(err.response);
       const msg = err.response?.data?.msg;
-      setError(msg === "Authentication has failed" ? "Erro ao cadastrar" : msg);
+      setError(msg === "Authentication has failed" || "users validation failed" ? "Erro ao cadastrar" : msg);
     }
   }
     
