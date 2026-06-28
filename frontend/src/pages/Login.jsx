@@ -1,10 +1,8 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import api from "../api/axios";
 import logo from '../assets/img/logo.svg'
 import { Button, InputSenha, Input, Card } from '../components'
-
-function handleSubmit() {
-    //implementar validação com api (backend)
-}
 
 function LeftPanel() {
   return (
@@ -25,6 +23,18 @@ function LeftPanel() {
 
 function RightPanel() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  async function handleSubmit() {
+    try {
+      await api.post("/auth/login", { email, password });
+      navigate("/home"); //redireciona
+    } catch (err) {
+      setError("E-mail ou senha inválidos.");
+    }
+  }
 
   return (
     <div className="right-panel">
@@ -34,8 +44,9 @@ function RightPanel() {
         acadêmica!
       </p>
       
-      <Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <InputSenha />
+      <Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} validate />
+      <InputSenha value={password} onChange={(e) => setPassword(e.target.value)} />
+      <a className="recovery-link mt-1"> Esqueci a minha senha </a>
 
       <Button onClick={handleSubmit}> Entrar </Button>
 
@@ -48,12 +59,12 @@ function RightPanel() {
   );
 }
 
-export default function Login({ onLogin }) {
+export default function Login() {
   return (
     <div className="main-wrapper">
       <Card>
       <LeftPanel />
-      <RightPanel onLogin={onLogin}/>
+      <RightPanel />
       </Card>
     </div>
   );

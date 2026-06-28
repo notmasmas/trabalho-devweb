@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import { getEmailError } from "../utils/validators";
 
-export default function Input({ type = "text", placeholder = "", value, onChange }) {
+export default function Input({ type = "text", placeholder = "", value, onChange, validate = false }) {
+    const error = validate && type === "email" ? getEmailError(value) : null;
+    
     return (
         <div>
             <input
@@ -10,6 +13,7 @@ export default function Input({ type = "text", placeholder = "", value, onChange
                 value={value}
                 onChange={onChange}
             />
+            {error && <span className="error">{error}</span>}
         </div>
     );
 }

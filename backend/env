@@ -1,3 +1,0 @@
-MONGO_URI=mongodb+srv://testUser:4ejCRFpOywKvxy3j@expressproject.dz79rph.mongodb.net/design_ifsc?appName=ExpressProject
-JWT_SECRET=cc0aa1d5528dce0b3343da80f8cc85989080779006913a8d0cd9eec4bb70fac9
-JWT_LIFETIME=30d

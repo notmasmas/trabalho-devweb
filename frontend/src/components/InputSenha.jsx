@@ -1,5 +1,7 @@
 import React, { useState } from "react"
+import { getPasswordError } from "../utils/validators";
 
+//componente interno
 function PasswordInput({ value, onChange, placeholder = "Senha" }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,16 +26,17 @@ function PasswordInput({ value, onChange, placeholder = "Senha" }) {
     );
 }
 
-export default function InputSenha() {
-    const [password, setPassword] = useState("")
+//lift state da função, assim podemos controlar através do Login ou qualquer outra página
+export default function InputSenha({ value, onChange, validate = false}) {
+  const error = validate ? getPasswordError(value) : null; //só realiza a validação caso seja True!
 
-    return (
+  return (
     <div>
-    <PasswordInput
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-    />
-    <a className="recovery-link mt-1"> Esqueci a minha senha </a>
+      <PasswordInput
+          value={value}
+          onChange={onChange}
+      />
+      {error && <span className="error">{error}</span>}
     </div>
-    );
+  );
 }

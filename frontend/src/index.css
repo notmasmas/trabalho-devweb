@@ -245,7 +245,7 @@ body {
   text-align: left;
   display: block;
   cursor: pointer;
-  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .sign-in-text {
@@ -303,9 +303,11 @@ body {
   background-color: var(--red-ifsc);
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVO
-   ════════════════════════════════════════ */
+.error {
+  color: #dc3545;
+}
+
+/* RESPONSIVO */
 
 @media (max-width: 767px) {
   .sidebar {
