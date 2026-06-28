@@ -35,6 +35,7 @@ main {
 .add-content {
     background-color: var(--green-ifsc);
     border: none;
+    margin: 10px;
 }
 
 .add-content:hover {
