@@ -30,7 +30,7 @@ function RightPanel() {
   async function handleSubmit() {
     try {
       await api.post("/auth/login", { email, password });
-      navigate("/home"); //redireciona
+      navigate("/"); //redireciona
     } catch (err) {
       setError("E-mail ou senha inválidos.");
     }
