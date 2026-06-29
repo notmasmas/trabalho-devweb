@@ -19,7 +19,7 @@ const login = async (req, res) => {
     const {email, password} = req.body;
 
     if (!email || !password) {
-        throw new BadRequestError('Por favor ensira e-mail e senha');
+        throw new BadRequestError('Por favor insira e-mail e senha');
     }
 
     const user = await User.findOne({email});
@@ -28,13 +28,13 @@ const login = async (req, res) => {
         throw new UnauthenticatedError('Falha na autenticação');
     }
 
-    const isPasswordCorrect = user.comparePassword(password);
+    const isPasswordCorrect = await user.comparePassword(password);
 
     if (!isPasswordCorrect) {
-        throw UnauthenticatedError('Falha na autenticação');
+        throw new UnauthenticatedError('Falha na autenticação');
     }
 
-    token = user.createJWT();
+    const token = user.createJWT();
 
     res
         .cookie('token', token, {
@@ -43,7 +43,18 @@ const login = async (req, res) => {
         .send();
 }
 
+const logout = async (req, res) => {
+
+  res.clearCookie('token', {
+    httpOnly: true,
+  });
+
+  return res.status(200).send();
+
+}
+
 module.exports = {
     register,
-    login
+    login,
+    logout
 }

@@ -6,7 +6,7 @@ const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require
 
 const getAllFiles = async (req, res) => {
 
-    const {name, author} = req.query;
+    const {name, author, uploader} = req.query;
     const queryObject = {}
 
     if (name) {
@@ -14,6 +14,9 @@ const getAllFiles = async (req, res) => {
     }
     if (author) {
         queryObject.author = {$regex: author, $options: 'i'};
+    }
+    if (uploader) {
+        queryObject.uploader = {$regex: uploader, $options: 'i'};
     }
 
     if (req.user.role == 'student') {
