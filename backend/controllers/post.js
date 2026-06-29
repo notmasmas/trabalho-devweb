@@ -5,8 +5,6 @@ const Post = require('../models/post');
 const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
 
 const getAllPosts = async (req, res) => {
-    console.log("query recebida:", req.query);
-
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
@@ -28,7 +26,6 @@ const getAllPosts = async (req, res) => {
     result = result.skip(skip).limit(limit).sort({ uploadDate: -1 }); //posts mais recentes ficam no topo
 
     const finalPosts = await result;
-    console.log("posts encontrados:", finalPosts.length);
     
     res
         .status(StatusCodes.OK)
@@ -68,7 +65,7 @@ const getPost = async (req, res) => {
 
     const {id:postID} = req.params;
 
-    const post = await Post.find({_id: postID});
+    const post = await Post.findOne({_id: postID}); //findOne para retornar o objeto em vez de array
 
     if (!post) {
         throw new NotFoundError('Post não foi encontrado');
@@ -82,7 +79,7 @@ const getPost = async (req, res) => {
 const deletePost = async (req, res) => {
 
     const {id:postID} = req.params;
-    const post = await Post.findOneAndDelete({_id: postID, author: req.user.id});
+    const post = await Post.findOneAndDelete({_id: postID, authorId: req.user.id});
 
     if (!post) {
         throw new ForbiddenError("Você não tem permissão para deletar este post");
@@ -107,7 +104,7 @@ const deletePost = async (req, res) => {
 const editPost = async (req, res) => {
 
     const {id:postID} = req.params;
-    const post = await Post.findOneAndUpdate({_id: postID, author: req.user.id}, req.body, {returnDocument: 'after'});
+    const post = await Post.findOneAndUpdate({_id: postID, authorId: req.user.id}, req.body, {returnDocument: 'after'});
 
     if (!post) {
         throw new ForbiddenError("Você não tem permissão para acessar este post");

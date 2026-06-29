@@ -16,16 +16,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-	justify-content: center;
     gap: 20px;
 }
 
 main h1 {
-	margin: 0;
+	margin: 15px 0 0 0;
+	font-size: 34px;
 }
 
 main p {
 	margin: -10px 0 25px 0;
+	text-align: center;
 }
 
 .search-create {
@@ -36,6 +37,7 @@ main p {
 	gap: 12px;
 	width: 100%;
 	max-width: 800px;
+	flex-wrap: wrap
 }
 
 .feed-wrapper {
@@ -47,13 +49,23 @@ main p {
 	gap: 30px;
 }
 
-.post {
-  border: 1.5px solid var(--border);
+.post, .post-single {
+  	border: 1.5px solid var(--border);
 	border-radius: 4px;
     background: white;
 	margin: 0;
+
+}
+
+.post {
 	width: 100%;
 }
+
+.post-single {
+	width: 90%;
+	margin-top: 30px;
+}
+
 
 .post:hover {
   border-color: #F79B12;
@@ -71,7 +83,7 @@ main p {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: rgb(232, 232, 232);
+	background-color: #eee9e6;
 	padding: 5px 12px;
 }
 
@@ -99,6 +111,13 @@ main p {
 	flex-direction: column;
 	gap: 8px;
 	padding: 0 20px;
+}
+
+.post-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 4px;
 }
 
 .post-bottom {

@@ -3,7 +3,7 @@ import api from "../../api/axios";
 import { Sidebar } from '../../components/Sidebar'
 import { SearchBar } from '../../components/SearchBar';
 import { Link } from 'react-router-dom';
-import Post from './Post'
+import FeedPost from './FeedPost'
 import { ModalPost } from './ModalPost';
 import './Forum.css'
 
@@ -64,7 +64,7 @@ export default function Forum() {
 			<div className="feed-wrapper">
 				{posts.map(({ _id, ...postProps }) => (
 					<Link key={_id} to={`/forum/${_id}`} style={{ textDecoration: 'none' }}>
-						<Post {...postProps} />
+						<FeedPost {...postProps} />
 					</Link>
 				))}
 			</div>
