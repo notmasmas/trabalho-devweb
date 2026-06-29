@@ -8,6 +8,7 @@ import Forum from "./pages/Forum/Forum.jsx"
 import BibliotecaEditar from './pages/BibliotecaEditar/BibliotecaEditar.jsx'
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
+import Semestres from "./pages/Semestres/Semestres.jsx";
 
 export default function App() {
   return (
@@ -38,6 +39,12 @@ export default function App() {
           </PrivateRoute>
         }/>
 
+        <Route path="/semestres" element={
+          <PrivateRoute>
+            <Semestres /><
+          /PrivateRoute>
+        } />
+          
         <Route path="/forum" element= {
           <PrivateRoute>
             <Forum />

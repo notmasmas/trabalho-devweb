@@ -37,10 +37,10 @@ export function Sidebar() {
                 <span>Biblioteca</span>
             </NavLink>
 
-            <a href="/static/html/semestres.html" className="nav-item">
+            <NavLink to="/semestres" className="nav-item">
                 <i className="bi bi-bezier2" />
                 <span>Semestres</span>
-            </a>
+            </NavLink>
 
             <div className="bottom">
                 <a onClick={logout} className="nav-item">
