@@ -1,16 +1,19 @@
+/*--- Reset básico pra não somar borda e padding ---*/
 * {
   box-sizing: border-box;
 }
 
-/* ── variaveis ── */
+/*--- Paleta de cores ---*/
 :root {
-  --cream:  #f2ede4;
-  --dark:   #1c1c1c;
+  --cream:     #f2ede4;
+  --dark:      #1c1c1c;
   --dark_blue: #171253;
-  --border: #c8bfb0;
-  --muted:  #7a7060;
+  --border:    #c8bfb0;
+  --muted:     #7a7060;
 }
 
+/*--- Configurações gerais da página ---
+com flexbox pra alinhar a sidebar e o conteúdo principal lado a lado */
 body {
   background: var(--cream);
   font-family: 'DM Sans', sans-serif;
@@ -20,10 +23,10 @@ body {
   align-items: stretch;
 }
 
-/* side bar*/
+/*--- Sidebar desktop ---*/
 .sidebar {
   width: 68px;
-  background: #faf7f6; /*#e9e3d8 */
+  background: #faf7f6;
   border-right: 1.5px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -36,10 +39,9 @@ body {
   height: 100vh;
 }
 
-.sidebar .logo-design-ifsc {
-  width: 32px;
-}
+.sidebar .logo-design-ifsc { width: 32px; }
 
+/*--- Estilo padrão dos ícones/links do menu lateral ---*/
 .sidebar .nav-item {
   display: flex;
   flex-direction: column;
@@ -51,13 +53,9 @@ body {
   transition: color 0.2s;
 }
 
-.sidebar .nav-item i {
-  font-size: 1.2rem;
-}
-
-.sidebar .nav-item:hover {
-  color: var(--dark_blue);
-}
+.sidebar .nav-item i      { font-size: 1.2rem; }
+.sidebar .nav-item:hover  { color: var(--dark_blue); }
+.sidebar .nav-item.active { color: var(--dark_blue); } /* Destaca página atual */
 
 .sidebar .bottom {
   margin-top: auto;
@@ -67,30 +65,78 @@ body {
   gap: 24px;
 }
 
+/* --- Botão hambúrguer --- */
+/* Botão de abrir o menu no celular, fica fixo no topo esquerdo por cima de tudo */
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 400;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--dark);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
 
-.sidebar .nav-item {
+/* --- Menu fullscreen mobile --- */
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--cream);
+  z-index: 500;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
+}
+
+/* -- X pra fechar o menu mobile ---*/
+.menu-mobile-fechar {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
   color: var(--muted);
-  font-size: 0.6rem;
-  text-decoration: none;
-  transition: color 0.2s;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 2.5rem;
 }
 
-.sidebar .nav-item i {
-  font-size: 1.2rem;
-}
-
-.sidebar .nav-item:hover {
-  color: var(--dark_blue);
-}
-
-.sidebar .bottom {
-  margin-top: auto;
+.menu-mobile-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  gap: 0;
 }
+
+/* --- links separados por linha pra facilitar o toque na tela --- */
+.menu-mobile-nav a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.15s;
+}
+
+.menu-mobile-nav a:first-child { border-top: 1px solid var(--border); }
+.menu-mobile-nav a:hover       { color: var(--dark_blue); }
+.menu-mobile-nav a.active      { color: var(--dark_blue); font-weight: 700; }
+
+/* --- Botão de sair empurrado pro rodapé do menu no celular --- */
+.menu-mobile-logout {
+  margin-top: auto;
+  padding-top: 2rem;
+  font-size: 1rem;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-mobile-logout:hover { color: var(--dark); }
