@@ -22,7 +22,7 @@ const getAllPosts = async (req, res) => {
     }
 
     if (authorId) {
-        result = result.find({ author: authorId });
+        result = result.find({ authorId: authorId });
     }
 
     result = result.skip(skip).limit(limit);
@@ -46,7 +46,8 @@ const createPost = async (req, res) => {
     let postData = {
         title,
         body,
-        author: req.user.id,
+        author: req.user.name,
+        authorId: req.user.id,
         tags
     }
 

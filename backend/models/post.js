@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: [true, "Post must have author"],
     },
+    "authorId": {
+        type: String,
+        required: [true, "Post must have author"]
+    },
     "comments": [
         {
             "user": String,
