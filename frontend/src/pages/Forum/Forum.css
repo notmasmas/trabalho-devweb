@@ -87,10 +87,11 @@ main {
 }
 
 .post-button {
-	width: 200px;
+	width: 150px;
+	height: 50px;
 }
 
-.post-button:hover {
+.post-button.verde:hover {
 	background-color: #72c376 !important;
 	transition: background-color 0.15s ease;
 }

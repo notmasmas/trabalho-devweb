@@ -1,4 +1,4 @@
-export default function Post({ title, body, author, comments, tags, imageSize, imageURI, uploadDate }) {
+export default function Post({ title, body, author, comments = [], tags = [], uploadDate }) {
 	function truncate(text, limit) {
 		if (text.length <= limit) return text;
 		return text.slice(0, limit) + "...";
@@ -20,7 +20,6 @@ export default function Post({ title, body, author, comments, tags, imageSize, i
 			<div className="post-center">
 				<span className="post-name"> {title} </span>
 				<span className="post-text"> {truncate(body, 200)} </span>
-				<img className="post-img" src={`http://localhost:3000/${imageURI}`}/>
 			</div>
 
 			<div className="post-bottom">

@@ -5,12 +5,14 @@ const Post = require('../models/post');
 const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
 
 const getAllPosts = async (req, res) => {
+    console.log("query recebida:", req.query);
 
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
     const title = req.query.title?.trim();
+    const authorId = req.query.authorId?.trim();
 
     let result = Post.find();
 
@@ -19,9 +21,14 @@ const getAllPosts = async (req, res) => {
         result = result.find({ title: titleRegex });
     }
 
+    if (authorId) {
+        result = result.find({ author: authorId });
+    }
+
     result = result.skip(skip).limit(limit);
 
     const finalPosts = await result;
+    console.log("posts encontrados:", finalPosts.length);
     
     res
         .status(StatusCodes.OK)
