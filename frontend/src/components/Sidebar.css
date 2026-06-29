@@ -23,7 +23,7 @@ body {
 /* side bar*/
 .sidebar {
   width: 68px;
-  background: var(--cream);
+  background: #faf7f6; /*#e9e3d8 */
   border-right: 1.5px solid var(--border);
   display: flex;
   flex-direction: column;

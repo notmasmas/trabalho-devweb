@@ -1,4 +1,4 @@
-export default function Post({ title, body, author, comments = [], tags = [], uploadDate }) {
+export default function FeedPost({ title, body, author, comments = [], tags = [], uploadDate }) {
 	function truncate(text, limit) {
 		if (text.length <= limit) return text;
 		return text.slice(0, limit) + "...";
