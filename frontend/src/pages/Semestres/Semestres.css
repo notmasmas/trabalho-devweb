@@ -7,20 +7,46 @@
   --green-ifsc: #84CB87;
 }
 
+/* ── página ocupa todo o espaço ao lado do sidebar ── */
+.semestres-page {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 2rem 2rem 2.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.semestres-page h1 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: .25rem;
+}
+
+.semestres-page > p {
+  color: var(--muted);
+  font-size: .875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── scroll horizontal ── */
 #wrapper {
+  flex: 1;
   overflow-x: auto;
   padding-bottom: 1rem;
 }
 
+/* ── área do fluxograma ── */
 #fluxograma {
   display: flex;
-  gap: 3rem;
-  padding: 1rem;
+  gap: 2.5rem;
+  padding: 1rem .5rem;
   min-width: max-content;
   position: relative;
   align-items: flex-start;
 }
 
+/* ── SVG atrás dos cards ── */
 #fluxograma svg {
   position: absolute;
   top: 0; left: 0;
@@ -35,17 +61,19 @@
   fill: none;
 }
 
+/* ── coluna ── */
 .col {
-  width: 175px;
+  width: 190px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: .75rem;
+  flex-shrink: 0;
 }
 
 .col-titulo {
   display: block;
   font-size: .7rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .07em;
@@ -54,6 +82,7 @@
   margin-bottom: .25rem;
 }
 
+/* ── card ── */
 .disc-card {
   position: relative;
   z-index: 1;
@@ -75,15 +104,16 @@
   font-weight: 600;
 }
 
-.disc-card span.ch {
+.disc-card .ch {
   font-size: .7rem;
   color: var(--muted);
 }
 
-.disc-card:hover       { border-color: var(--dark_blue); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
-.disc-card.ativo       { border-color: var(--green-ifsc); box-shadow: 0 0 0 2px var(--green-ifsc); }
+.disc-card:hover              { border-color: var(--dark_blue); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.disc-card.ativo              { border-color: var(--green-ifsc); box-shadow: 0 0 0 2px var(--green-ifsc); }
 .disc-card[data-tipo="optativa"] { border-style: dashed; }
 
+/* ── badge obrigatória / optativa ── */
 .tipo-tag {
   font-size: .6rem;
   font-weight: 700;
@@ -97,18 +127,18 @@
 .tipo-tag.obrigatoria { background: var(--green-ifsc); color: #fff; }
 .tipo-tag.optativa    { background: var(--cream); color: var(--muted); border: 1px solid var(--border); }
 
-/* painel de detalhe */
+/* ── painel de detalhe (desktop) ── */
 #detalhe {
   position: fixed;
   top: 0; right: 0;
-  width: 280px;
+  width: 360px;
   height: 100vh;
   background: #fff;
   border-left: 1px solid var(--border);
-  padding: 1.25rem 1.25rem 2rem;
+  padding: 1.5rem;
   overflow-y: auto;
-  z-index: 200;
-  box-shadow: -4px 0 20px rgba(0,0,0,.07);
+  z-index: 300;
+  box-shadow: -4px 0 24px rgba(0,0,0,.09);
 }
 
 #btn-fechar {
@@ -117,14 +147,15 @@
   border: none;
   cursor: pointer;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding: 0;
+  line-height: 1;
 }
 
 #detalhe h2 {
-  font-size: .95rem;
+  font-size: 1rem;
   color: var(--dark);
-  margin: .5rem 0 1rem;
+  margin: .5rem 0 1.25rem;
   line-height: 1.4;
   clear: both;
 }
@@ -137,14 +168,14 @@
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .06em;
-  margin-top: .75rem;
+  margin-top: .85rem;
 }
 
 #detalhe dd {
-  font-size: .8rem;
+  font-size: .85rem;
   color: var(--dark);
   margin-left: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 #detalhe code {
@@ -159,3 +190,27 @@
 }
 
 .erro { color: var(--muted); font-size: .875rem; padding: 1rem 0; }
+
+/* ── mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  .semestres-page {
+    padding: 1rem;
+  }
+
+  /* painel vira bottom sheet em mobile */
+  #detalhe {
+    width: 100%;
+    height: 60vh;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.1);
+  }
+
+  .col { width: 150px; }
+
+  #fluxograma { gap: 1.5rem; }
+}

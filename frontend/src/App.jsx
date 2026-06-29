@@ -6,6 +6,7 @@ import Cadastro from "./pages/Cadastro.jsx";
 import Biblioteca from "./pages/Biblioteca/Biblioteca.jsx"
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
+import Semestres from "./pages/Semestres/Semestres.jsx";
 
 export default function App() {
   return (
@@ -35,6 +36,10 @@ export default function App() {
             <Biblioteca />
           </PrivateRoute>
         }/>
+
+        <Route path="/semestres" element={
+          <PrivateRoute><Semestres /></PrivateRoute>
+        } />
 
       </Routes>
     </BrowserRouter>

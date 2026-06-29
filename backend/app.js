@@ -7,7 +7,7 @@ const connectDB = require('./config/db/connect');
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:5173'], // React/Vite
+    origin: ['http://localhost:5173', 'http://localhost:5174'], // React/Vite
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     credentials: true
 };

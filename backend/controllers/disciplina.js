@@ -97,7 +97,7 @@ const createDisciplina = async (req, res) => {
             );
 
             // Cria um array contendo apenas as strings dos códigos encontrados no banco
-            const codigosEncontrados = encontrados.map(d => d.codigo);
+            const codigosEncontSrados = encontrados.map(d => d.codigo);
             // Compara as listas para filtrar quaiis códigos enviados pelo usuário NÃO foram achados no banco
             const naoEncontrados = preRequisitos.filter(
                 c => !codigosEncontrados.includes(c.toUpperCase())

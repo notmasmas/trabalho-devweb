@@ -6,12 +6,12 @@ const Disciplina = require('../../models/disciplina');
 // Importa o arquivo JSON
 const dados = require('./disciplinas.json');
 // Importa a função que realmente faz o meio de campo e liga o servidor ao banco
-const connectDB = require('../connect');
+const connectDB = require('../../config/db/connect');
  
 const seed = async () => {
     try {
         // Tenta conectar no banco usando a URL que tá no .env. Se der ruim, vai direto pro catch
-        await connectDB(process.env.MONGO_URI);
+        await connectDB();;
         console.log('Conectado ao MongoDB'); // Se apareceu isso, o primeiro passo deu bom!
  
         // ATENÇÃO: Deleta TUDO que já existe nessa tabela/coleção. Perigo! mas limpa o terreno.
