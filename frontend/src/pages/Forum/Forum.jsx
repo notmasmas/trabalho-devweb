@@ -49,9 +49,9 @@ export default function Forum() {
 			<div className="search-create">
 				<SearchBar search={search} setSearch={setSearch} />
 				<button className="btn btn-primary add-content post-button verde" onClick={() => {setIsModalOpen(true)}}>
-          <i className="bi bi-pencil me-1"></i>
-          Criar post
-        </button>
+          			<i className="bi bi-pencil me-1"></i>
+          			Criar post
+        		</button>
 				<button
 					className={`btn post-button ${myPostsOnly ? "btn-primary" : "btn-outline-primary"}`}
 					onClick={() => { setMyPostsOnly(!myPostsOnly); setPage(1); }}

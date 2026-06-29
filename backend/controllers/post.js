@@ -25,7 +25,7 @@ const getAllPosts = async (req, res) => {
         result = result.find({ authorId: authorId });
     }
 
-    result = result.skip(skip).limit(limit);
+    result = result.skip(skip).limit(limit).sort({ uploadDate: -1 }); //posts mais recentes ficam no topo
 
     const finalPosts = await result;
     console.log("posts encontrados:", finalPosts.length);

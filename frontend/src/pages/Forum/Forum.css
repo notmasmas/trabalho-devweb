@@ -12,12 +12,20 @@
 
 main {
     flex: 1;
-    padding: 32px 16px;
+    padding: 32px 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
-		justify-content: center;
+	justify-content: center;
     gap: 20px;
+}
+
+main h1 {
+	margin: 0;
+}
+
+main p {
+	margin: -10px 0 25px 0;
 }
 
 .search-create {
@@ -33,16 +41,17 @@ main {
 .feed-wrapper {
 	width: 100%;
 	max-width: 800px;
-	margin: 0;
+	margin: 30px 30px;
 	display: flex;
 	flex-direction: column;
+	gap: 30px;
 }
 
 .post {
   border: 1.5px solid var(--border);
 	border-radius: 4px;
-  background: white;
-	margin: 30px 0;
+    background: white;
+	margin: 0;
 	width: 100%;
 }
 
@@ -53,7 +62,6 @@ main {
 
 .post-wrapper {
 	width: 100%;
-	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -63,11 +71,17 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: rgb(232, 232, 232);
+	padding: 5px 12px;
+}
+
+.post-username, .post-date, .post-name, .post-text {
+	color: black;
 }
 
 .post-name {
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .post-username {
@@ -80,10 +94,18 @@ main {
 	font-style: italic;
 }
 
+.post-center {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 0 20px;
+}
+
 .post-bottom {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 5px 20px 20px 20px;
 }
 
 .post-button {
