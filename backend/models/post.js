@@ -8,11 +8,15 @@ const postSchema = new mongoose.Schema({
     "body": {
         type: String,
         required: [true, "Must provide post body"],
-        maxlength: [500, "Post cannot be longer than 500"],
+        maxlength: [2000, "Post cannot be longer than 2000"],
     },
     "author": {
         type: String,
         required: [true, "Post must have author"],
+    },
+    "authorId": {
+        type: String,
+        required: [true, "Post must have author"]
     },
     "comments": [
         {

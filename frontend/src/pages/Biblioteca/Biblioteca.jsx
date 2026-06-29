@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import api from "../../api/axios";
 import { Sidebar } from '../../components/Sidebar'
 import { SearchBar } from '../../components/SearchBar';
@@ -35,18 +36,18 @@ export default function Biblioteca () {
 
     <main className="container">
     <h1>Biblioteca</h1>
-    <p>Aqui você encontra materiais auxiliares para a suas aulas compartilhados por professores e outros alunos!</p>
-    <SearchBar search={search} setSearch={setSearch}/>
+    <p>Aqui você encontra materiais auxiliaresetIsModals para a suas aulas compartilhados por professores e outros alunos!</p>
 
     <div className="add-content-wrapper">
+        <SearchBar search={search} setSearch={setSearch}/>
         <button className="btn btn-primary add-content" onClick={() => {setIsModalOpen(true)}}>
             <i className="bi bi-file-earmark-plus"></i>
              Adicionar conteúdo
         </button>
-        <button className="btn btn-primary add-content">
+        <Link to="/biblioteca/editar" className="btn btn-primary add-content">
             <i className="bi bi-pencil"></i>
              Editar meus PDFs
-        </button>
+        </Link>
     </div>
 
     <div className="row row-cols-1 row-cols-md-3 g-4 pdf-wrapper">
