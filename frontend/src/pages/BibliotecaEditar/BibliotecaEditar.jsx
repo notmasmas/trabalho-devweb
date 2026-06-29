@@ -46,7 +46,7 @@ export default function BibliotecaEditar () {
         </Link>
     </div>
 
-    <div className="row row-cols-1 row-cols-md-3 g-4 pdf-wrapper">
+    <div className="row g-4 pdf-wrapper">
         {
         files.length === 0?
          <div className="col-12 d-flex justify-content-center align-items-center" style={{ minHeight: "150px" }}>

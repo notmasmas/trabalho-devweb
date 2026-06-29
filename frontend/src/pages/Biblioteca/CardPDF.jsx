@@ -1,34 +1,42 @@
 import logoIFSC from '../../assets/img/logo.svg';
-import './CardPDF.css'
+import './CardPDF.css';
 
 export function CardPDF({ cardID, cardTitle, cardDescription }) {
 
     function downloadPDF() {
         const url = `http://localhost:3000/api/v1/files/download/${cardID}`;
-        window.open(url, '_blank');
+        window.open(url, "_blank");
     }
 
     return (
-        <div className="col">
-            <div className="card h-100 card-horizontal">
+        <div className="col-12 col-md-6 col-lg-4">
+            <div className="card pdf-card">
 
-                <img 
-                    src={logoIFSC} 
-                    className="card-img-left" 
-                    alt="logo"/>
+                <img
+                    src={logoIFSC}
+                    alt="PDF"
+                    className="pdf-card-image"
+                />
 
-                <div className="card-body">
-                    <h5 className="card-title">{cardTitle}</h5>
-                    <p className="card-text">{cardDescription}</p>
+                <div className="card-body pdf-card-body">
 
-                    <button 
+                    <div className="pdf-card-content">
+                        <h5 className="card-title">{cardTitle}</h5>
+
+                        <p className="pdf-card-text">
+                            {cardDescription}
+                        </p>
+                    </div>
+
+                    <button
                         className="btn btn-primary"
                         onClick={downloadPDF}>
-                        Download
+                        <i className="bi bi-download"></i> Download
                     </button>
+
                 </div>
 
             </div>
         </div>
-    )
+    );
 }
