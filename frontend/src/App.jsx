@@ -41,8 +41,8 @@ export default function App() {
 
         <Route path="/semestres" element={
           <PrivateRoute>
-            <Semestres /><
-          /PrivateRoute>
+            <Semestres />
+          </PrivateRoute>
         } />
           
         <Route path="/forum" element= {

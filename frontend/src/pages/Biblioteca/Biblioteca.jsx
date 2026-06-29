@@ -34,7 +34,7 @@ export default function Biblioteca () {
     <div className="app-layout">
     <Sidebar/>
 
-    <main className="container">
+    <main className="biblioteca-main">
     <h1>Biblioteca</h1>
     <p>Aqui você encontra materiais auxiliaresetIsModals para a suas aulas compartilhados por professores e outros alunos!</p>
 
@@ -50,18 +50,15 @@ export default function Biblioteca () {
         </Link>
     </div>
 
-    <div className="row row-cols-1 row-cols-md-3 g-4 pdf-wrapper">
-        {
-        files.map ((file) => {
-            return (
-                <CardPDF
-                    key={file["_id"]}
-                    cardID={file["_id"]}
-                    cardTitle={file["name"]}
-                    cardDescription={file["description"]}
-                />
-            )
-        })}
+    <div className="row g-4 pdf-wrapper">
+        {files.map(file => (
+            <CardPDF
+                key={file._id}
+                cardID={file._id}
+                cardTitle={file.name}
+                cardDescription={file.description}
+            />
+        ))}
     </div>
 
     <button type="button" className="btn btn-primary load-more" onClick={() => {setPage(page + 1)}}>Carregar mais</button>

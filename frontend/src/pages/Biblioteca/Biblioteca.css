@@ -1,62 +1,76 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-  --cream:  #f2ede4;
-  --dark:   #1c1c1c;
-  --dark_blue: #171253;
-  --border: #c8bfb0;
-  --muted:  #7a7060;
-  --green-ifsc: #84CB87;
-  --red-ifsc: #F55A0A;
-
+    --cream: #f2ede4;
+    --dark: #1c1c1c;
+    --dark_blue: #171253;
+    --border: #c8bfb0;
+    --muted: #7a7060;
+    --green-ifsc: #84CB87;
+    --red-ifsc: #F55A0A;
 }
 
 .app-layout {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
 }
 
-main {
+/* conteúdo principal */
+
+.biblioteca-main {
     flex: 1;
     padding: 32px 16px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
 }
 
-.pdf-wrapper {
-    width: 100%;
+/* título */
+
+.biblioteca-main h1,
+.biblioteca-main > p {
+    text-align: center;
 }
+
+/* barra superior */
 
 .add-content-wrapper {
     display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 12px;
-	width: 100%;
-	max-width: 900px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
 }
 
 .add-content {
     background-color: var(--green-ifsc);
     border: none;
-    margin: 10px;
 }
 
 .add-content:hover {
     background-color: var(--red-ifsc);
 }
 
+/* grid dos cards */
+
+.pdf-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* botão carregar mais */
+
 .load-more {
-    width: 200px;
+    width: 220px;
+    align-self: center;
+
     background-color: var(--green-ifsc);
     border: none;
-    margin-top: auto;
 }
 
 .load-more:hover {
