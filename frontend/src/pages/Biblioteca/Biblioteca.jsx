@@ -37,9 +37,9 @@ export default function Biblioteca () {
     <main className="container">
     <h1>Biblioteca</h1>
     <p>Aqui você encontra materiais auxiliaresetIsModals para a suas aulas compartilhados por professores e outros alunos!</p>
-    <SearchBar search={search} setSearch={setSearch}/>
 
     <div className="add-content-wrapper">
+        <SearchBar search={search} setSearch={setSearch}/>
         <button className="btn btn-primary add-content" onClick={() => {setIsModalOpen(true)}}>
             <i className="bi bi-file-earmark-plus"></i>
              Adicionar conteúdo
