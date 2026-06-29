@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 :root {
@@ -14,6 +13,12 @@
 
 }
 
+.app-layout {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 main {
     flex: 1;
     padding: 32px 16px;
@@ -23,20 +28,22 @@ main {
     gap: 20px;
 }
 
+.pdf-wrapper {
+    width: 100%;
+}
+
 .add-content {
     background-color: var(--green-ifsc);
     border: none;
+    margin: 10px;
 }
 
 .add-content:hover {
     background-color: var(--red-ifsc);
 }
 
-.card {
-    max-width: 300px;
-}
-
 .load-more {
+    width: 200px;
     background-color: var(--green-ifsc);
     border: none;
     margin-top: auto;

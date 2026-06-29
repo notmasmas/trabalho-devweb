@@ -43,7 +43,18 @@ const login = async (req, res) => {
         .send();
 }
 
+const logout = async (req, res) => {
+
+  res.clearCookie('token', {
+    httpOnly: true,
+  });
+
+  return res.status(200).send();
+
+}
+
 module.exports = {
     register,
-    login
+    login,
+    logout
 }
