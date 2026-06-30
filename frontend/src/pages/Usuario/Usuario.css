@@ -2,26 +2,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
+    width: 100%;
+    min-height: 115vh;
 }
 
 .user-content {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
     background: var(--cream);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 32px;
+    box-sizing: border-box;
 }
 
 .user-content h2 {
     margin-bottom: 24px;
     text-align: center;
+    color: var(--dark-blue);
+    font-size: 28px;
 }
 
 .user-content .form-label {
     font-weight: 600;
     margin-bottom: 6px;
+    display: block;
+    color: var(--dark);
+    font-size: 0.95rem;
 }
 
 .user-content .form-control {
@@ -42,5 +50,82 @@
     margin: 0px;
     padding: 0px;
     color: var(--green-ifsc);
+    font-size: 0.95rem;
+}
+
+/* ── RESPONSIVIDADE (≤ 768px) ── */
+@media (max-width: 768px) {
+    .user-main {
+        padding: 15px;
+    }
+
+    .user-content {
+        max-width: 100%;
+        padding: 24px;
+    }
+
+    .user-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .user-content .form-label {
+        font-size: 0.9rem;
+    }
+
+    .user-content .form-control {
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+    }
+
+    .user-content button {
+        margin-top: 10px;
+        font-size: 0.95rem;
+    }
+
+    .info-paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+/* ── RESPONSIVIDADE (≤ 480px) ── */
+@media (max-width: 480px) {
+    .user-main {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .user-content {
+        padding: 16px;
+    }
+
+    .user-content h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .user-content .form-label {
+        font-size: 0.85rem;
+    }
+
+    .user-content .form-control {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .user-content button {
+        margin-top: 8px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .info-box {
+        margin-top: 12px;
+    }
+
+    .info-paragraph {
+        font-size: 0.85rem;
+    }
 }
 

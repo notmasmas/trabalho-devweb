@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import api from '../api/axios';
-import { Sidebar } from '../components/Sidebar';
+import api from '../../api/axios';
+import { Sidebar, Loading } from '../../components'
 import './Home.css';
 
 export default function Home() {
@@ -22,20 +22,18 @@ export default function Home() {
 
     if (loading) {
         return (
-            <div className="loading">
-                <div className="loading-spinner"></div>
-                <p className="loading-text">Carregando...</p>
-            </div>
+            <Loading />
         );
     }
 
     return (
         <div className="app-layout">
-            <Sidebar />
+            <Sidebar/>
             
+            <div className="main-wrapper">
             <div className="grid-container-wrapper">
                 {/* Agora o user.name nunca vai ler null! */}
-                <h2 className="grid-titulo">Olá, {user.name}!</h2>
+            <h2 className="grid-titulo">Olá, <span className="user-nome">{user.name}! </span></h2>
 
                 <div className="grid-botoes">
                     <div className="grid-item">
@@ -65,5 +63,6 @@ export default function Home() {
                 </div>
             </div>
         </div>
+    </div>
     );
 }

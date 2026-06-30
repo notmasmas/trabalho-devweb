@@ -103,13 +103,6 @@ export function ModalPost({ user, isOpen, onClose, onSuccess }) {
                     />
                     <p className="error">{errors.tags || ''}</p>
 
-                    <input
-                        type="file"
-                        accept="image/png, image/jpeg"
-                        onChange={(e) => setFile(e.target.files[0])}
-                    />
-                    <p className="error">{errors.file || ''}</p>
-
                     <div className="modal-actions">
                         <button type="button" onClick={resetData} className="btn btn-primary">
                             Cancelar

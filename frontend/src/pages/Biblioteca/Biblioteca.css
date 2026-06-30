@@ -12,11 +12,6 @@
     --red-ifsc: #F55A0A;
 }
 
-.app-layout {
-    display: flex;
-    min-height: 100vh;
-}
-
 /* conteúdo principal */
 
 .biblioteca-main {
@@ -33,6 +28,10 @@
 .biblioteca-main h1,
 .biblioteca-main > p {
     text-align: center;
+}
+
+.biblioteca-main h1 {
+    color: var(--dark-blue)
 }
 
 /* barra superior */

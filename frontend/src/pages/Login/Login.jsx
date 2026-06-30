@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom";
-import api from "../api/axios";
-import logo from '../assets/img/logo.svg'
-import { Button, InputSenha, Input, Card } from '../components'
-import Cadastro from './Cadastro'
+import api from "../../api/axios";
+import logo from '../../assets/img/logo.svg'
+import { Button, InputSenha, Input, Card } from '../../components'
+import Cadastro from '../Cadastro'
+import './Login.css'
 
 export function LeftPanel() {
   return (

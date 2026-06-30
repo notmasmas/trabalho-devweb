@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import api from "../../api/axios";
-import { Sidebar } from "../../components/Sidebar";
+import { Sidebar } from "../../components";
 import "./Semestres.css";
 
 function getTipo(d) {

@@ -38,6 +38,11 @@ Em outro terminal:
 
 O front-end estará disponível em: http://localhost:5173/
 
+## Documentação
+[Files (Biblioteca de PDFs)](documentation/filesAPI.md)
+[Fórum](documentation/postsAPI.md)
+[Autenticação](documentation/authAPI.md)
+
 ## Integrantes do grupo
 - Pietra Mota
 - Sarah Meireles
@@ -45,8 +50,4 @@ O front-end estará disponível em: http://localhost:5173/
 - Maria Helena Melo
 - Filipe Pereira da Silva
 
-## Documentação
-[Files (Biblioteca de PDFs)](documentation/filesAPI.md)
-[Fórum](documentation/postsAPI.md)
-[Autenticação](documentation/authAPI.md)
 

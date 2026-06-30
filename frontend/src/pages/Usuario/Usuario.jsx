@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../../api/axios';
-import { Sidebar } from '../../components/Sidebar';
+import { Sidebar, Loading } from '../../components';
 import './Usuario.css';
 
 export default function Usuario() {
@@ -46,10 +46,7 @@ export default function Usuario() {
 
     if (loading) {
         return (
-            <div className="loading">
-                <div className="loading-spinner"></div>
-                <p className="loading-text">Carregando...</p>
-            </div>
+            <Loading />
         );
     }
 
@@ -57,7 +54,7 @@ export default function Usuario() {
         <div className="app-layout">
             <Sidebar />
 
-            <main className="user-main">
+            <div className="user-main">
                 <div className="user-content">
 
                     <h2>Informações do Usuário</h2>
@@ -129,7 +126,7 @@ export default function Usuario() {
                     </form>
 
                 </div>
-            </main>
+            </div>
         </div>
     );
 }

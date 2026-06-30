@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from "../../api/axios";
-import { Sidebar } from '../../components/Sidebar'
-import { SearchBar } from '../../components/SearchBar';
+import { Sidebar, Searchbar } from '../../components'
 import { Link } from 'react-router-dom';
 import FeedPost from './FeedPost'
 import { ModalPost } from './ModalPost';
@@ -47,7 +46,7 @@ export default function Forum() {
 			<p>Deixe suas dúvidas ou compartilhe informações com demais alunos e professores!</p>
 			
 			<div className="search-create">
-				<SearchBar search={search} setSearch={setSearch} />
+				<Searchbar search={search} setSearch={setSearch} />
 				<button className="btn btn-primary add-content post-button verde" onClick={() => {setIsModalOpen(true)}}>
           			<i className="bi bi-pencil me-1"></i>
           			Criar post

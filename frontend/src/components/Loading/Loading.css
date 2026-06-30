@@ -1,0 +1,36 @@
+/* Componente Loading */
+
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 20px;
+}
+
+.loading-spinner {
+  border: 8px solid rgb(171, 171, 171);
+  border-left-color: var(--red-ifsc);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--dark);
+  font-size: 12px;
+}

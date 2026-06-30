@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom";
 import api from "../api/axios";
 import { Button, InputSenha, Input, Card } from '../components'
-import { LeftPanel } from './Login'
-import Login from './Login'
+import { LeftPanel } from './Login/Login'
+import Login from './Login/Login'
 
 export default function Cadastro() {
 	const navigate = useNavigate();

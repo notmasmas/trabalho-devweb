@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/axios";
-
-import { Sidebar } from "../../components/Sidebar";
-import { SearchBar } from "../../components/SearchBar";
+import { Sidebar, Searchbar } from "../../components";
 import { CardPDF } from "./CardPDF";
 import { ModalPDF } from "./ModalPDF";
 
@@ -45,7 +43,7 @@ export default function Biblioteca() {
                 </p>
 
                 <div className="add-content-wrapper">
-                    <SearchBar
+                    <Searchbar
                         search={search}
                         setSearch={setSearch}
                     />

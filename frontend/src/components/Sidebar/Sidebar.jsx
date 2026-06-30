@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import api from '../api/axios'
+import api from '../../api/axios'
 import './Sidebar.css';
-import logoIFSC from '../assets/img/logo.svg'
+import logoIFSC from '../../assets/img/logo.svg'
 
-export function Sidebar() {
+export default function Sidebar() {
     // useNavigate serve para redirecionar
     const navigate = useNavigate();
     // useState controla se o menu do celular está aberto
