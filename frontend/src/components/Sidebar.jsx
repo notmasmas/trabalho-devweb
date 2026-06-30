@@ -11,12 +11,14 @@ export function Sidebar() {
     const [aberto, setAberto] = useState(false);
 
     // Função responsável por encerrar a sessão do usuário
-    function logout() {
+    async function logout() {
         try {
-            api.post('/auth/logout', {}, { withCredentials: true });
+            await api.post('/auth/logout', {}, { withCredentials: true });
+
             navigate('/login', { replace: true });
-        } catch(error) {
-            console.log(error);
+
+        } catch (error) {
+            console.error(error);
         }
     }
 
