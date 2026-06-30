@@ -17,33 +17,38 @@
     align-items: center;   
     justify-content: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 560px;
     gap: 20px;
     padding: 20px;
 }
 
 .grid-titulo {
-    font-size: 1.6rem;
+    font-size: clamp(1.25rem, 2.2vw + 0.8rem, 1.8rem);
     font-weight: 500;
     color: var(--dark-blue);
     margin: 0;
     text-align: center;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .user-nome {
     font-weight: 600;
 }
+
 .grid-botoes {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 16px;
     width: 100%;
-    max-width: 380px; 
+    max-width: 460px;
 }
 
 .grid-item {
-    flex: 1 1 calc(50% - 12px);
-    aspect-ratio: 1 / 1;
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
 }
 
 .btn-quadrado {
@@ -52,12 +57,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    /* Remove o estilo padrão de link text */
-    text-decoration: none; 
-    
+    gap: 8px;
+    text-decoration: none;
     width: 100%;
-    height: 100%;
+    min-height: 132px;
+    padding: 16px;
     background-color: white;
     color: var(--dark);
     border: 1.5px solid var(--border);
@@ -68,23 +72,64 @@
     transition: transform 0.2s, background-color 0.2s;
 }
 
+.btn-quadrado i {
+    font-size: 1.6rem;
+}
+
 .btn-quadrado:hover {
     background-color: rgb(241, 241, 241);
     transform: scale(1.02);
 }
 
 @media (max-width: 767px) {
-    .grid-container-wrapper {
-        padding: 16px;
+    .main-wrapper {
+        padding: 20px 12px;
     }
-    
+
+    .grid-container-wrapper {
+        padding: 12px;
+        gap: 16px;
+    }
+
     .grid-botoes {
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+        max-width: 360px;
+        gap: 12px;
     }
 
     .grid-item {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 6px);
+        min-width: 0;
+    }
+
+    .btn-quadrado {
+        min-height: 110px;
+        padding: 12px;
+        border-radius: 14px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-titulo {
+        font-size: clamp(1.1rem, 4.8vw, 1.35rem);
+    }
+
+    .grid-botoes {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .grid-item {
+        flex: 1 1 calc(50% - 5px);
+    }
+
+    .btn-quadrado {
+        min-height: 96px;
+        padding: 10px;
+    }
+
+    .btn-quadrado i {
+        font-size: 1.4rem;
     }
 }
