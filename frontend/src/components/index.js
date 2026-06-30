@@ -1,5 +1,9 @@
-export { default as Button } from './Button'
-export { default as InputSenha } from './InputSenha'
-export { default as Input } from './Input'
-export { default as Card } from './Card'
-export { default as Loading } from './Loading'
+export { default as Button } from './Button';
+export { default as InputSenha } from './InputSenha';
+export { default as Input } from './Input';
+export { default as Card } from './Card';
+export { default as Loading } from './Loading/Loading';
+export { default as Sidebar } from './Sidebar/Sidebar';
+export { default as Searchbar } from './Searchbar/Searchbar';
+export { default as PrivateRoute } from './PrivateRoute';
+export { default as PublicRoute } from './PublicRoute';

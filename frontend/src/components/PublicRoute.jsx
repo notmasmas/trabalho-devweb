@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import api from "../api/axios";
-import Loading from "./Loading.jsx";
+import { Loading } from "./index";
 
 export default function PublicRoute({ children }) {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ export default function PublicRoute({ children }) {
       .finally(() => setLoading(false));
   }, []);
 
-    if (loading) return < Loading / >;
+    if (loading) return <Loading />;
 
     if (isAuth) {
       return <Navigate to="/" replace />;

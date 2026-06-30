@@ -1,6 +1,6 @@
 import './SearchBar.css';
 
-export function SearchBar ({search, setSearch}) {
+export default function Searchbar ({search, setSearch}) {
 
     return (
         <div className="search-wrapper">

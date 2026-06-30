@@ -16,7 +16,6 @@
 com flexbox pra alinhar a sidebar e o conteúdo principal lado a lado */
 body {
   background: var(--cream);
-  font-family: 'DM Sans', sans-serif;
   color: var(--dark);
   min-height: 100vh;
   display: flex;
@@ -34,9 +33,11 @@ body {
   padding: 20px 0;
   gap: 28px;
   flex-shrink: 0;
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
   height: 100vh;
+  z-index: 9999;
 }
 
 .sidebar .logo-design-ifsc { width: 32px; }

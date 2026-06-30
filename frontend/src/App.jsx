@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 {/* routes, Route, useNavigate, Navigate só funcionam se estiverem dentro de um BrowserRouter */}
-import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Login from "./pages/Login/Login.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Biblioteca from "./pages/Biblioteca/Biblioteca.jsx"
 import Forum from "./pages/Forum/Forum.jsx"
 import PostPage from "./pages/Forum/PostPage.jsx"
 import BibliotecaEditar from './pages/BibliotecaEditar/BibliotecaEditar.jsx'
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
+import { PrivateRoute, PublicRoute } from "./components";
 import Semestres from "./pages/Semestres/Semestres.jsx";
 import Usuario from './pages/Usuario/Usuario.jsx';
 

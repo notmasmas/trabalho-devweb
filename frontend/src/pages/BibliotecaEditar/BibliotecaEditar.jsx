@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import api from "../../api/axios";
-import { Sidebar } from '../../components/Sidebar'
+import { Sidebar } from '../../components'
 import CardPDFEditar from './CardPDFEditar'
 import ModalEditar from './ModalEditar'
 import './BibliotecaEditar.css'

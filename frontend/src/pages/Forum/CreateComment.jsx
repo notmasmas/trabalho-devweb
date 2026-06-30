@@ -18,10 +18,20 @@ export default function CreateComment({ id, onSuccess }) {
   }
 
     return (
-        <div className="comment">
-            <Input type="text" placeholder="Deixe seu comentário" value={comment} onChange={(e) => setComment(e.target.value)} />
-            <button onClick={handleComment} className="btn bi bi-send"/>
-            {error && <p className="error">{error}</p>}
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <div style={{ flex: 1 }}>
+                <Input 
+                    type="text" 
+                    placeholder="Deixe seu comentário" 
+                    value={comment} 
+                    onChange={(e) => setComment(e.target.value)} 
+                />
+            </div>
+            <button 
+                onClick={handleComment} 
+                className="btn bi bi-send"
+                style={{ width: "44px", height: "44px" }} 
+            />
         </div>
     )
 }

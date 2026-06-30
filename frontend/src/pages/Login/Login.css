@@ -1,0 +1,85 @@
+/* LOGIN */
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* card */
+.card-shell {
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  background: var(--cream);
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* painel esquerdo */
+.left-panel {
+  flex: 1;
+  border-right: 1.5px solid var(--border);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.illustration-box {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  aspect-ratio: 4 / 3;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration-box img {
+  width: 180px;
+  height: auto;
+}
+
+.panel-title {
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+}
+
+.panel-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* painel direito */
+.right-panel {
+  flex: 1;
+  padding: 0px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.right-panel h2 {
+  font-size: 1.6rem;
+  margin: 0 0 -8px;
+  font-weight: 400;
+}
+
+.right-panel .subtitle {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}

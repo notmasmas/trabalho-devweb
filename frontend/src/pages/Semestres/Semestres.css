@@ -7,19 +7,24 @@
   --green-ifsc: #84CB87;
 }
 
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
 /* ── página ocupa todo o espaço ao lado do sidebar ── */
 .semestres-page {
   flex: 1;
   min-width: 0;
-  padding: 2rem 2rem 2rem 2.5rem;
-  overflow: hidden;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
 .semestres-page h1 {
-  font-size: 1.5rem;
-  color: var(--dark);
+  font-size: 1.8rem;
+  color: var(--dark-blue);
   margin-bottom: .25rem;
 }
 
@@ -202,7 +207,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
     padding: 1.5rem;
     border: none;
