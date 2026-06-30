@@ -9,34 +9,30 @@ export function CardPDF({ cardID, cardTitle, cardDescription }) {
     }
 
     return (
-        <div className="col-12 col-md-6 col-lg-4">
-            <div className="card pdf-card">
+        <div className="card pdf-card">
 
-                <img
-                    src={logoIFSC}
-                    alt="PDF"
-                    className="pdf-card-image"
-                />
+            <img
+                src={logoIFSC}
+                alt="PDF"
+                className="pdf-card-image"
+            />
 
-                <div className="card-body pdf-card-body">
+            <div className="card-body pdf-card-body">
 
-                    <div className="pdf-card-content">
-                        <h5 className="card-title">{cardTitle}</h5>
+                <div className="pdf-card-content">
+                    <h5 className="card-title">{cardTitle}</h5>
 
-                        <p className="pdf-card-text">
-                            {cardDescription}
-                        </p>
-                    </div>
-
-                    <button
-                        className="btn btn-primary"
-                        onClick={downloadPDF}>
-                        <i className="bi bi-download"></i> Download
-                    </button>
-
+                    <p>{cardDescription}</p>
                 </div>
 
+                <button
+                    className="btn btn-primary"
+                    onClick={downloadPDF}>
+                    <i className="bi bi-download"></i> Download
+                </button>
+
             </div>
+
         </div>
     );
 }

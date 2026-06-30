@@ -63,7 +63,7 @@
 }
 
 .btn-quadrado:hover {
-    background-color: var(--muted);
+    background-color: rgb(241, 241, 241);
     transform: scale(1.02);
 }
 

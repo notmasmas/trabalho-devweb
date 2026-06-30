@@ -39,6 +39,7 @@ export function Sidebar() {
                 <NavLink to="/semestres" className="nav-item"><i className="bi bi-bezier2" /><span>Semestres</span></NavLink>
 
                 <div className="bottom">
+                    <NavLink to="/usuario" className="nav-item"><i className="bi bi-person" /><span>Conta</span></NavLink>
                     <a onClick={logout} className="nav-item" style={{ cursor: 'pointer' }}>
                         <i className="bi bi-box-arrow-left" />
                         <span>Logout</span>
@@ -64,6 +65,8 @@ export function Sidebar() {
                         <NavLink to="/forum"      onClick={fechar}>Fórum</NavLink>
                         <NavLink to="/biblioteca" onClick={fechar}>Biblioteca</NavLink>
                         <NavLink to="/semestres"  onClick={fechar}>Semestres</NavLink>
+                        <NavLink to="/usuario"  onClick={fechar}>Minha Conta</NavLink>
+                        <a onClick={logout}>Logout</a>
                     </nav>
 
                     <a className="menu-mobile-logout" onClick={() => { logout(); fechar(); }}>

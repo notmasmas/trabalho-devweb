@@ -1,13 +1,8 @@
 .pdf-card {
     display: flex;
     flex-direction: row;
-
-    height: 180px;
-
-    border-radius: 12px;
-    overflow: hidden;
-
-    transition: .2s;
+    width: 100%;
+    min-height: 180px;
 }
 
 .pdf-card:hover {
@@ -25,12 +20,13 @@
 .pdf-card-body {
     display: flex;
     flex-direction: column;
-
-    justify-content: space-between;
-
     padding: 18px;
-
     flex: 1;
+}
+
+.pdf-card-body .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .pdf-card-content {
@@ -44,13 +40,12 @@
 }
 
 .pdf-card-content p {
-    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 
     overflow: hidden;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .pdf-card-body .btn {
@@ -61,3 +56,4 @@
     display: flex;
     gap: 10px;
 }
+

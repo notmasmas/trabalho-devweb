@@ -59,7 +59,7 @@ export default function Home() {
                     <div className="grid-item">
                         <Link to="/usuario" className="btn-quadrado">
                             <div><i className="bi bi-person fs-1"></i></div>
-                            Minha conta
+                            Minha Conta
                         </Link>
                     </div>
                 </div>
