@@ -9,7 +9,9 @@ const register = async (req, res) => {
 
     res
         .cookie('token', token, {
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
         })
         .send();
 }
@@ -38,7 +40,9 @@ const login = async (req, res) => {
 
     res
         .cookie('token', token, {
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
         })
         .send();
 }
@@ -47,6 +51,8 @@ const logout = async (req, res) => {
 
   res.clearCookie('token', {
     httpOnly: true,
+    secure: true,
+    sameSite: "none"
   });
 
   return res.status(200).send();
