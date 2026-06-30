@@ -37,6 +37,10 @@ const fileSchema = new mongoose.Schema({
         required: [true, 'file URI must be provided'],
         trim: true
     },
+    cloudinaryID: {
+    type: String,
+    required: true
+    },
     "uploadDate": {
         type: Date,
         default: Date.now

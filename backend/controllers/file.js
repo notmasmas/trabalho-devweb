@@ -1,26 +1,34 @@
-const {StatusCodes} = require('http-status-codes');
-const fs = require('fs');
-const path = require('path');
-const File = require('../models/file.js');
-const {BadRequestError, NotFoundError, CustomAPIError, ForbiddenError} = require('../errors');
+const { StatusCodes } = require('http-status-codes');
+const streamifier = require('streamifier');
+const cloudinary = require('../config/cloudinary');
+
+const File = require('../models/file');
+
+const {
+    BadRequestError,
+    NotFoundError,
+    ForbiddenError
+} = require('../errors');
 
 const getAllFiles = async (req, res) => {
 
-    const {name, author, uploader} = req.query;
-    const queryObject = {}
+    const { name, author, uploader } = req.query;
+    const queryObject = {};
 
     if (name) {
-        queryObject.name = {$regex: name, $options: 'i'};
-    }
-    if (author) {
-        queryObject.author = {$regex: author, $options: 'i'};
-    }
-    if (uploader) {
-        queryObject.uploader = {$regex: uploader, $options: 'i'};
+        queryObject.name = { $regex: name, $options: 'i' };
     }
 
-    if (req.user.role == 'student') {
-        queryObject.protected = false; // this prevents students from seeing protected files
+    if (author) {
+        queryObject.author = { $regex: author, $options: 'i' };
+    }
+
+    if (uploader) {
+        queryObject.uploader = uploader;
+    }
+
+    if (req.user.role === "student") {
+        queryObject.protected = false;
     }
 
     let result = File.find(queryObject);
@@ -32,136 +40,155 @@ const getAllFiles = async (req, res) => {
     result = result.skip(skip).limit(limit);
 
     const files = await result;
-    
-    res
-        .status(StatusCodes.OK)
-        .json({files})
-}
+
+    res.status(StatusCodes.OK).json({ files });
+};
 
 const createFile = async (req, res) => {
+
     if (!req.file) {
-        throw new BadRequestError('Arquivo deve ser providenciado');
+        throw new BadRequestError("Arquivo deve ser providenciado.");
     }
 
-    const {size, path} = req.file;
-    
-    const {
-        name, 
-        author, 
-        description, 
-        protected
-    } = req.body;
+    const uploadResult = await new Promise((resolve, reject) => {
 
-    const fileData = {
-        name,
-        author,
+        const uploadStream = cloudinary.uploader.upload_stream(
+            {
+                folder: "biblioteca",
+                resource_type: "raw"
+            },
+            (error, result) => {
+
+                if (error) {
+                    return reject(error);
+                }
+
+                resolve(result);
+            }
+        );
+
+        streamifier
+            .createReadStream(req.file.buffer)
+            .pipe(uploadStream);
+
+    });
+
+    const file = await File.create({
+        name: req.body.name,
+        author: req.body.author,
+        description: req.body.description,
+        protected: req.body.protected,
         uploader: req.user.id,
-        description,
-        protected,
-        fileSize: size,
-        fileURI: path
-    }
 
-    const file = await File.create(fileData);
+        fileURI: uploadResult.secure_url,
+        cloudinaryID: uploadResult.public_id,
+        fileSize: uploadResult.bytes
+    });
 
     res
         .status(StatusCodes.CREATED)
-        .send();
-}
+        .json(file);
+};
 
 const getFile = async (req, res) => {
-    const {id:fileID} = req.params;
-    
-    const file = await File.findOne({_id: fileID});
+
+    const { id: fileID } = req.params;
+
+    const file = await File.findById(fileID);
 
     if (!file) {
-        throw new NotFoundError('Arquivo não encontrado');
+        throw new NotFoundError("Arquivo não encontrado.");
     }
 
-    if (file.protected && req.user.role == 'student') {
-        throw new ForbiddenError("Você não tem permissão para acessar este arquivo");
+    if (file.protected && req.user.role === "student") {
+        throw new ForbiddenError("Você não tem permissão para acessar este arquivo.");
     }
 
     res
         .status(StatusCodes.OK)
         .json(file);
-}
-
-const deleteFile = async (req, res) => {
-
-    const {id:fileID} = req.params;
-    const file = await File.findOneAndDelete({_id: fileID,
-                                               uploader: req.user.id});
-
-    if (!file) {
-        throw new ForbiddenError("Você não tem permissão para deletar este arquivo");
-    }
-
-    const filePath = path.join(__dirname, '..', file.fileURI);
-
-    try {
-        await fs.promises.unlink(filePath);
-    }
-    catch (error) {
-        console.warn('Arquivo já foi deletado ou não encontrado');
-    }
-
-    res
-        .status(StatusCodes.OK)
-        .send();
-}
+};
 
 const editFile = async (req, res) => {
 
-    const{id:fileID} = req.params;
+    const { id: fileID } = req.params;
 
-    const file = await File.findOneAndUpdate({_id: fileID, 
-                                                uploader: req.user.id}, // checking if user is the owner of that file
-                                                req.body, // content that is being updated
-                                                {returnDocument: 'after'});
+    const file = await File.findOneAndUpdate(
+        {
+            _id: fileID,
+            uploader: req.user.id
+        },
+        req.body,
+        {
+            new: true,
+            runValidators: true
+        }
+    );
 
     if (!file) {
-        throw new ForbiddenError("Você não tem permissão para editar este arquivo");
+        throw new ForbiddenError("Você não tem permissão para editar este arquivo.");
     }
 
     res
         .status(StatusCodes.OK)
-        .send();
-}
+        .json(file);
+};
 
-const downloadFile = async (req, res) => {
-    const {id:fileID} = req.params;
+const deleteFile = async (req, res) => {
 
-    const file = await File.findById(fileID).select('fileURI');
+    const { id: fileID } = req.params;
+
+    const file = await File.findOne({
+        _id: fileID,
+        uploader: req.user.id
+    });
 
     if (!file) {
-        throw new NotFoundError('File not found');
+        throw new ForbiddenError("Você não tem permissão para deletar este arquivo.");
     }
 
-    if (file.protected && req.user.role == 'student') {
-        throw new ForbiddenError("Você não tem permissão para baixar este arquivo");
-    }
+    try {
 
-    const filePath = path.join(__dirname, '..', file.fileURI);
-
-    return res.download(filePath, 'file.pdf', (err) => {
-        if (err) {
-            console.error(err);
-
-            if (!res.headersSent) {
-                return res.status(500).json({
-                    message: 'Algo deu errado, tente mais tarde'
-                });
+        await cloudinary.uploader.destroy(
+            file.cloudinaryID,
+            {
+                resource_type: "raw"
             }
-        }
-    });
+        );
+
+    } catch (err) {
+        console.warn("Erro ao remover arquivo do Cloudinary:", err.message);
+    }
+
+    await file.deleteOne();
+
+    res
+        .status(StatusCodes.OK)
+        .send();
+};
+
+const downloadFile = async (req, res) => {
+
+    const { id: fileID } = req.params;
+
+    const file = await File.findById(fileID);
+
+    if (!file) {
+        throw new NotFoundError("Arquivo não encontrado.");
+    }
+
+    if (file.protected && req.user.role === "student") {
+        throw new ForbiddenError("Você não tem permissão para baixar este arquivo.");
+    }
+
+    return res.redirect(file.fileURI);
 };
 
 module.exports = {
     getAllFiles,
     createFile,
     getFile,
-    deleteFile,
     editFile,
+    deleteFile,
     downloadFile
 };
