@@ -11,11 +11,12 @@ Um arquivo PDF contém os seguintes atributos no banco de dados:
 | `id` | `ObjectId` | id automaticamente gerado pelo MongoDB |
 | `name`| `string`|nome do arquivo|
 |`author`|`string`|autor do arquivo|
-|`uploader`|`ObjectID`|quem fez upload do arquivo (id dele no banco)|
+|`uploader`|`string`|quem fez upload do arquivo (id dele no banco)|
 |`description`|`string`|descrição do arquivo|
 |`proctected`|`bool`|se o arquivo está disponível somente para professores
 |`fileSize`|`number`|tamanho do arquivo |
 |`fileURI`|`string`|URI de onde está armazenado o arquivo PDF em si|
+|`cloudinaryID` | Guarda o ID desse arquivo no Cloudinary|
 |`uploadDate`|`Date`|data de upload do arquivo|
 
 
@@ -36,7 +37,7 @@ Pega todos os arquivos disponívels no banco de dados.
 |`author` | `api/v1/files?author="John"`| Arquivos cujo autor possui esse nome |
 |`uploader`| `api/v1/files?uploader="Pietra"` | Arquivos cujo dono possui esse nome |
 |`page` | `api/v1/files?page=2` | Arquivos da página solicitada dependendo do limite
-|`limite` | `api/v1/files?limit=10` | Limita a quantidade de arquivos retornados
+|`limit` | `api/v1/files?limit=10` | Limita a quantidade de arquivos retornados
 
 <details>
 <summary>Saída</summary>
@@ -52,7 +53,7 @@ Pega todos os arquivos disponívels no banco de dados.
             "description": "This is a test file for the API request.",
             "protected": false,
             "fileSize": 1024,
-            "fileURI": "uploads/files/test_file.pdf",
+            "fileURI": "URL DO CLOUDINARY",
             "uploadDate": "2026-04-20T01:20:32.915Z",
             "__v": 0
         },
@@ -64,7 +65,7 @@ Pega todos os arquivos disponívels no banco de dados.
             "description": "This is a test file for the API request",
             "protected": false,
             "fileSize": 1024,
-            "fileURI": "uploads/file/test_file.pdf",
+            "fileURI": "URL DO CLOUDINARY",
             "uploadDate": "2026-05-01T19:40:06.194Z",
             "__v": 0
         }]
@@ -108,11 +109,12 @@ Pega apenas um arquivo.
   "_id": "6a19d65629856ed2a2e5c9cc",
   "name": "Test File",
   "author": "Jack Doe",
-  "uploader": "Lara Smith",
+  "uploader": "123",
   "description": "This is a test file for the API request",
   "protected": false,
   "fileSize": 68096,
-  "fileURI": "uploads/files/1780078166431-Curriculo_Maria_Helena_Melo.pdf",
+  "fileURI": "URL DO CLOUDINARY",
+  "cloudinaryID": "123"
   "uploadDate": "2026-05-29T18:09:26.438Z",
   "__v": 0
 }

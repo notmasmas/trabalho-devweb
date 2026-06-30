@@ -11,7 +11,8 @@ Um post de forum possui os seguintes atributos no banco de dados:
 | `id` | `ObjectId` | id automaticamente gerado pelo MongoDB |
 | `title`| `string`|título do post|
 |`body`|`string`|corpo do post (texto)|
-|`author`|`string`|quem fez upload do arquivo (id dele no banco)|
+|`author`|`string`|quem fez upload do arquivo (nome)|
+|`authorId` |`string`| id de quem fez upload do arquivo|
 |`comments`|`[{user, text, createdAt}]`|conjunto de comentários|
 |`tags`|`[string]`|lista de tags do post|
 |`imageSize`|`number`|tamanho da imagem (se tiver) |
@@ -32,7 +33,7 @@ Pega todos os posts disponívels no banco de dados.
 | Query | Exemplo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
 |`page` | `api/v1/posts?page=2` | Arquivos da página solicitada dependendo do limite
-|`limite` | `api/v1/posts?limit=10` | Limita a quantidade de posts retornados
+|`limit` | `api/v1/posts?limit=10` | Limita a quantidade de posts retornados
 
 <details>
 <summary>Saída</summary>
@@ -44,7 +45,8 @@ Pega todos os posts disponívels no banco de dados.
         "_id": "6a3f1e38c721aaf64b86764c",
         "title": "Test post",
         "body": "This is a test post to test this API Route",
-        "author": "6a3ef61633777e10c3035c2b",
+        "author": "Maria",
+        "authorId": "6a3ef61633777e10c3035c2b"
         "tags": [
             "cool,amazing"
         ],
@@ -100,7 +102,8 @@ Pega apenas um post.
     "_id": "6a3f1e38c721aaf64b86764c",
     "title": "Test post",
     "body": "This is a test post to test this API Route",
-    "author": "6a3ef61633777e10c3035c2b",
+    "author": "Maria",
+    "authorId": "6a3ef61633777e10c3035c2b"
     "tags": [
         "cool,amazing"
     ],

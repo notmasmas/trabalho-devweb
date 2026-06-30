@@ -33,7 +33,12 @@ const changeUserData = async (req, res) => {
     const token = user.createJWT();
 
     res
-        .cookie('token', token, {httpOnly: true})
+        .cookie('token', token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            path: "/"
+        })
         .status(StatusCodes.OK)
         .send();
 };
