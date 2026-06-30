@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { getPasswordError } from "../utils/validators";
 
 export default function InputSenha({ value, onChange, validate = false, placeholder = "Senha", onBlur }) {

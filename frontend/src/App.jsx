@@ -10,6 +10,7 @@ import BibliotecaEditar from './pages/BibliotecaEditar/BibliotecaEditar.jsx'
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import Semestres from "./pages/Semestres/Semestres.jsx";
+import Usuario from './pages/Usuario/Usuario.jsx';
 
 export default function App() {
   return (
@@ -61,6 +62,12 @@ export default function App() {
         <Route path="/forum/:id" element={
           <PrivateRoute>
             <PostPage />
+          </PrivateRoute>
+        }/>
+
+        <Route path="/usuario" element={
+          <PrivateRoute>
+            <Usuario />
           </PrivateRoute>
         }/>
 

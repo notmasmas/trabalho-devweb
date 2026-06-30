@@ -1,0 +1,46 @@
+.user-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.user-content {
+    width: 100%;
+    max-width: 650px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.user-content h2 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.user-content .form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.user-content .form-control {
+    margin-bottom: 18px;
+}
+
+.user-content button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.info-box {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.info-paragraph {
+    margin: 0px;
+    padding: 0px;
+    color: var(--green-ifsc);
+}
+

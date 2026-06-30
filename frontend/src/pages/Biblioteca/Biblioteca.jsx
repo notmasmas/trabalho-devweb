@@ -36,7 +36,7 @@ export default function Biblioteca () {
 
     <main className="biblioteca-main">
     <h1>Biblioteca</h1>
-    <p>Aqui você encontra materiais auxiliaresetIsModals para a suas aulas compartilhados por professores e outros alunos!</p>
+    <p>Aqui você encontra materiais auxiliares para a suas aulas compartilhados por professores e outros alunos!</p>
 
     <div className="add-content-wrapper">
         <SearchBar search={search} setSearch={setSearch}/>
