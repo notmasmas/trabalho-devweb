@@ -2,7 +2,7 @@
 
 A Proposta da plataforma é centralizar conhecimentos úteis para alunos de graduação do curso de Design do IFSC
 
-> Contando com fórum, biblioteca de PDFs, área de compartilhamento de trabalhos de design realizados por outros alunos e fluxograma de matérias do curso incluindo seus requerimentos prévios
+> Contando com fórum, biblioteca de PDFs e fluxograma de matérias do curso incluindo seus requerimentos prévios
 
 ## Inspirações
 
@@ -13,29 +13,30 @@ Nos foi apresentado esse problema de descentralização de informações pelo pr
 - Fórum da comunidade para tirar dúvidas ou conhecer outros alunos
 - Biblioteca de PDFs, com a possibilidade de pesquisa, download e upload de arquivos. Professores podem fazer o upload de PDFs na plataforma e marcá-los como disponíveis apenas para outros professores ou alunos de determinado semestre
 - Fluxograma das matérias do curso, apontando seus requerimentos e que matéria é recomendada ser feita em determinada fase do curso
-- Seção de divulgação de trabalhos dos próprios alunos para inspiração e portfólio
-
-## Cores utilizadas
-
---cream:  #f2ede4;\
---dark:   #1c1c1c;\
---dark_blue: #171253;\
---border: #c8bfb0;\
---muted:  #7a7060;\
---green-ifsc: #84CB87;\
---red-ifsc: #F55A0A;
+- Edição de dados do usuário
 
 ## Instalação dos módulos
 
 - É necessário ter o Node.js/NPM instalado
-  
-Se a IDE utilizada possuir terminal integrado, com o projeto aberto:
 
+`cd frontend`
 `$ npm install`
+`cd ../backend`
+`$npm install`
 
-Senão, em um terminal:\
-`$ cd diretorio_em_que_o_projeto_esta/trabalho-devweb`\
-`$ npm install`
+## Executando localmente
+
+Em um terminal:
+
+`cd frontend`
+`npm run dev`
+
+Em outro terminal: 
+
+`cd backend`
+`npm start`
+
+O front-end estará disponível em: http://localhost:5173/
 
 ## Integrantes do grupo
 - Pietra Mota
@@ -45,5 +46,7 @@ Senão, em um terminal:\
 - Filipe Pereira da Silva
 
 ## Documentação
-Posts (Biblioteca de PDFs) [Documentação](documentation/filesAPI.md)
+[Files (Biblioteca de PDFs)](documentation/filesAPI.md)
+[Fórum](documentation/postsAPI.md)
+[Autenticação](documentation/authAPI.md)
 
