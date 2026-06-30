@@ -32,6 +32,18 @@ body, #root {
   width: 100%;
 }
 
+.app-layout > main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 68px;
+}
+
+@media (max-width: 768px) {
+  .app-layout > main {
+    margin-left: 0;
+  }
+}
+
 .main-wrapper {
   flex: 1; 
   display: flex;
