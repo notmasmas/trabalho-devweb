@@ -11,7 +11,8 @@ const register = async (req, res) => {
         .cookie('token', token, {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: "none",
+            path: "/"
         })
         .send();
 }
@@ -42,7 +43,8 @@ const login = async (req, res) => {
         .cookie('token', token, {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: "none",
+            path: "/"
         })
         .send();
 }
@@ -52,7 +54,8 @@ const logout = async (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
     secure: true,
-    sameSite: "none"
+    sameSite: "none",
+    path: "/"
   });
 
   return res.status(200).send();

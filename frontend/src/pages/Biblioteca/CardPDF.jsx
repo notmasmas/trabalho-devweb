@@ -4,7 +4,7 @@ import './CardPDF.css';
 export function CardPDF({ cardID, cardTitle, cardDescription }) {
 
     function downloadPDF() {
-        const url = `http://localhost:3000/api/v1/files/download/${cardID}`;
+        const url = `https://trabalho-devweb-production.up.railway.app/api/v1/files/download/${cardID}`;
         window.open(url, "_blank");
     }
 
