@@ -36,7 +36,8 @@ const changeUserData = async (req, res) => {
         .cookie('token', token, {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: "none",
+            path: "/"
         })
         .status(StatusCodes.OK)
         .send();
