@@ -7,7 +7,7 @@ const connectDB = require('./config/db/connect');
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:5173', 'http://localhost:5174', process.env.FRONTEND_URI], // React/Vite
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://acervo-design.vercel.app'], // React/Vite
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     credentials: true
 };
